@@ -1,0 +1,724 @@
+    BÖLÜM 4
+
+    YAPAY ZEKÂ DESTEKLI EMEK: DIJITAL DÖNÜŞÜMDE
+    İNSAN–YZ İŞ BIRLIĞI
+
+                                                    Ramazan POLAT 1, Bayraktar KARAGÖZ 2
+
+
+
+
+GİRİŞ
+
+Dijital Dönüşüm, Yapay Zekâ ve Emek
+Özellikle “üretken yapay zekâ” kavramının son 5 yılda hayatımıza girmesiyle iv-
+melenen toplumsal dijital dönüşümün yakın zamanda üretim ilişkilerini, emek
+süreçlerini ve kamu hizmetlerini temelden değiştireceği öngörülmektedir. Ma-
+kine öğrenmesi, doğal dil işleme ve otonom karar destek sistemlerinin yalnızca
+özel sektör tarafında değil aynı zamanda kamu kurumlarında da gündelik işlerin
+parçası hâline gelmesi kaçınılmazdır. Vergi dairelerinden belediyelere, hastane-
+lerden üniversitelere, ulaştırmadan lojistik altyapılara kadar pek çok alanda veri
+odaklı, algoritmalara dayalı karar verme süreçleri ve araçlarının uygulandığı
+görülmektedir.
+    Hayatı bu denli etkileyecek kurum ve kuruluşların uygulamalarındaki bu ev-
+rim, sadece emek süreçlerini daha hızlı veya daha ucuz hâle getirmekle kalmaya-
+cak, aynı zamanda bazı işlerin tanım ve kapsamlarının yeniden düzenlenmesini
+gerektirecek ve hatta yeni bir üretim ve çalışma rejimi ortaya koyacaktır ki, biz
+bu rejime “yapay zekâ destekli emek” diyoruz. Bu yeni rejimde insan ile YZ sis-
+temleri arasında sürekli bir etkileşim ve görev paylaşımı söz konusudur. Bazı
+işlerin tamamını algoritmalar ve YZ devralırken diğer bazı işlerde ise son kararı
+insanlar verecek ve hatta insanların üstlendiği roller daha da güçlenecektir.
+1
+    Kıdemli YZ Uzmanı, Orta Doğu Teknik Üniversitesi, rpolat@metu.edu.tr,
+    ORCID iD: 0009-0006-6253-6718
+2
+    Programcı, Sosyal Güvenlik Kurumu, bkaragoz@sgk.gov.tr, ORCID iD: 0009-0006-5391-3382
+
+DOI: 10.37609/akya.437.c19725
+                                                                                            87
+88   YAPAY ZEKÂ VE ÇALIŞMA HAYATININ GELECEĞİ
+
+
+
+     “Yeni Elektrik” ve “Yeni Sanayi Devrimi” Benzetmesi
+     Makine öğrenmesi ve YZ alanlarında uzmanlaşmış, dünya çapında bu alanlarda
+     verdiği eğitimler sayesinde çokça tanınan bilgisayar bilimci Andrew Ng, yapay
+     zekâyı “yeni elektrik” olarak tanımlamaktadır. Ng; 20. yüzyılda elektriğin nere-
+     deyse her sektörde kullanılması, fabrikalardan evlere kadar her yere girmesi ve
+     toplumların yaşam tarzını dönüştürmesine benzer bir dönüşümün, 21. yüzyılda
+     YZ tarafından gerçekleştirileceğini savunmaktadır (Ng, 2017).
+        Bununla beraber çeşitli çalışmalarda yapay zekânın üretkenlik ve emek pi-
+     yasası üzerindeki etkisi, sanayi devriminin etkileriyle kıyaslamaktadır. Dünya
+     Ekonomik Forumu raporları, yapay zekânın iş hayatında tarihsel ölçekte büyük
+     dönüşüm ve yeniden yapılanmaya sebep olacağını, ancak aynı zamanda yeni
+     meslek ve uzmanlık alanlarının da ortaya çıkacağını ileri sürmektedir (World
+     Economic Forum, 2024, 2025).
+         Bu benzetmeler, yapay zekânın; “büyük veri”, “bulut bilişim” ya da “meta-
+     verse” gibi modası gelip geçen teknoloji akımlarından ziyade, “buhar gücü”,
+     “matbaa” ve “elektrik” ölçeğinde, toplumlarda köklü değişiklikler yapacak dev-
+     rimsel bir gelişme olduğunu iddia etmektedir. Toplumların ve kurumların işlev
+     ve işleyişlerini kökünden değiştirebilecek güce sahip bu dönüşüme “güncel bir
+     teknoloji modası” olarak bakmak, yarını kaçırmak demektir. Buna karşın yapay
+     zekâyı sıradan bir teknolojik gelişme olarak görmek yerine onu doğru şekilde
+     değerlendirenler, bilim ve teknoloji alanında ulusal ve uluslararası düzeyde bir
+     ilerleme hatta bir sıçrama bile yaşayabilir!
+
+     “Yapay Zekâ Destekli Emek” ve “Silikon Yaka” Kavramları
+     Teknolojik gelişmelerle beraber birçok yeni terim, deyim ve kavram da günlük
+     yaşamda ve iletişim dilinde kendine yer bulmaktadır. Örneğin özçekim (selfie),
+     seyyare (drone), sosyal medya etkileşimi (engagement), sohbet yayımı (pod-
+     cast), yazışma botu (chatbot) gibi kavramlar artık günlük konuşmanın parçası
+     haline gelmiş ve gündelik iletişimde kendine genişçe yer bulmuştur. Bu çerçe-
+     vede, yapay zekânın yaygınlaşmasıyla eşgüdümlü olarak geleneksel mavi yaka
+     ve beyaz yaka ayrımına ek olarak yeni bir emekçi sınıfının ortaya çıkacağı öngö-
+     rülmekte ve bu sınıfa ait emekçilere “silikon yaka” veya “silikon yakalı” denmesi
+     önerilmektedir.
+         “Silikon yaka”, üretimin ve karar alma süreçlerinin önemli bir bölümünü YZ
+     sistemleri yardımıyla gerçekleştiren; yaptığı işin tasarımını, kabul kriterlerini,
+                           Yapay Zekâ Destekli Emek: Dijital Dönüşümde İnsan–YZ İş Birliği   89
+
+
+
+doğruluğunu ve yerindeliğini doğrudan YZ sistemleri ile kurduğu etkileşim et-
+rafında şekillendiren, yeni bir bilgi işçisi sınıfı olarak tanımlanabilir.
+   Bu tanım:
+» Beyaz yakadan ayrılır: Çünkü yapay zekâdan ara sıra faydalanan değil, işi
+  bizzat YZ ile birlikte kurgulayan çalışanları kasteder.
+» Mavi yakadan ayrılır: Çünkü esas emeği mal üretiminde değil, bilişsel ve
+  dijital süreçlere dayalı çıktılar üreterek harcar.
+» Yapay zekâ mühendislerinden ayrılır: Çünkü YZ sistemlerini tasarlayan,
+  eğiten ve geliştirenlerden ziyade mevcut sistemleri gündelik üretim rejimine
+  yerleştiren, kullanan ve besleyen emekçileri merkeze alır.
+    Bu çalışmada amaç, YZ destekli emeği yeni bir üretim biçimi olarak okuyu-
+cuyla tanıştırmak, silikon yakayı yeni bir emekçi grubu olarak konumlandırmak
+ve yapay zekânın nimetlerinden azami surette faydalanılabilmesi için kamu ku-
+rumlarına yönelik politika önerileri geliştirmektir. Bunun için de yukarıda belir-
+tilen terimlerin tanımlanması ve anlamlarının benimsenmesi elzemdir.
+
+
+1. YENI ÜRETIM BIÇIMLERI: YAPAY ZEKÂ DESTEKLI EMEK
+
+1.1. Yapay Zekâ Destekli Üretim: Yalnızca Otomasyon Değil, İş
+Tasarımı
+YZ destekli emek, yalnızca var olan bir işin tamamen otonom hale getirilmesi
+olarak düşünülmemelidir. Bunun yerine daha iyiye götüren köklü bir dönüşüm-
+den söz edilmektedir:
+» İş süreçlerinin baştan sona insan + YZ etkileşimi göz önüne alınarak yeniden
+  tasarlanması,
+» Mevcut durumda insanlar için enerji kaybı olarak nitelendirilebilecek karar-
+  ların bir kısmının algoritmalarca verilmesi ve insanların nihai onay mercii
+  hâline gelmesi,
+» İnsanların bazı işlerde artık doğrudan üretim yapması yerine YZ sistemlerine
+  hedef ve kısıtları tarif ederek bu sistemleri üretime dâhil etmesi ve böylece
+  operatör rolü üstlenmesi.
+   Buradaki üretim rejimi ne tamamen otonom ne de tamamen elle olacak şe-
+kilde tarif edilmektedir, yani hibrit bir yapıya sahiptir. Elde edilen ürün ve sonuç
+her neyse, insan ile yapay zekânın ortak ürünüdür.
+90   YAPAY ZEKÂ VE ÇALIŞMA HAYATININ GELECEĞİ
+
+
+
+     1.2. Bilimsel Üretimde Yapay Zekâ: Genesis Misyonu Örneği
+     Bu yeni üretim biçimine dair belki de en çarpıcı örnek, Kasım 2025’te ABD’de baş-
+     latılan Genesis Misyonudur. ABD Başkanlık kararnamesiyle yürürlüğe giren bu
+     ulusal girişim, Enerji Bakanlığı bünyesinde bilimsel verilerin, ulusal laboratuvar-
+     ların ve süper bilgisayarların, yapay zekâ sistemlerine entegre edilmesiyle yeni bir
+     platform kurmayı hedeflemektedir (United States White House, 2025a, 2025b).
+       Resmî belgelere göre Genesis Misyonu’nun amaçları şöyle ifade edilmektedir
+     (United States White House, 2025a, 2025b):
+     1. Federal kurumlarda biriken devasa bilimsel veri kümelerinin YZ yardımıyla
+        bilimsel keşifleri hızlandıracak şekilde kullanılması,
+     2. YZ tabanlı bilimsel temel modellerin geliştirilmesi,
+     3. Deney tasarımının otomatikleştirilmesi, simülasyonların hızlandırılması,
+     4. Biyoteknoloji, enerji, malzeme bilimi ve ulusal güvenlik gibi alanlarda öngö-
+        rücü modeller oluşturulması.
+         Bu misyon, şimdiye kadar uygulanmakta olan geleneksel “laboratuvar +
+     insan araştırmacı” modelinden ziyade “laboratuvar + süper bilgisayar + YZ
+     ajanları + insan araştırmacı” modeline geçişi tasvir etmekte olup YZ destekli
+     emek kavramına en çarpıcı örneği teşkil etmektedir. Öyle ki, bu kapsamda ya-
+     pılacak araştırmaların sürelerinin yıllardan haftalara, hatta günlere indirilmesi
+     amaçlanmaktadır.
+         Bilim adamları burada yalnızca veri toplayan ve analiz eden pozisyonunda
+     değil, aynı zamanda YZ sistemlerinden hipotez üretilmesini talep eden ve üre-
+     tilen hipotezlerin doğruluğunun test edilmesini tarif eden birer silikon yakalı
+     araştırmacı hâline gelmektedir.
+
+     1.3. Kamuda Hizmet Üretimi: Yapay Zekâ ile Güçlenen Kamu
+     Emekçileri
+     Benzer bir dönüşüm, dünyanın geri kalan ülkelerinde kamu hizmetlerinde de
+     yaşanmaktadır. Örneğin OECD’nin güncel çalışmalarına göre üye ülkelerin yak-
+     laşık %67’si, kamu hizmetlerine YZ sistemlerini çeşitli düzeylerde çoktan entegre
+     şekilde kullanmaktadır (OECD, 2025).
+        Örnekler:
+     » Çağrı merkezleri: Üretken YZ botları, vatandaş sorularını ilk karşılayan kat-
+       man hâline gelmekte ve sadece karmaşık durumlar için çağrıların insanlara
+       yönlendirilmesi sağlanmaktadır (Bright ve ark., 2025).
+                          Yapay Zekâ Destekli Emek: Dijital Dönüşümde İnsan–YZ İş Birliği   91
+
+
+
+» Sosyal yardım ve hak sahipliği: Başvuruların otomatik ön değerlendirme-
+  sinin yapılması, metin özetleme araçları, mevzuat ve dilekçe taramasını hız-
+  landırarak uzman personelin iş yükünü azaltmaktadır (Roosevelt Institute,
+  2025).
+» Vergi idaresi: Bazı ülkelerde vergi otoriteleri, beyan ve inceleme süreçlerinde
+  YZ tabanlı risk değerlendirme, dolandırıcılık tespiti ve karar destek sistemleri
+  kullanmaya başlamaktadır (OECD, 2025; PwC, 2025).
+» Belediyeler: Şikâyet yönetimi, arıza kayıtları, ruhsat işlemleri ve şehir plan-
+  lama analizlerinde YZ destekli veri analitiği ve metin işleme araçları devreye
+  girmektedir (OECD, 2025; PwC, 2025).
+   Birleşik Krallık bünyesinde yapılan bazı pilot uygulamalarda, özellikle ofis
+yazılımlarına entegre olarak çalışan üretken YZ araçlarının toplantı özetlerinden
+e-posta taslaklarına kadar pek çok idari işi otomatik hale getirerek hatırı sayılır
+oranda kamu çalışanının iş yükünü önemli ölçüde azalttığı raporlanmıştır (UK
+Parliament, 2025; Hashem ve ark., 2025).
+   Tüm bu örneklerin ortak noktası, “kamu emekçisi + YZ” ikilisinin vatandaşa
+sunulan hizmetlerin kalitesinin ve hızını arttırmasının yanı sıra çalışanların da
+daha dişe dokunur işlere yönelmesini mümkün kılmasıdır.
+
+1.4. Kamu Değerine Katkı: Verimlilik, Kalite, Erişilebilirlik
+Yapay zekâ destekli yeni üretim rejiminin kamudaki potansiyel katkıları üç baş-
+lıkta toplanabilir:
+1. Verimlilik: Çalışanların çok zaman ve enerji harcayarak yaptığı kaynak ara-
+   ma, belge tarama, sınıflandırma ve özetleme gibi rutin iş ve işlemler YZ ile
+   çok daha hızlanabilir. Bu da kamu personelinin zamanını daha uygun, insani
+   temas gerektiren görevlere kaydırabilmesine olanak tanır (UK Parliament,
+   2025; PwC, 2025).
+2. Kalite: Büyük veri depoları üzerinde çalışan YZ modelleri, çelişkili maddele-
+   ri çok kısa sürede fark edebilir ve insan gözünden kaçan ayrıntıları ve örün-
+   tüleri ortaya çıkarabilir (Bright ve ark., 2025; Hashem ve ark., 2025).
+3. Erişilebilirlik: Doğal dil işleme, ses tanıma, metin okuma ve görsel tanımla-
+   ma teknolojileri, engelli veya dezavantajlı insanların kamu hizmetlerine eri-
+   şiminde büyük kolaylıklar sağlayabilir (OECD, 2025).
+   Tabii ki tüm bunlar kamudaki emek süreçlerinin YZ destekli emek ve sili-
+kon yaka kavramları göz önüne alınarak yeniden tasarlanması, iş tanımlarının
+92   YAPAY ZEKÂ VE ÇALIŞMA HAYATININ GELECEĞİ
+
+
+
+     güncellenmesi, yetkinlik ve sorumluluk çerçevelerinin YZ destekli bir mantıkla
+     yeniden gözden geçirilmesi ile ancak mümkün olabilecektir.
+
+
+     2. SILIKON YAKA: YENI BIR EMEKÇI SINIFI
+
+     2.1. Tanımın Detaylandırılması
+     Yukarıda verilen temel tanım dikkate alındığında “silikon yakalı” olarak adlan-
+     dırılabilecek çalışanlar için şu ölçütler öne çıkmaktadır:
+     1. Üretim ve karar alma kapasitesinin önemli bir oranı, hatta belki de çoğu YZ
+        üzerinden yürütülür: YZ bu hususta sadece yardımcı rolünü üstlenmekten
+        ziyade işin çekirdek bileşenlerinden biri olabilir.
+     2. İşin baştan sona tasarlanması, uygunluk ölçütleri ve kontroller YZ yetenekle-
+        ri göz önüne alınarak yeniden şekillenir: Çalışanın iyi performans gösterme-
+        si, YZ sistemlerini ustaca kullanmasına bağlı olduğu gibi üretilen ürün veya
+        verilen kararın kalitesi de kullanılan YZ modelinin teknolojisine doğrudan
+        bağlıdır.
+     3. İnsan–YZ etkileşimi süreklidir: Genel olarak tüm iş sürecinde yapay zekâya
+        talimat verme, çıktıyı değerlendirme ve insan faktörünün devreye girerek gerek-
+        tiğinde müdahalelerde bulunma, yeni iş yapış rejiminin ayrılmaz bir parçasıdır.
+        Bu bakımdan:
+     » Bazen veya sadece gerektiğinde YZ aracından yardım alan ve basit bir sorgu
+       yapan sıradan ofis çalışanı silikon yakalı sayılmaz.
+     » Tamamen fiziksel iş yapan ve yaptığı işte kararlarını kendisi veren, yani YZ ile
+       neredeyse hiçbir etkileşimi olmayanlar kapsam dışıdır.
+     » YZ model mimarisini tasarlayan araştırmacı veya YZ mühendisi ise ayrı bir
+       kategori olarak değerlendirilir; silikon yakalılar, daha çok YZ mühendisleri-
+       nin ürettikleri YZ sistemlerini kullananlardır.
+
+     2.2. Silikon Yakanın Alt Türleri
+     Kamu ve özel sektörde pratikte dört ana silikon yakalı çalışan tipi olabilir.
+
+     2.2.1. Silikon Yakalı Operatör
+     » Asıl işi YZ sistemlerine talimat vermek suretiyle YZ sistemlerini kullanmak,
+       talimatlar sonucu oluşan çıktıları derlemek ve iş sürecinde kullanmaktır.
+                          Yapay Zekâ Destekli Emek: Dijital Dönüşümde İnsan–YZ İş Birliği   93
+
+
+
+» Çağrı merkezi çalışanı, sosyal yardım ön inceleme görevlisi, kredi ön onayı
+  analisti gibi roller bu gruba girer.
+» Bu kişiler işlerinin temelinde YZ çıktılarını veya ajanlarını kullanır, gerekli
+  gördükleri durumda müdahale eder ve yaptıkları düzenlemeleri tekrar iş sü-
+  recine dahil eder.
+
+2.2.2. Silikon Yakalı Arabirimci
+» İş yapan birimlerin ihtiyaçlarını YZ diline çevirerek ilgili YZ modellerini sü-
+  reçlere adapte eden ve politikalara uyarlayan köprü roldür.
+» YZ iş analisti, kurum içi YZ sorumlusu gibi hem yapılan işin teknik terimle-
+  rine hâkim hem de YZ modelinin dilini konuşabilen roller bu kapsamdadır.
+» Örneğin bir kurumda mevzuat konusunda uzman birimlerle YZ ekibini bu-
+  luşturup mevzuata uyumlu sohbet botu senaryolarını hazırlayan kişiler tipik
+  bir arabirimci silikon yakalıdır (Bright ve ark., 2025).
+
+2.2.3. Silikon Yakalı Eğitmen
+» YZ sistemlerinin eğitilmesinde ve ustalaştırılmasında (İng. fine-tuning) kul-
+  lanılan verileri etiketler, çıktıları değerlendirir ve yapay zekânın üretim kali-
+  tesinin kontrol işlerini yürütür.
+» Eğitmenler, model yanıtlarını puanlayarak değerlendirir, hataları sistematik
+  olarak işaretler ve yapay zekânın hizalanmasında büyük rol alır.
+» Kamu tarafında, yapay zekânın verdiği taslak cevap veya kararları kontrol
+  edip doğru–yanlış örnekleriyle sistemi geri besleyen uzmanlar, silikon yakalı
+  eğitmen rolüne sahiptir (Mammen ve ark., 2024).
+
+2.2.4. Silikon Yakalı Kontrolör
+» Fiziksel ortamda çalışan robotik veya otonom sistemleri, YZ destekli kontrol
+  arayüzleri üzerinden yöneten hibrit emekçidir.
+» Fiziksel güç gerektiren depo robotları, akıllı ulaşım sistemleri, insansız hava
+  araçları gibi sistemleri uzaktan yönetenler bu kategoriye girer.
+» Kamuda, akıllı şehir altyapısını izleyen ve YZ destekli alarm sistemlerine mü-
+  dahale eden saha ekipleri, bu profilin tipik örnekleridir (PwC, 2025).
+
+2.3. Yapay Zekâ + Uzmanlık: Silikon Yakalının İkinci Bacağı
+Bir silikon yakalının yalnızca YZ arayüzünü kullanmayı bilmesi yeterli değildir.
+Aynı zamanda yapay zekâyı kullandığı alanla doğrudan ilintili bir uzmanlığa sa-
+hip olması, üreteceği çıktının kalitesini belirleyen ikinci önemli faktördür.
+94   YAPAY ZEKÂ VE ÇALIŞMA HAYATININ GELECEĞİ
+
+
+
+        Örneğin:
+     » YZ kullanarak görsel içerik üreten bir silikon yakalı, fotoğrafçılık, sinema
+       veya grafik tasarım bilgisine sahipse, kompozisyon, ışık, renk ve anlatı dili
+       açısından daha tutarlı ve amaca uygun çıktılar alabilir.
+     » YZ destekli hukuk metni taslağı hazırlayan bir uzman, mevzuata hâkim de-
+       ğilse, sistemin ürettiği hukuken sorunlu cümleleri ayıklayamaz.
+     » YZ destekli karar sistemini kullanan bir sosyal hizmet uzmanı, kırılgan grup-
+       ların ihtiyaçlarına dair alan bilgisine sahip değilse, modelin ürettiği önerile-
+       rin hangi durumda âdil veya zararlı olacağını ayırt etmekte zorlanır.
+        Literatürde insan uzmanlığının yapay zekânın etkinliğini katlayarak arttır-
+     dığı; işin uzmanlarının daha doğru sorular sorduğu, hatalı çıktıları fark ettiği
+     ve modeli daha iyi yönlendirdiği görülmüştür (Mammen ve ark., 2024; World
+     Economic Forum, 2025).
+        Dolayısıyla bir silikon yakalı işine etki eden temel faktörleri kısaca şöyle ifade
+     etmek mümkündür:
+        YZ becerisi × alan uzmanlığı = toplam etki.
+        Bu denklemde herhangi bir çarpanın (faktörün) sıfıra yaklaşması, toplam et-
+     kiyi ciddi biçimde düşürecektir.
+
+
+     3. İŞ GÜCÜ DINAMIKLERI, BECERILER VE KURUMSAL
+     DÖNÜŞÜM
+
+     3.1. Görevlerin Yeniden Tasarlanması
+     YZ destekli emek rejimini, “işleri insan yapar – bilgisayar yardım eder” şeklinde
+     basite indirgemek yetersiz kaldığından yapay zekânın; görev dağılımının bir par-
+     çası hâline gelmesi söz konusudur:
+     » Rutin, tekrar eden ve dolayısıyla hata yapma oranının da yüksek olduğu gö-
+       revler YZ tarafından yürütülür.
+     » Etik kararlar, istisnaların değerlendirilmesi, vatandaşla yüz yüze iletişim ge-
+       rektiren durumlar ve siyasi/stratejik kararlar insanın sorumluluğunda kalır.
+        Bu bağlamda kamunun iş tanımlarını aşağıdaki sorulara göre yeniden göz-
+     den geçirmesi beklenir:
+     » Hangi görevlerin tamamen insanlar tarafından yapılmasına devam edilme-
+       lidir?
+                          Yapay Zekâ Destekli Emek: Dijital Dönüşümde İnsan–YZ İş Birliği   95
+
+
+
+» Hangi görevler tamamen YZ tarafından yapılmak üzere devredilebilir?
+» Hangi görevlerde insan–YZ ortaklığı en verimli ve güvenli sonucu doğurur?
+  Bu ortaklığın oranı ne kadardır?
+   Bu yaklaşım ile şekillenecek yeni iş mantığı, sadece verimliliği artırmakla kal-
+mayıp aynı zamanda motivasyonu arttırmak ve kamuya güveni korumak için de
+kritik öneme sahiptir (PwC, 2025; World Economic Forum, 2024).
+
+3.2. Yeni Beceri Kazandırma, Mevcut Becerileri Geliştirme ve
+Yaşam Boyu Öğrenme
+Yapay zekânın iş dünyasında beklenen en büyük etkisi, bir taraftan bazı meslek-
+leri yok ederken diğer taraftan yeni meslekler ortaya çıkarmasıdır. Dünya Eko-
+nomik Forumu raporlarına göre yakın gelecekte işlerin önemli bir kısmının nite-
+liği değişecek; dolayısıyla milyonlarca çalışanın yeniden beceri kazanması (İng.
+reskilling) veya mevcut becerilerini güncellemesi (İng. upskilling) gerekecektir
+(World Economic Forum, 2024, 2025).
+   Kamu için bu durum şu anlama gelir:
+» Mevcut kamunun YZ okuryazarlığının teşvik edilmesi.
+» Birçok meslek grubuna yönelik eğitim oluşturulması (hukukçular için YZ,
+  mühendisler için YZ vb.).
+» Mevcut iş ve işlemlerin YZ destekli emek kapsamında yeniden değerlendiril-
+  mesi ve bu dönüşümden en çok etkilenecek kadrolar için eğitim ve adaptas-
+  yon programları hazırlanması.
+   Burada kritik nokta, bugünkü çalışanları gözden çıkarıp yarının çalışanları-
+nı beklemek yerine, mevcut çalışanları bu dönüşümün içine katmaktır. Dünya
+Ekonomik Forumu, kurumlara çalışanlarını geleceğe hazırlamak için yeni beceri
+kazandırma ve becerileri geliştirme stratejileri önermektedir (World Economic
+Forum, 2024).
+
+3.3. İş Yükü, Stres ve Örgütsel Kültür
+YZ, doğru kullanıldığında çalışanların iş yükünü azaltabileceği gibi yanlış kur-
+gulandığında tam tersi sonuçlar da doğurabilir. Mesela yapay zekânın işyerlerin-
+de panik ve belirsizlik hissini tetikleyebileceği, bunun sonucunda çalışanlarda
+moral ve işe sadakat konusunda olumsuz etkiler yaratabileceğine dair çalışmalar
+dikkat çekmektedir (Lim, 2024).
+96   YAPAY ZEKÂ VE ÇALIŞMA HAYATININ GELECEĞİ
+
+
+
+        Kamu kurumları açısından riskler:
+     » Çalışanların YZ nedeniyle işlerini kaybedeceklerini düşünmesi bu değişime
+       direnci arttırır.
+     » Çalışanların YZ tarafından verilen kararlar için sorumluluğun kendilerinde
+       olduğunu hissedip sistem üzerinde kontrol sahibi olmadıklarını hissetmeleri,
+       sorumluluk yükünü ağırlaştırır (Roosevelt Institute, 2025).
+     » Şeffaf olmayan YZ çözümleri suistimalin yolunu açabileceği gibi bu çözümle-
+       ri uygulayan kurum ve yönetime karşı güveni de zedeler.
+        Bu nedenlerden dolayı:
+     » Yapay zekâya geçiş süreçlerinden önce, çalışanlar için güvenli bir ortam oluş-
+       turulmalı ve iletişim kanalları daima açık tutulmalıdır.
+     » Pilot uygulamalara çalışanlar da dâhil edilmelidir.
+     » Olumsuz etkiler (stres, iş yükü, memnuniyet) düzenli aralıklarla ölçülmeli
+       ve gerek görüldüğünde süreçler yeniden tasarlanmalıdır (Lim, 2024; RAND
+       Corporation, 2025).
+     » YZ tarafından verilen kararlar ve yapılan işler uçtan uca denetlenebilir olma-
+       lıdır.
+
+     3.4. Eşitsizlik ve Kapsayıcılık Boyutu
+     Aslında birçok yardımcı araç gibi YZ de doğru kullanıldığında kamu hizmetle-
+     rinde eşitsizlikleri azaltabilir. Ancak yanlış kurgulandığında da mevcut eşitsiz-
+     likleri derinleştirme riski vardır. Özellikle:
+     » YZ modelleri eğitilirken kullanılan verilerde zaten mevcut olan önyargılar
+       ve eğilimler, YZ sistemlerinin kararlarını da aynı yönde etkileyebilir. Böylece
+       bu önyargı ve eğilimler, belli bir azınlığın aleyhine sonuçlar üretilmesine yol
+       açabilir.
+     » Dijital okuryazarlığı yeterli olmayanlar, YZ tabanlı hizmetlerden daha az fay-
+       dalanmaya meyilli davranışlar gösterebilir.
+        Bu nedenle, kamuda YZ entegrasyonu için:
+     » Toplam etki analizleri ve etik değerlendirmeler yapılmalı,
+     » Sendikalar, meslek örgütlerii sivil toplum örgütleri ve uzmanlar arasında dü-
+       zenli ve herkesin katılımına açık diyalog imkânları sağlanmalı,
+     » Yapay zekânın benimsenmesi aşamaları, çalışma barışı ve personel rejimi-
+       nin temel güvencelerini zedelemeyecek biçimde tasarlanmalıdır (UNESCO,
+       2021; OECD, 2025).
+                           Yapay Zekâ Destekli Emek: Dijital Dönüşümde İnsan–YZ İş Birliği   97
+
+
+
+
+4. KAMUDA YAPAY ZEKÂ DESTEKLI EMEK İÇIN POLITIKA
+ÇERÇEVESI
+
+4.1. Strateji ve Koordinasyon: “Genesis”ten Çıkarılacak Dersler
+Genesis Misyonu, kamu otoritesinin yapay zekâyı stratejik bir altyapı yatırımı
+olarak ele almasına iyi bir örnektir: Münferit pilot projelerden ziyade veri de-
+polarının süper bilgisayarlar ve YZ ajanlarıyla entegre olarak çalıştığı ulusal bir
+platform yaklaşımı benimsenmiştir (United States White House, 2025a, 2025b).
+  Buna rağmen bu model ülkemiz için doğrudan kopyalanabilir bir model ol-
+masa da şu temel dersler çıkarılabilir:
+» YZ temelli projelerin dağınık ve izole silolar halinde yürütülmesi yerine ku-
+  rumlar arası koordinasyon, uyum ve ortak standartlar üzerinden yürütülme-
+  si!
+» Kamu verilerinin güvenlik ve mahremiyet ilkeleri de göz önüne alınarak YZ
+  kullanımına elverişli biçime dönüştürülmesi ve işlenmesi!
+» Büyük ölçekli altyapı yatırımlarının sadece bazı kurumlar için değil, daha
+  geniş bir kamu ekosistemi için planlanması (PwC, 2025; OECD, 2025)!
+
+4.2. Kurum İçi Yapay Zekâ Ajanları, Bilgi Depoları ve Rol Tabanlı
+Erişim
+Kamuda YZ destekli emeğin yerleştirilebilmesi için öncelikle kamuda YZ araç-
+larının yerleşik bir şekilde çalıştırılması gerekmektedir ki bu konu belki de en
+önemli olduğu halde en az bahsedilen gereksinimlerdendir. Doğal olarak YZ
+araçlarının alelade kullanılması düşünülemez. Bu nedenle aşağıda, kamuda YZ
+destekli emeğe geçilebilmesi için pratik öneriler sunulmaktadır:
+1. Kurum içi (müstakil) yapay zekâ ajanları ve chatbotlar
+» Her kurum; kurum içi mevzuat, süreç ve bilgi birikimini kullanabilen kapalı
+  devre YZ ajanlarına sahip olmalıdır.
+» Bu ajanlar, personelin günlük işlerini kolaylaştıran kurum içi asistanlar gibi
+  çalışmalı; dış sistemlerle kontrollü etkileşim kurmalıdır.
+2. Kurumsal yapay zekâ bilgi depoları
+» Mevzuat, yönetmelikler, iç genelgeler, yönergeler, sık sorulan sorular, örnek
+  dilekçeler, karar örnekleri gibi içeriklerin, YZ tarafından kullanılabilir şekilde
+  yapılandırıldığı kurumsal bilgi depoları oluşturulmalıdır.
+98   YAPAY ZEKÂ VE ÇALIŞMA HAYATININ GELECEĞİ
+
+
+
+     » Bu bilgi depoları hem YZ ajanlarının hem de doğrudan personelin erişimine
+       imkân tanımalıdır.
+     3. Rol tabanlı erişim ve asgariyet ilkesi
+     » Her personel her bilgiye erişememeli; erişimler görev ve yetkiyle paralel bir
+       şekilde sınırlandırılmalı, tüm erişimler kayıt altına alınmalıdır.
+     » YZ sistemlerinin yalnızca gerekli veriye ve sadece ihtiyaç duyduğu süre zar-
+       fında erişmesi sağlanmalıdır.
+     4. Güvenlik: Yapay zekâ ajanlarının izolasyonu
+     » Kurum içi YZ ajanları, internet, dış ağlar ve kamuya açık modellerden izole
+       olarak var olmalıdır. Bu izolasyon hassas verilerin kontrolsüz bir şekilde dış
+       sistemlere aktarılmaması için elzemdir.
+     » Hem insanlar ile ajanlar hem de ajanlar arasındaki tüm etkileşim ve iletişim
+       denetim izlerine tabi tutulmalı ve kayıt altına alınmalıdır. Gerektiğinde geç-
+       mişe dönük inceleme ve erişim denetimleri yapılabilmelidir (PwC, 2025).
+
+     4.3. Açık Kaynak, Birlikte Çalışabilirlik ve A2A Yaklaşımı
+     Kurumların münferit ve kapalı YZ bileşenlerine yatırım yapması yerine açık
+     kaynak kodlu, güvenli ve birlikte çalışabilir bir ekosistem kurmak daha rasyo-
+     neldir. Kamu kurumlarından her birinin ayrı standartlarda, uyumsuz ve birbir-
+     leriyle konuşamayan YZ sistemleri kurmaları ve kullanmaları, sadece getireceği
+     yüksek maliyet açısından değil aynı zamanda birlikte çalışabilirliğe de set çektiği
+     için kaçınılması gereken bir yaklaşım olarak görülmelidir. Bu nedenle:
+     » Kamu kurumlarındaki egemen yapay zekâlar arasındaki iletişim ve veri alış-
+       veriş şeklini belirleyen bir A2A (agent-to-agent, ajanlar arası iletişim) proto-
+       kolü tasarlanmalı ya da mevcut protokollerden uygun olanlar seçilmelidir!
+     » Açık standartlara dayalı API’ler (uygulama programlama arabirimleri) kulla-
+       nılarak YZ ajanlarının farklı kurum sistemleriyle konuşabilmesi sağlanmalıdır!
+        Böylece hem maliyetler düşer hem de kurumların sıfırdan tekerleği icat et-
+     mesinin önüne geçilir (PwC, 2025; OECD, 2025). Ayrıca bu yaklaşım ile ulusal
+     egemenlik ve veri güvenliği açısından kritik altyapıların tek bir tedarikçiye ba-
+     ğımlı hâle gelmesi de engellenmiş olur (PwC, 2025).
+
+     4.4. Hesap Verebilirlik, İnsanlı Döngü (human-in-the-loop) ve Telif
+     Hakları
+     YZ, kamu karar süreçlerinde ne kadar merkezi hale gelirse, hesap verebilirlik
+     ve sorumluluk dağılımı da o kadar kritik hâle gelir. Bu bağlamda YZ açısından
+                           Yapay Zekâ Destekli Emek: Dijital Dönüşümde İnsan–YZ İş Birliği   99
+
+
+
+hesap verilebilirlik, YZ sistemlerinin ancak ve ancak tüm eylem, karar ve sonuç-
+larının şeffaf, izlenebilir ve denetlenebilir olması ile sağlanabilir. Bununla bera-
+ber YZ destekli emeğin sonuçlarından nihai olarak hangi insan/yetkili/kurumun
+sorumlu olduğunun da açık biçimde tanımlanması gerekmektedir. UNESCO,
+YZ yaşam döngüsü boyunca denetim, etki değerlendirmesi ve izlenebilirlik (İng.
+audit, impact-assessment, traceability) mekanizmalarının kurulmasını, hesap
+verebilirliğin üç temel unsuru olarak ele alır (UNESCO, 2022).
+    Hesap verebilirliğin pratikte tatbik edilebilir bir uygulamaya dönüşebilmesi
+için denetim, etki değerlendirmesi ve izlenebilirliğin yalnızca ilkesel düzeyde de-
+ğil, kanıta dayalı biçimde tesis edilmesi şarttır. Bu nedenle, YZ modelleri ve bu
+modellerden türeyen ajanlar dahil tüm özneler (ajan–insan–sistem) arasındaki
+iletişim ve etkileşimin kayıt altına alınması, hesap verebilirliğin omurgası olarak
+görülmelidir. Dolayısıyla en azından kararları etkileyen süreçlerde aşağıdakile-
+rin uçtan uca kaydedilmesi gerekir:
+»   İstem/komut (prompt) ve bağlam (context)
+»   Kullanılan YZ modeli ve sürümü
+»   Erişilen veri kaynakları
+»   Yapılan araç/servis çağrıları (tool-calling)
+»   Üretilen çıktılar
+»   Operatör onayı/reddi
+»   Zaman damgaları ve yetkilendirme izleri
+   Bu unsurlar uçtan uca bir denetim izi olarak tutulmadıkça, sonradan incele-
+me, hata analizi, ayrımcılık/eğilim tespiti, itiraz değerlendirmesi ve sorumluluk
+ataması fiilen mümkün olamaz! Bu yaklaşım, UNESCO’nun vurguladığı dene-
+tim ve izlenebilirlik hedefiyle de tam uyumludur.
+    UNESCO’nun (2021) Yapay Zekâ Etiği Tavsiye Kararı, herhangi bir YZ siste-
+minin nihai kararının, asla insan sorumluluğunun yerini almaması gerektiğinin
+altını çizerek yaşam ve ölüm kararlarının yapay zekâya bırakılmaması gerektiği-
+ni açıkça ifade eder. Bu çerçevede, kamuda YZ kullanılırken insanlı döngü (İng.
+human-in-the-loop) prensibi benimsenir: Yani nihai karar muhakkak insan yet-
+kisi ve sorumluluğunda kalmalı; YZ karar veren değil, verilen kararı destekleyen
+bir bileşen olmalıdır (UNESCO, 2021).
+   Öte yandan telif hakları açısından değerlendirildiğinde ABD Telif Ofisi, ta-
+mamı YZ tarafından üretilen eserler için telif hakkı korumasının söz konusu
+olamayacağını; telif hakları için içerikte insan yaratıcı katkısının bulunmasının
+zorunlu olduğunu vurgulamıştır (United States Copyright Office, 2025). Bu yak-
+100   YAPAY ZEKÂ VE ÇALIŞMA HAYATININ GELECEĞİ
+
+
+
+      laşıma göre, yapay zekânın ürettiği her türlü metin, görsel, müzik ve içerik —
+      eğer insan katkısı yoksa— hukuken insan eseri sayılmamaktadır. Ancak insanın
+      YZ çıktısını düzenlemesi ve dönüştürmesi hâlinde, ortaya çıkan bütün içinde
+      insan yaratıcılığı bulunan kısımlar telif korumasına konu olabilir (Mammen ve
+      ark., 2024).
+          Kamuda, YZ ile üretilen her türlü rapor, rehber veya görsel içerikte bu ay-
+      rımlar açıkça tanımlanmalı; hatta tamamen veya kısmen YZ tarafından üretilen
+      içerikler için özel logolar benimsenmeli ve kullanılması teşvik edilmelidir. Ge-
+      rektiğinde üretilen içeriklerin hangi kısımlarının YZ yardımıyla üretildiğini şef-
+      faf biçimde bildirecek karekodlar da içerikle beraber sunulmalı; böylece etik ve
+      hukuki çerçeveye uygunluk güvence altına alınmalıdır (UNESCO, 2021; United
+      States Copyright Office, 2025).
+
+
+      5. ZORLUKLAR, HIZALANMA PROBLEMI VE KARŞI
+      GÖRÜŞLER
+
+      5.1. Hizalanma Problemi (Alignment Problem) Nedir?
+      Hizalanma problemi basitçe, bir YZ sisteminin verilen hedeflere ulaşırken aslın-
+      da istenmeyen sonuçlar üretmesi şeklinde tanımlanabilir. Yani YZ aslında veri-
+      len görevi yerine getirmiştir ancak ya YZ tarafından kullanılan yöntem yanlıştır
+      ya da beklenmeyen sonuçlar ortaya çıkarmıştır.
+          Klasik bir örnekle anlatmak gerekirse, hata sayısını sıfıra indirmesi istenen
+      bir YZ sistemi, hatalı olduğu kanaatine vardığı tüm kayıtları silerse, hedefe tek-
+      nik olarak ulaşmış sayılsa da aslında gerçek hayatta hiç beklenmeyen bir şekilde
+      sonuca varmış ve hizadan çıkmıştır. Bu durumlarda yapay zekânın belirlenen
+      hedeflere ulaşmadan önce varsayımlarını ortaya koyması ve bu hedeflere nasıl
+      ulaşılacağı hususunda özet vermesi hizalanmasına yardımcı olabilir. Dolayısıyla
+      YZ okuryazarlığı önemlidir; yapay zekâdan sadece “neyi” yapmasını istediği-
+      nizi bildirmek değil, aynı zamanda “nasıl” yapmasını istediğinizi bildirmek de
+      önemlidir.
+         Bu nedenle:
+      » Yapay zekânın varması beklenen hedefler yalnızca nicel metriklerle tanım-
+        lanmamalıdır.
+      » Etik, hukuki ve toplumsal normlar da YZ modeline açık bir şekilde şart ola-
+        rak sunulmalıdır.
+                           Yapay Zekâ Destekli Emek: Dijital Dönüşümde İnsan–YZ İş Birliği   101
+
+
+
+» İnsan denetimi ve bağımsız denetim mekanizmalarıyla YZ modelinin davra-
+  nışı periyodik olarak gözden geçirilmelidir (UNESCO, 2021; OECD, 2025).
+
+5.2. İşsizlik, Mahremiyet ve Etik Kaygılar
+Yapay zekâya yönelik eleştirilerin önemli bir kısmı üç başlıkta toplanmaktadır:
+1. İşsizlik ve güvencesizlik korkusu
+» Dünya Ekonomik Forumu araştırmalarına göre çalışanların önemli bir kıs-
+  mı YZ nedeniyle işini kaybetmekten endişe duymaktadır (World Economic
+  Forum, 2025).
+» Özellikle yüksek beceri gerektirmeyen rutin idari işlerin fazla olduğu kurum-
+  larda YZ çözümlerinin çalışanlara olan ihtiyacı ortadan kaldıracağı, dolayı-
+  sıyla çalışanları işsiz bırakacağı korkusu yaygındır.
+2. Mahremiyet ve gözetim
+» YZ destekli izleme ve gözetim sistemleri, insan davranışlarının daha sıkı iz-
+  lenmesini ve insan mahremiyetine aykırı çıkarımlarda bulunulmasını müm-
+  kün kılabilir.
+» Bu kaygılar hesap verebilirlik ve temel haklar açısından ciddi tartışmalar do-
+  ğurmaktadır (UNESCO, 2021; OECD, 2025).
+3. Etik önyargılar ve ayrımcılık
+» YZ sistemleri, eğitildikleri verilerde zaten mevcut olan önyargıları ve eğilim-
+  leri yansıtabilir; sosyal yardım, kredi, işe alım veya ceza sistemi gibi alanlarda
+  belirli gruplar aleyhine sistematik ayrımcı sonuçlar üretebilir (Roosevelt Ins-
+  titute, 2025).
+   Bu kaygıları ciddiye almak demek, YZ teknolojilerini tamamen reddetmeyi
+gerektirmez. Aksine, bu riskleri yönetmek için şeffaflık, etki analizi, etik kurullar
+ve katılımcı tasarım mekanizmalarının kurulması gerektiğini gösterir (UNES-
+CO, 2021; OECD, 2025). Ancak gene de bu kaygıların gerekçe olarak gösteril-
+mesi suretiyle YZ alanındaki gelişmelerin adaptasyonu konusunda yavaş dav-
+ranmak ne kadar doğru olabilir? Zira bu teknolojinin faydaları ortadayken sırf
+bu kaygılardan dolayı YZ çözümlerini yavaşlatmak ve/veya uygulatmamak, ta-
+rihimizde matbaanın yaygınlaşmasındaki gecikmelere ve bunun açtığı yaralara
+benzetilebilir.
+102   YAPAY ZEKÂ VE ÇALIŞMA HAYATININ GELECEĞİ
+
+
+
+      5.3. Nükleer Enerji Benzetmesi: Çift Kullanımlı Teknolojiler
+      Yapay zekânın tamamen reddedilmesine yönelik pozisyon alınması, tarihsel ola-
+      rak nükleer enerji tartışmalarına benzetilebilir. Nükleer teknoloji, bir yandan yı-
+      kıcı silahlar üretmek için kullanılmışken, diğer yandan düşük karbonlu elektrik
+      üretimi için temel bir çözüm olarak sunulmuştur (International Atomic Energy
+      Agency, 2025; Wachtel, 2023).
+          Bu durum aslında birçok teknolojik gelişme için geçerlidir. Teknolojilerin,
+      sırf kötüye kullanılabileceği nedeniyle tamamen reddedilmesi, engellenmesi
+      veya kullanımının ağır şekilde regüle edilmesi yerine özgürlükçü yaklaşımların
+      benimsenmesi ve şeffaflık yoluyla risklerin yönetilmesi daha gerçekçi bir yakla-
+      şım olacaktır.
+         YZ için de benzer bir çerçeve geçerlidir:
+      » Yapay zekâyı tamamen yasaklamak, gelişmelerin başka ülkelere veya kayıt
+        dışı alanlara kaymasına yol açabilir.
+      » Yapay zekâyı sınırsız ve denetimsiz olarak serbest bırakmak ise temel hak ve
+        özgürlükler için ciddi riskler doğurur.
+         Dolayısıyla pragmatik yaklaşım, riskleri minimize, faydaları ise maksimize
+      eden bir yönetişim sistemi kurmaktır (UNESCO, 2021; OECD, 2025).
+
+      5.4. Pragmatik, İnsan Merkezli Bir Yol: Kaçınmak Değil, Şekil
+      Vermek
+      Bu noktada savunulan temel tez, kaçınılmaz olandan kaçmaya çalışmak yerine
+      ona şekil vermenin daha akıllıca bir strateji olduğudur. YZ treninin gittiği yön,
+      diğer teknolojiler gibi tehlikeler barındırabilir fakat treni tamamen durdurmaya
+      çalışmak mümkün değildir. Yapılabilecek olanlar:
+      » Yapay zekânın kamuda hangi alanlarda, hangi sınırlar içinde kullanılacağını
+        kamu politikası ile belirlemek,
+      » Çalışanların haklarını ve refahını koruyacak sosyal politikalar (yeniden eği-
+        tim, işten işe geçiş destekleri, gelir güvenceleri vb.) tasarlamak,
+      » Yapay zekânın eğitim, sağlık, sosyal güvenlik ve adalet gibi temel kamu hiz-
+        metlerinde eşitlik ve kaliteyi arttırıcı biçimde kullanılmasını sağlamak,
+      » Silikon yakalıların ortaya çıkışını, yeni bir sosyal sözleşme ile dengelemek
+        (örneğin sendikalar ve meslek örgütleriyle yeni toplu sözleşme çerçeveleri).
+                          Yapay Zekâ Destekli Emek: Dijital Dönüşümde İnsan–YZ İş Birliği   103
+
+
+
+   Bu yaklaşım ne teknofobi ne de teknofetişizm içerir; pragmatik, insan mer-
+kezli ve hakkaniyet odaklı bir çizgiyi hedefler (Lim, 2024; RAND Corporation,
+2025).
+
+
+SONUÇ
+Bu çalışma, YZ çözümlerinin yalnızca birer “verimlilik aracı” olarak değerlendi-
+rilmesinin yetersiz olacağı, aksine kamu hizmetlerinin yeniden yapılandırılması
+ve işlerin yeniden tasarımı hususunda devrim yaratacak bir fırsat olduğunu or-
+taya koymaktadır. Bu nedenle YZ destekli emeğin özellikle kamu kurumlarının
+işleyişini köklü bir şekilde iyileştiren bir üretim rejimi olarak benimsenmesi için
+aşağıdaki öneriler sunulmaktadır:
+» Kamuda görev ve beceriler, YZ okuryazarlığı ve alan uzmanlığı etrafında ye-
+  niden şekillenmelidir.
+» YZ nimetlerinden güvenli ve meşru bir biçimde yararlanılabilmesi için bir
+  taraftan süreçler en baştan yeniden tasarlanırken diğer taraftan kurumlarca
+  kullanılacak egemen YZ araçlarının yerleştirilmesinde kesinlikle hesap vere-
+  bilirlik, insanlı döngü ve hizalanma gibi temel gereksinimler dikkate alınma-
+  lıdır.
+» İşsizlik, sorumluluk, mahremiyet, hizalanma ve diğer kaygılar ciddiyetle kar-
+  şılanmalı ve bu kaygıları bertaraf edecek önlemler alınarak YZ çözümlerinin
+  tatbikine engel olması önlenmelidir.
+» YZ artık birçok ülke için kamunun ve ulusal güvenliğin temel altyapı tekno-
+  lojisi hâline gelmektedir. Dolayısıyla ülkemizin de bu konuda gerekli adımla-
+  rı atması ve bu teknolojinin getirdiği nimetlerden azami düzeyde fayda sağla-
+  ması için en üst düzeyde önem vermesi gerekmektedir.
+    Toplumların ve özellikle kamu kurumlarının işlev ve işleyişlerini kökünden
+değiştirebilecek güce sahip bu dönüşüme sıradan bir teknolojik gelişme olarak
+bakmak, geleceği ıskalamak demektir. Öte yandan yapay zekânın potansiyeli-
+ne vâkıf olarak bu dönüşümü ülke genelinde bir fırsat ve devrime çevirmek de
+mümkündür. Haliyle yapay zekâdan en büyük faydayı sağlayabilmek için söz
+konusu dönüşüme sadece hazırlıklı olmakla yetinmeyip istisnai bir stratejik ön-
+celik atfedilmesi, son derece yerinde olacaktır. Zira YZ, insanlığın tanık olacağı
+“son teknolojik devrim” olabilir, çünkü bu potansiyele sahiptir.
+104   YAPAY ZEKÂ VE ÇALIŞMA HAYATININ GELECEĞİ
+
+
+
+
+      KAYNAKLAR
+      Bright, J., Enock, F. E., Esnaashari, S., Francis, J., Hashem, Y., & Morgan, D. (2025). Generative AI
+           is already widespread in the public sector. ACM. https://doi.org/10.1145/3700140
+      Hashem, Y., Enock, F. E., Bright, J., Francis, J., Hashem, Y., & Morgan, D. (2025). Mapping the po-
+           tential: Generative AI and public sector work. The Alan Turing Institute & Office for National
+           Statistics. https://www.turing.ac.uk/sites/default/files/2025-05/ons_tus_final_report.pdf
+      International Atomic Energy Agency. (2025). Nuclear power and clean energy. IAEA. https://www.
+           iaea.org
+      Lim, N. (2024, September 23). Rolling out AI? Mind the panic in the office. RAND Corporation.
+           https://www.rand.org/pubs/commentary/2024/09/rolling-out-ai-mind-the-panic-in-the-of-
+           fice.html
+      Mammen, C. E., Mustaklem, P., Sundaralingam, P., & Wang-Maścianica, V. (2024). Creativity, ar-
+           tificial intelligence, and the requirement of human authors and inventors. University of Califor-
+           nia, Berkeley School of Law.
+      Ng, A. (2017, March 10). Why AI is the new electricity. Stanford Graduate School of Business Insi-
+           ghts. https://www.gsb.stanford.edu/insights/andrew-ng-why-ai-new-electricity
+      OECD. (2025). Governing with artificial intelligence – AI in public service design and delivery.
+           OECD Publishing. https://www.oecd.org
+      PwC. (2025). AI works for governments: A digital sprinters report. PwC. https://www.pwc.com/gx/
+           en/ai-services/ai-works-for-governments.pdf
+      RAND Corporation. (2025, October 14). Your new teammate is a machine. Are you ready?
+           RAND Corporation. https://www.rand.org/pubs/commentary/2025/10/your-new-teamma-
+           te-is-a-machine-are-you-ready.html
+      Roosevelt Institute. (2025). Shorey, S. AI and government workers: Use cases in public administra-
+           tion. Roosevelt Institute. https://rooseveltinstitute.org/publications/ai-and-government-wor-
+           kers
+      UNESCO. (2021). Recommendation on the ethics of artificial intelligence. United Nations Educati-
+           onal, Scientific and Cultural Organization. https://www.unesco.org/en/artificial-intelligence/
+           recommendation-ethics
+      UNESCO. (2022). UNESCO’s input in reply to the OHCHR report on the Human Rights Coun-
+           cil resolution 47/23: UNESCO Recommendation on the Ethics of Artificial Intelligence. United
+           Nations Office of the High Commissioner for Human Rights. https://www.ohchr.org/sites/
+           default/files/2022-03/UNESCO.pdf
+      United States Copyright Office. (2025). Copyright and artificial intelligence. Part 2: Copyrighta-
+           bility. U.S. Copyright Office. https://www.copyright.gov/ai/Copyright-and-Artificial-Intelli-
+           gence-Part-2-Copyrightability-Report.pdf
+      United States White House. (2025a, November 24). Fact sheet: President Donald J. Trump unveils
+           the Genesis Mission to accelerate AI for scientific discovery. The White House. https://www.
+           whitehouse.gov/fact-sheets/2025/11/fact-sheet-president-donald-j-trump-unveils-the-gene-
+           sis-missionto-accelerate-ai-for-scientific-discovery
+      United States White House. (2025b, November 24). Launching the Genesis Mission (Executive
+           Order). The White House. https://www.whitehouse.gov/presidential-actions/2025/11/launc-
+           hing-the-genesis-mission
+                              Yapay Zekâ Destekli Emek: Dijital Dönüşümde İnsan–YZ İş Birliği     105
+
+
+
+UK Parliament, Committee of Public Accounts. (2025). Artificial intelligence in government (HC
+    356, 2024–25). UK House of Commons. https://publications.parliament.uk/pa/cm5901/cm-
+    select/cmpubacc/356/report.html
+Wachtel, I. (2023, June 15). Nuclear power as a clean energy solution? The debate heats up. USC
+    Dornsife Magazine. https://dornsife.usc.edu/magazine/the-nuclear-debate
+World Economic Forum. (2024). This is how businesses should approach reskilling for AI. World
+    Economic Forum. https://www.weforum.org/stories/2024/10/reskilling-ai-workers-busines-
+    ses
+World Economic Forum. (2025, January 17). Singer, V. AI and beyond: How every career can
+    navigate the new tech landscape. World Economic Forum. https://www.weforum.org/sto-
+    ries/2025/01/ai-and-beyond-how-every-career-can-navigate-the-new-tech-landscape
+

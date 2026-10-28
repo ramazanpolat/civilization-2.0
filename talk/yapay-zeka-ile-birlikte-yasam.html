@@ -1,0 +1,236 @@
+<title>Yapay Zekâ ile Birlikte Yaşam</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  /* Layout: claret header > two columns on wide screens (sticky section index, reading column) > correction notes */
+  :root {
+    --bg: #fbf7f1;
+    --surface: #ffffff;
+    --fg: #2a1c22;
+    --muted: #6f5f66;
+    --line: #eadfd6;
+    --accent: #78113e;
+    --gold: #f9bf3b;
+    --gold-ink: #8f5c00;
+    --chip: #f5eaee;
+    --chip-gold: #fdf0cf;
+    --hero-1: #6a0f37;
+    --hero-2: #3a0620;
+    --font-ui: "Manrope", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    --font-read: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #160a10; --surface: #21111a; --fg: #f3e8ec; --muted: #b8a2ac; --line: #3b2431;
+      --accent: #f3a9c6; --gold: #f9bf3b; --gold-ink: #f9bf3b; --chip: #33192a; --chip-gold: #3d2e10;
+      --hero-1: #55092b; --hero-2: #22030f; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #160a10; --surface: #21111a; --fg: #f3e8ec; --muted: #b8a2ac; --line: #3b2431;
+    --accent: #f3a9c6; --gold: #f9bf3b; --gold-ink: #f9bf3b; --chip: #33192a; --chip-gold: #3d2e10;
+    --hero-1: #55092b; --hero-2: #22030f; color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font-ui); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+
+  .hero { background: radial-gradient(700px 420px at 90% 10%, rgba(249,191,59,.14), transparent 70%), linear-gradient(160deg, var(--hero-1), var(--hero-2)); color: #fff; }
+  .hero .wrap { padding-block: 44px 40px; display: grid; gap: 16px; }
+  .eyebrow { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: #f9bf3b; }
+  .eyebrow::before { content: ""; width: 40px; height: 2px; background: #f9bf3b; }
+  h1 { font-weight: 800; font-size: clamp(34px, 6.4vw, 58px); line-height: 1.04; letter-spacing: -.02em; }
+  h1 em { font-style: normal; display: inline-block; transform: skewX(-11deg); transform-origin: 0 80%; }
+  .hero p { max-width: 62ch; font-size: 16px; color: rgba(255,255,255,.82); }
+  .hero code { font-family: var(--font-data); font-size: 13px; color: #f9bf3b; }
+
+  .layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 48px; padding-block: 40px 72px; }
+  nav.toc { position: sticky; top: calc(16px + env(safe-area-inset-top, 0px)); align-self: start; display: grid; gap: 2px; font-size: 14px; }
+  nav.toc .lbl { font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-ink); margin-bottom: 8px; }
+  nav.toc a { display: grid; grid-template-columns: 26px 1fr; gap: 6px; padding: 6px 8px; border-radius: 8px; color: var(--fg); text-decoration: none; }
+  nav.toc a span { font-family: var(--font-data); font-size: 12px; color: var(--gold-ink); padding-top: 2px; }
+  nav.toc a:hover { background: var(--chip); }
+
+  article { display: grid; gap: 56px; min-width: 0; }
+  .sec { display: grid; gap: 16px; scroll-margin-top: 20px; }
+  .sec-head { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; align-items: baseline; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
+  .no { font-family: var(--font-data); font-weight: 600; color: var(--gold-ink); font-size: 15px; }
+  h2 { font-weight: 800; font-size: clamp(22px, 3.2vw, 28px); line-height: 1.2; letter-spacing: -.01em; }
+  .gist { grid-column: 2; color: var(--muted); font-size: 15px; }
+  .body { display: grid; gap: 14px; font-family: var(--font-read); font-size: 18.5px; line-height: 1.7; max-width: 66ch; }
+  .pull { margin: 6px 0; padding: 4px 0 4px 20px; border-left: 4px solid var(--gold); font-family: var(--font-ui); font-weight: 700; font-size: clamp(19px, 2.4vw, 23px); line-height: 1.4; color: var(--accent); max-width: 40ch; }
+  .terms { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 8px; max-width: 66ch; }
+  .terms div { padding: 12px 14px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); display: grid; gap: 4px; min-width: 0; }
+  .terms b { font-family: var(--font-data); font-size: 13px; color: var(--gold-ink); letter-spacing: .04em; }
+  .terms span { font-size: 14px; line-height: 1.5; }
+  mark.v { background: transparent; color: inherit; text-decoration: underline dotted var(--gold-ink); text-underline-offset: 4px; }
+
+  .notes { padding: 20px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); display: grid; gap: 10px; }
+  .notes h2 { font-size: 20px; }
+  .notes ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 15px; }
+  .notes .k { font-size: 13px; color: var(--muted); }
+
+  @media (max-width: 820px) {
+    .layout { grid-template-columns: 1fr; gap: 28px; }
+    nav.toc { position: static; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); padding: 14px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+    nav.toc .lbl { grid-column: 1 / -1; }
+    .body { font-size: 17.5px; }
+  }
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Konuşma transkripti · düzeltilmiş</div>
+    <h1>Yapay Zekâ ile<br><em>Birlikte Yaşam</em></h1>
+    <p>Ramazan POLAT’ın sesli kaydı. Wispr Flow çıktısı düzeltildi; konuşmanın sesi ve sırası korundu. Kaynak: <code>transcript-1.md</code></p>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <nav class="toc" aria-label="Bölümler">
+    <span class="lbl">Bölümler</span>
+    <a href="#s1"><span>01</span>Gürültüye girmeyeceğim</a>
+    <a href="#s2"><span>02</span>Cümle tamamlayandan kod yazana</a>
+    <a href="#s3"><span>03</span>Benim hayatımdaki yeri</a>
+    <a href="#s4"><span>04</span>Önce birkaç tanım</a>
+    <a href="#s5"><span>05</span>Yetmiş ajan</a>
+    <a href="#s6"><span>06</span>İnsan, ajan, insan</a>
+    <a href="#s7"><span>07</span>Benim ajanımla konuşun</a>
+    <a href="#s8"><span>08</span>Toplantıya ajanla girmek</a>
+    <a href="#s9"><span>09</span>Ajanın yetkisi</a>
+    <a href="#s10"><span>10</span>Ajanına nasıl davranıyorsun?</a>
+    <a href="#notlar"><span>·</span>Düzeltme notları</a>
+  </nav>
+
+  <article>
+
+    <section class="sec" id="s1">
+      <div class="sec-head"><span class="no">01</span><h2>Gürültüye girmeyeceğim</h2><span class="gist">Spekülasyon bir yana, yapay zekâ hayatımıza giriyor.</span></div>
+      <div class="body">
+        <p>Yapay zekâ ile birlikte yaşam. Ya da yaşamak.</p>
+        <p>Eminim etraftan siz de duyuyorsunuzdur: yapay zekâ ile ilgili bir sürü haber, söylenti, olay; gerçek ya da uydurma. Viral videolar vesaire, bir sürü şeyle karşılaşıyorsunuzdur. Robotlar kung fu yapıyor, yanlışlıkla birini tekmeliyor; bazı robotlar yoldan çıkıyor. Akrobasi yapan robotlar. Tabii yapay zekâ deyince işin içine sadece robotlar girmiyor. Haberlerde de duyuyorsunuz: Yapay zekâ bizi geçecek mi? Yapay zekâ bizden daha zeki olur mu? İşimizi elimizden alır mı? İnsanlığa hükmeder mi? Matrix mi geliyor? Skynet ne zaman kurulacak? Yapay zekânın bilinci var mı? Duyguları var mı? Hisleri var mı? Yoldan çıkan, oraya buraya saldıran yapay zekâlar; hackerlar yapay zekâyı kullanarak şurayı hackledi, <mark class="v">OpenAI şöyle oldu, şu şirket hacklendi</mark>, şöyle oldu, böyle oldu. Öbür taraftan “yapay zekâyı durdurun, yoksa dünyanın sonu gelecek” gibi bir sürü haber. Duyuyoruz, duymuşsunuzdur.</p>
+        <p>Ama bu konulara girmek istemiyorum, çünkü bunlar çok spekülatif konular. Hepsi ayrı ayrı üzerinde konuşulabilecek, belki her biri ayrı bir sunum, bir söyleşi gerektirecek konular.</p>
+        <p>Bugünkü konumuz yapay zekâ ile birlikte yaşam. Çünkü yukarıda sorduğum soruların cevabı ne olursa olsun, yapay zekâ hayatımıza giriyor ve hayatımızdaki kullanım oranı günden güne artıyor.</p>
+      </div>
+      <p class="pull">Soruların cevabı ne olursa olsun, yapay zekâ hayatımıza giriyor.</p>
+    </section>
+
+    <section class="sec" id="s2">
+      <div class="sec-head"><span class="no">02</span><h2>Cümle tamamlayandan kod yazana</h2><span class="gist">GPT-2, ChatGPT ve bugün.</span></div>
+      <div class="body">
+        <p>İlk GPT çıktığı zaman, şöyle bir model, böyle bir model dedik. GPT-2 çıktı; artık cümlelerinizi tamamlayabiliyordu. Ama konuşamıyordunuz, karşılıklı konuşma yoktu o zaman. Sadece cümlelerinizi tamamlıyordu. GPT-3 çıkınca ChatGPT oldu; artık sohbet edebiliyordunuz. Ondan sonra 3.5’te bayağı zeki hâle geldi ve aldı başını gitti. Şimdi o kadar yaygınlaştı, hayatımıza o kadar girdi ki kod yazıyor. Bir sonraki kelimeyi tahmin eden, cümle tamamlayan bir modelden nereye geldiğimizi bir düşünün.</p>
+      </div>
+      <p class="pull">Bir sonraki kelimeyi tahmin eden bir modelden nereye geldiğimizi bir düşünün.</p>
+    </section>
+
+    <section class="sec" id="s3">
+      <div class="sec-head"><span class="no">03</span><h2>Benim hayatımdaki yeri</h2><span class="gist">Terminal başında, ajanlarla.</span></div>
+      <div class="body">
+        <p>Benim hayatımdaki yeri de gittikçe artıyor. Şöyle ki: bilgisayar başında geçirdiğim zamanın yaklaşık yüzde 55’ini, 60’ını terminal başında geçiriyorum. Terminal başında geçirdiğim sürenin de neredeyse tamamını ajanlarla konuşarak geçiriyorum. Terminal kullanmadığım zamanlarda da çoğu zaman ya Claude’la ya Codex’le konuşarak bazı şeyleri hallediyorum. Google’a daha az girmeye başladım, çünkü ajanlara soruyorum.</p>
+        <p>Yapay zekâ hayatımın öyle bir parçası hâline geldi ki, bu süreçte benim ve benim gibi hayatında yapay zekâyı merkeze alan insanların geçtiği bazı yollar, bir süreç var. Nereden geldik, nereye gidiyoruz? Yapay zekâyla beraber yaşamak nasıl bir şey ve ileride nasıl olacak? Size bunun üzerine bir sunum yapmak istiyorum. Böylece daha hazırlıklı olabileceğinizi ve nasıl ilerlemeniz gerektiği konusunda cevaplar bulabileceğinizi umuyorum.</p>
+      </div>
+      <p class="pull">Google’a daha az girmeye başladım, çünkü ajanlara soruyorum.</p>
+    </section>
+
+    <section class="sec" id="s4">
+      <div class="sec-head"><span class="no">04</span><h2>Önce birkaç tanım</h2><span class="gist">Ajan, harness, session, instance.</span></div>
+      <div class="body">
+        <p>Yapay zekâyla birlikte yaşamayı öğrenmek için, bunun nasıl bir şey olduğunu tahayyül edebilmek için bazı tanımlarda anlaşmamız gerekiyor. Ajan nedir? LLM modeli nedir? Harness nedir? Session nedir? Instance nedir?</p>
+        <p>Bunları bilmeden ajanlara sadece bir sohbet botuymuş gibi davranmak pek mümkün olmuyor. Çünkü insanlara çok benziyorlar: insanlar gibi konuşuyorlar, insanlar gibi yazıyorlar, aynı dili konuşarak iletişime geçiyoruz. Ama aramızda çok farklılıklar da var; onları anlatmaya gerek yok. Ama bu ajanları hayatınıza katmak istiyorsanız, onlarla iletişimde olacaksanız, bazı temel şeyleri gözden geçirmemiz gerekiyor.</p>
+        <p>Mesela bir insanla telefonla konuştuğunuzda, bir telefonu açıp bir kulağınıza tutarsınız; başka bir telefon daha açıp aynı kişiyi diğer kulağınıza tutmazsınız. Ama ajanlar için böyle bir şey gayet doğal, hatta tercih edilen bir durum. Yani iki ayrı pencerede aynı ajanla konuşabiliyorum. Bu ajanlar ayrı session’larda, ayrı instance’larda olduğu için birbirlerinden habersizler; ben haberdar edene kadar da haberdar değiller.</p>
+        <p>Gerçek hayatta böyle bir şey düşünebiliyor musunuz? Ali diye bir arkadaşınız var. Bir telefon açıyorsunuz, bir şey konuşuyorsunuz; başka bir telefonda başka şeyler söylüyorsunuz. Sonra üçüncü bir telefon alıyorsunuz, bambaşka şeylerden bahsediyorsunuz, projeyle ilgili bir şeyler soruyorsunuz. Ama hepsi aynı kişi. Ajanlarda bu gayet mümkün ve tercih ediliyor.</p>
+        <p>Hatta bir süre sonra o kadar çok ajanınız oluyor ki, bunlar aynı ajandan da olabilir, farklı ajandan da olabilir. Şimdi diyeceksiniz ki: ajanı ajandan ayıran şey nedir? Bunun için, dediğim gibi, terminolojide anlaşmamız gerekiyor.</p>
+        <p>Öncelikle, ajan nedir? Ajan, bir LLM modelinin kod çalıştırabilen hâlidir. Bir de girdi arayüzü var; onunla konuşuyorsunuz, yazışıyorsunuz. Yazıştığınız şeyin arkasında bir LLM çalışıyor ve bir şeyler yapabiliyor.</p>
+        <p>Peki bir şeyler yapabilmesini sağlayan parça ne? Buna harness deniyor. Harness bir kod parçası. Bu kod LLM modelini çağırıp sizin promptlarınızı ona gönderiyor, cevaplarını alıp ekrana basıyor. LLM modeli bir kodun çalışmasını isterse, harness o kodu çalıştırıyor ve sonucunu modele geri veriyor.</p>
+        <p>Aynı ajandan 3-5 instance çalıştırabilirsiniz; ayrı ayrı terminallerde 3-5 tane. Dahası, bu ajanları birbiriyle iletişime sokup birine söylediğiniz şeyden diğerinin haberdar olmasını sağlayabilirsiniz. Ama bu durumda işler daha da karmaşık hâle geliyor.</p>
+      </div>
+      <div class="terms" aria-label="Bölümdeki tanımlar">
+        <div><b>AJAN</b><span>Bir LLM modelinin kod çalıştırabilen hâli.</span></div>
+        <div><b>HARNESS</b><span>Promptu modele gönderen, cevabı ekrana basan, istenen kodu çalıştırıp sonucu modele geri veren kod parçası.</span></div>
+        <div><b>SESSION · INSTANCE</b><span>Aynı ajanın ayrı pencereleri; sen haber verene kadar birbirinden habersiz.</span></div>
+      </div>
+      <p class="pull">Ali diye bir arkadaşınız var. Üç ayrı telefonda konuşuyorsunuz. Ama hepsi aynı kişi.</p>
+    </section>
+
+    <section class="sec" id="s5">
+      <div class="sec-head"><span class="no">05</span><h2>Yetmiş ajan</h2><span class="gist">Odalar, lider ajanlar ve bir ana ajan.</span></div>
+      <div class="body">
+        <p>Benim 70 küsur ajanım var. Ama hepsiyle konuşmuyorum; hepsiyle konuşmak çok yorucu olurdu. Bunun yerine hiyerarşik bir yapı kuruyorum: odalar var, her odada bir ajan lider, diğer ajanlar onun astı. Bütün odaların üstünde de bir tane ana ajan var. Genelde bu ajanla konuşuyorum. O ajan diğer ajanlara işlerini bildiriyor ve olan bitenden de haberdar. Benim konuştuğum birincil ajan o.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="s6">
+      <div class="sec-head"><span class="no">06</span><h2>İnsan, ajan, insan</h2><span class="gist">İnsanlar arasına ajan girince tanımlanmamış bir alan açılıyor.</span></div>
+      <div class="body">
+        <p>Buraya kadar her şey normal diyebilirsiniz: ben kendi ajanımla konuşuyorum. Ancak insanlar kendi aralarında iş birliği yaptığında, yani biz insanlar kendi aramızda iletişime geçerken ajanları işin içine soktuğumuzda, daha önce tanımlanmamış bir alana giriyoruz. Çünkü artık ajanlar da var.</p>
+        <p>İlk olan şey şu: “Benim ajanım böyle söyledi.” Mesela iş arkadaşınıza diyorsunuz ki: “Bana şöyle bir problem göndermiştin, şu projeyi şu şekilde yap demiştin. Ama ben yaparken ajanım ‘bu olmaz’ dedi.” Bunu duyan biri sizce ne diyebilir? “Ajanınız doğru söylemiş, tamam, onun dediğine uyalım” mı desin? Yoksa “o zaman başka bir yol deneyelim” mi desin? Ajanın ne söylediğinden tam emin değil. Araya bir de insan giriyor: düşünsenize, insan onu aktarırken belki ajanın söylediğini yanlış aktarıyor. Ajanın görevi yanlış anlamış olma ihtimali de var, kişinin görevi yanlış anlamış olma ihtimali de.</p>
+        <p>Bu zaten insanlar arasında yaşanan bir şey. Biri size bir görev veriyor ya da siz başkasına bir görev veriyorsunuz; bazı şeyleri tam aktarmıyorsunuz, eksik kalıyor. Mecburen ne yapıyoruz? Proje yönetiminde her şeyi yazılı olarak döküyoruz ki aynı dili konuştuğumuzdan, İngilizcede “be on the same page” derler ya, aynı sayfayı okuduğumuzdan, aynı şeyi anladığımızdan emin olalım. Bundan emin olmaya çalışırken bir de işin içine ajan giriyor. Bu, işleri tabii ki daha da karmaşık hâle getiriyor. Ve açıkçası bazı sosyal sorunlar da getiriyor.</p>
+        <p>Öncelikle bir tepki oluyor. Biri size şahsen bir şey sorduğunda, sizden şahsen bir şey beklediğinde, siz hemen ajanınıza sorup onun cevabını yapıştırırsanız, buna “slop” diyorlar: yapay zekâ ajanları tarafından beceriksizce yapılmış bir sonuç. Bu, birçok iletişim türünde ayıp karşılanıyor. O yüzden ne yaparsanız yapın, bazı prensipler edinmeniz gerekiyor; iş ortamında da, kendi ajanlarınızla konuşurken de.</p>
+        <p>Sizin kendi ajanınızla konuşma şekliniz ayrı. Ama işin içine iş arkadaşlarınız girdiğinde, ya da siz ve iş arkadaşlarınızın ajanları arasında bir ilişki kurulduğunda, bu artık sadece kişiden kişiye bir iletişim olmaktan çıkıyor; kişiden ajana bir iletişim oluyor. Her bireyin kendisiyle kendi ajanı arasında bir ilişki zaten var; bu katman zaten biliniyor. Ama bir kişiyle başkasının ajanı arasında iletişim olunca olayın şekli değişiyor. Bu da çoğu durumda pek hoşumuza giden bir şey değil.</p>
+      </div>
+      <p class="pull">Kişiden kişiye bir iletişim olmaktan çıkıyor; kişiden ajana bir iletişim oluyor.</p>
+    </section>
+
+    <section class="sec" id="s7">
+      <div class="sec-head"><span class="no">07</span><h2>Benim ajanımla konuşun</h2><span class="gist">İyi karşılanan durum: kişi ajanla konuştuğunu biliyor.</span></div>
+      <div class="body">
+        <p>Ama iyi karşılanan durumlar da var. Mesela benim ajanımla konuşup bana toplantı talebinde bulunabilirsiniz. Ama kaydolmanız gerekiyor; benim ajanıma e-posta adresinizi göndermeniz gerekiyor. Sonra onunla chat yapar gibi konuşuyorsunuz. Bana ulaşmak isteyen insanlar bana e-posta atmak yerine doğrudan web sayfasından girip benim ajanımla konuşarak randevu ayarlayabiliyor, bana e-posta atabiliyor, mesaj gönderebiliyor. Eğer yakın çevremden biriyse daha fazlasını da yapabiliyor; o konulara şimdi girmenin zamanı değil. Ama sonuç olarak burada bu ilişki aslında pozitif bir amaç için kullanılıyor; kişi ajanla konuştuğunu zaten biliyor.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="s8">
+      <div class="sec-head"><span class="no">08</span><h2>Toplantıya ajanla girmek</h2><span class="gist">Yakında herkes toplantıya ajanıyla girecek.</span></div>
+      <div class="body">
+        <p>Öte yandan ajanları kendi dünyamıza yerleştirdikçe birçok insan artık toplantıya ajanıyla beraber giriyor. Ajanı toplantıyla ilgili notları tutuyor, konuşmaları transkribe ediyor, bunları bağlamına, bir yerlere yazıyor. Böylece onlar da hatırlar hâle geliyor.</p>
+        <p>Tahmin etmek çok da zor değil: birkaç yıl sonra neredeyse herkesin ajanı olacak ve toplantıya herkes ajanıyla girecek. Hatta bazıları toplantılara kendileri girmeyecek, ajanları girecek; bunun önüne geçilemeyeceğini düşünüyorum. Bu çok zor bir şey değil, çok uzak bir şey değil. Sadece alışkanlıklarımızdan vazgeçemediğimiz ve bunu tahayyül edemediğimiz için şimdi böyle görünüyor. Ama bizim kurduğumuz sistemlerde, benim ve arkadaşlarımın ajanları kendi aralarında iletişime geçerken, benzer durumları zaten yaşıyoruz.</p>
+        <p>Ben arkadaşımı arayıp “Sen bu projede ne yaptın?” demiyorum. Kendi ajanıma diyorum ki: “Arkadaşım bu projede ne yapmış? Git onun ajanına sor.” Aramızda bir güven ilişkisi olduğu için ve ajanlarımızın da bu yetkisi olduğu için, birbirlerinin yaptığı işlere ulaşabiliyorlar. Hatta ortak proje bile geliştirebiliyorlar, kendi ajanlarımız.</p>
+      </div>
+      <p class="pull">“Arkadaşım bu projede ne yapmış? Git onun ajanına sor.”</p>
+    </section>
+
+    <section class="sec" id="s9">
+      <div class="sec-head"><span class="no">09</span><h2>Ajanın yetkisi</h2><span class="gist">Ajan sizin adınıza ne kadar karar verebilir?</span></div>
+      <div class="body">
+        <p>Bir de ajanınıza yetki verme meselesi var. Ajanınız sizin adınıza toplantıya katılıyor ya: sizin adınıza karar verebilir mi, veremez mi? Karar verirse hangi konularda verebilir? Belli bir rütbesi var mı, yok mu? Ve karşı tarafın bütün bunlardan haberdar olma ihtimali nedir?</p>
+        <p>Düşünsenize: şirketin CEO’su, alttakilerle yapılan bir toplantıya kendisi yerine ajanını gönderiyor. Biraz alçaltıcı bulunacaktır belki, ama uzak bir şey değil. Belki alttakiler de toplantıya kendi ajanlarını gönderecek. Ajan alttakilerle konuşuyor, anlaşıyorlar. Ama alttakilerin, CEO’nun ajanının hangi yetkilere sahip olduğunu bilmesi gerekiyor. Mesela CEO ajanına teknik konularda ya da pazarlama konularında karar verilmemesini söylemiştir belki: “Bu konularda sen karar veremezsin.” Dışarıdaki diğer katılımcılar, insanlar bunu nasıl görecek? Ajanın altına “Pazarlama konularında karar veremez, yönetimsel konularda karar verebilir, şu konularda ancak şu şekilde karar verebilir” diye bir tanım mı yazılsın, toplantıyı da ona göre mi düzenlesinler? Tabii ki bu olmayacak; onlar da bu tanımı okuyup aklında tutabilecek ajanlar gönderecekler.</p>
+        <p>Dolayısıyla ajanlar hayatımıza girdikten sonra onları sosyal açıdan nereye yerleştireceğimiz, ne kadar yetki vereceğimiz meselesi, şu an haberlere düşmemiş olsa da, yakında gündeme gelecek diye düşünüyorum. Bu arada ajan haklarından da bahsedecekler.</p>
+      </div>
+      <p class="pull">Onları sosyal açıdan nereye yerleştireceğiz, ne kadar yetki vereceğiz?</p>
+    </section>
+
+    <section class="sec" id="s10">
+      <div class="sec-head"><span class="no">10</span><h2>Ajanına nasıl davranıyorsun?</h2><span class="gist">Yeni bir değerlendirme ölçütü ve henüz olmayan protokol.</span></div>
+      <div class="body">
+        <p>İnsanların kendi kişisel ajanlarıyla, kişisel asistanlarıyla iletişim şekli de insanlar için bir değerlendirme kriteri olarak görülecek. Ajanlarına kötü davrananlar, iyi davrananlar. Ajanlarına <mark class="v">köle gibi</mark> davrananlar, onlardan akıl alanlar, onlarla gönül ilişkisi kuranlar. “Her” filmini seyretmişsinizdir belki; seyretmenizi tavsiye ederim. Eski bir film ama aslında günümüze ışık tutan filmlerden biri. Bunun gibi birkaç film daha önerebilirim. Bu filmleri aslında yaşıyoruz. Black Mirror dizisinin bölümlerini izleyenler varsa, bir kısmı gerçekleşti bile.</p>
+        <p>Bu sunumda da amacım geleceğe bir ışık tutmak: ne yapmalısınızdan çok, neler yapabilirsiniz. İnsanın pek hazır olmadığı bakış açıları bunlar aslında. Herkesin yaşadığı ama dile getirilmeyen şeyler; çünkü böyle bir norm yok, böyle bir prosedür yok, böyle bir protokol yok.</p>
+        <p>Düşünsenize, protokol kuralları belli: ast ile üst bir araya geldiği zaman kim kimi selamlayacak, o iş nasıl olacak, belli. Ama işin içine ajanlar girince ortada böyle bir protokol yok.</p>
+        <p>Yapay zekâ ile birlikte yaşam, ya da yaşamak: bu protokolün yakında geleceği ve buna adapte olmak için sizin de biraz paçaları sıvamanız gerektiği, kulağınıza küpe olsun istiyorum.</p>
+      </div>
+      <p class="pull">Bu protokolün yakında geleceği, kulağınıza küpe olsun.</p>
+    </section>
+
+    <section class="notes" id="notlar">
+      <h2>Düzeltme notları</h2>
+      <p class="k">Noktalı altı çizili ifadeler doğrulanmalı.</p>
+      <ul>
+        <li>“Ellem” → LLM; “cloud” → Claude; “hör filmi” → “Her” filmi (2013).</li>
+        <li>“RB on the same page” → “be on the same page”.</li>
+        <li>“Kuşlu gibi davrananlar” → “köle gibi davrananlar”. Önceki notlardaki köle / bilge / baba üçlüsüne dayanarak düzeltildi; doğrula.</li>
+        <li>“OpenAI şöyle, şu şirketi hackledi” → “OpenAI şöyle oldu, şu şirket hacklendi”. Asıl cümle belirsiz.</li>
+        <li>“Sonucunu ajana veriyor” → “sonucunu modele geri veriyor” (harness, kodun çıktısını LLM’e döndürür).</li>
+        <li>“Ajanı kendi ajanı toplantıyla ilgili notları tutuyor… onlarda hatırlar oluyor” → “Ajanı notları tutuyor… böylece onlar da hatırlar hâle geliyor.”</li>
+        <li>Sondaki “İşte alım” anlaşılamadı, çıkarıldı. “Aşağısıyla yukarısı” → “ast ile üst”.</li>
+        <li>“Paçayı sıvamanız” → “paçaları sıvamanız”; “kulaklarınıza bir küpe” → “kulağınıza küpe”.</li>
+      </ul>
+    </section>
+
+  </article>
+</div>

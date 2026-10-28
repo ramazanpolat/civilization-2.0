@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Medeniyet 2.0</title>
+<style>
+  @font-face { font-family: "Manrope"; src: url(Manrope.ttf); font-weight: 200 800; }
+
+  :root {
+    --claret: #78113e;
+    --claret-deep: #4a0824;
+    --claret-ink: #3a0620;
+    --gold: #f9bf3b;
+    --gold-soft: #e9c77b;
+    --cream: #fbf7f1;
+    --paper: #ffffff;
+    --ink: #2a1c22;
+    --muted: #6f5f66;
+    --line: #eadfd6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1240px; height: 1754px; background: var(--cream); }
+  body { font-family: "Manrope", sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  .poster { position: relative; width: 1240px; height: 1754px; overflow: hidden; background: var(--cream); }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: absolute; inset: 0 0 auto 0; height: 1000px;
+    background:
+      radial-gradient(820px 700px at 88% 38%, #8c1a4a 0%, rgba(140,26,74,0) 65%),
+      linear-gradient(165deg, #6a0f37 0%, var(--claret-deep) 62%, #2f0414 100%);
+  }
+  .hero svg.art { position: absolute; inset: 0; width: 1240px; height: 1000px; }
+
+  .topbar { position: absolute; top: 56px; left: 96px; right: 96px; display: flex; justify-content: space-between; align-items: center; }
+  .topbar img { height: 112px; display: block; }
+  .topbar .tag {
+    display: flex; align-items: center; gap: 16px;
+    font-size: 20px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--gold);
+  }
+  .topbar .tag::before { content: ""; width: 52px; height: 2px; background: var(--gold); }
+
+  .title { position: absolute; top: 300px; left: 96px; color: #fff; }
+  h1 { font-weight: 800; font-size: 112px; line-height: 1.06; letter-spacing: -.025em; }
+  h1 em { display: inline-block; font-style: normal; transform: skewX(-11deg); transform-origin: 0 78%; }
+  .title .rule { margin-top: 44px; width: 120px; height: 5px; border-radius: 3px; background: var(--gold); }
+
+  /* timeline */
+  .timeline { position: absolute; left: 128px; right: 160px; top: 922px; height: 50px; }
+  .timeline .track { position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,.2), rgba(249,191,59,.8)); }
+  .timeline ol { list-style: none; display: flex; justify-content: space-between; position: relative; }
+  .timeline li { display: flex; flex-direction: column; align-items: center; width: 0; }
+  .timeline li::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #d3b3c0; margin-top: 3px; }
+  .timeline li span { margin-top: 14px; white-space: nowrap; font-size: 15px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.6); }
+  .timeline li:last-child::before { width: 15px; height: 15px; margin-top: 0; background: var(--gold); box-shadow: 0 0 0 7px rgba(249,191,59,.18), 0 0 24px 4px rgba(249,191,59,.45); }
+  .timeline li:last-child span { margin-top: 11px; color: var(--gold); }
+
+  /* ---------- speaker ---------- */
+  .speaker { position: absolute; top: 1036px; left: 96px; right: 96px; height: 258px; display: flex; align-items: center; gap: 48px; }
+  .photo {
+    flex: none; width: 238px; height: 238px; border-radius: 50%; padding: 8px; background: var(--paper);
+    box-shadow: 0 22px 46px -22px rgba(58,6,32,.5), 0 0 0 3px var(--gold);
+  }
+  .photo img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+  .meta { flex: 1; }
+  .label { display: flex; align-items: center; gap: 14px; font-size: 17px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--claret); }
+  .label::after { content: ""; width: 56px; height: 2px; background: var(--gold); }
+  .name { margin-top: 10px; font-weight: 800; font-size: 60px; line-height: 1.05; letter-spacing: -.015em; color: var(--claret-ink); }
+  .role { margin-top: 8px; font-size: 27px; font-weight: 700; color: var(--claret); }
+  .aff-row { margin-top: 14px; display: flex; align-items: center; gap: 20px; }
+  .aff { font-size: 21px; font-weight: 500; line-height: 1.45; color: var(--muted); }
+  .aff-row .sep { width: 1px; align-self: stretch; background: var(--line); }
+  .aff-row img { height: 54px; display: block; }
+
+  /* ---------- details ---------- */
+  .details { position: absolute; left: 96px; right: 96px; top: 1316px; height: 334px; display: grid; grid-template-columns: 1fr 330px; gap: 22px; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 24px; overflow: hidden; box-shadow: 0 22px 50px -30px rgba(58,6,32,.4); }
+
+  .when-where { display: grid; grid-template-rows: 150px 1fr; }
+  .when {
+    position: relative; display: flex; align-items: center; padding: 0 40px; gap: 34px; color: #fff;
+    background: linear-gradient(160deg, var(--claret) 0%, var(--claret-deep) 100%);
+  }
+  .when::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--gold); }
+  .when .day { font-weight: 800; font-size: 92px; line-height: 1; letter-spacing: -.03em; }
+  .when .md { display: flex; flex-direction: column; gap: 4px; }
+  .when .md b { font-size: 28px; font-weight: 800; letter-spacing: .04em; }
+  .when .md span { font-size: 22px; font-weight: 600; color: var(--gold); }
+  .when .div { width: 1px; height: 76px; background: rgba(255,255,255,.28); }
+  .when .time { display: flex; align-items: center; gap: 16px; }
+  .when .time svg { width: 40px; height: 40px; stroke: var(--gold); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .when .time b { font-size: 60px; font-weight: 800; letter-spacing: -.01em; }
+
+  .where { padding: 0 40px; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+  .where .k { display: flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+  .where .k svg { width: 28px; height: 28px; stroke: var(--claret); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .where .url { font-size: 36px; font-weight: 800; letter-spacing: -.01em; color: var(--claret); white-space: nowrap; }
+
+  .qrcard { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
+  .qrcard .box { width: 262px; height: 262px; padding: 22px; border-radius: 14px; border: 2px solid var(--gold-soft); background: #fff; }
+  .qrcard .box svg { width: 100%; height: 100%; display: block; }
+  .qrcard .cap { font-size: 16px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--claret); }
+
+  /* ---------- footer ---------- */
+  .footer {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 74px; background: var(--claret-ink); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: 600; letter-spacing: .04em;
+  }
+  .footer::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--gold); }
+  .footer b { color: var(--gold); font-weight: 700; margin: 0 14px; }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <section class="hero">
+    <svg class="art" viewBox="0 0 1240 1000" aria-hidden="true">
+      <defs>
+        <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1.2" fill="#fff" fill-opacity=".06"/>
+        </pattern>
+        <radialGradient id="glow" cx="1030" cy="420" r="420" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#f9bf3b" stop-opacity=".10"/>
+          <stop offset="1" stop-color="#f9bf3b" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1240" height="1000" fill="url(#dots)"/>
+      <circle cx="1030" cy="420" r="420" fill="url(#glow)"/>
+      <g fill="none" stroke="#f9bf3b" stroke-opacity=".09" stroke-width="1.2">
+        <circle cx="1030" cy="560" r="300"/>
+        <circle cx="1030" cy="560" r="390" stroke-dasharray="2 10"/>
+      </g>
+      <g transform="translate(247 203) scale(.82)">
+      <!--COLUMN-->
+      </g>
+    </svg>
+
+    <div class="topbar">
+      <img src="firat-logo.png" alt="Fırat Üniversitesi">
+      <div class="tag">Söyleşi</div>
+    </div>
+
+    <div class="title">
+      <h1>Medeniyet 2.0:<br><em>Yapay Zekâyla</em><br><em>Birlikte Yaşam</em></h1>
+      <div class="rule"></div>
+    </div>
+
+    <div class="timeline">
+      <div class="track"></div>
+      <ol>
+        <li><span>Ateş</span></li>
+        <li><span>Tarım</span></li>
+        <li><span>Yazı</span></li>
+        <li><span>Matbaa</span></li>
+        <li><span>Sanayi</span></li>
+        <li><span>İnternet</span></li>
+        <li><span>Yapay Zekâ</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="speaker">
+    <div class="photo"><img src="speaker.jpg" alt=""></div>
+    <div class="meta">
+      <div class="label">Konuşmacı</div>
+      <div class="name">Ramazan POLAT</div>
+      <div class="role">Kıdemli Yapay Zekâ Uzmanı</div>
+      <div class="aff-row">
+        <div class="aff">Bilgisayar Yüksek Mühendisi<br>ODTÜ Bilgi İşlem Daire Başkanlığı</div>
+        <div class="sep"></div>
+        <img src="odtu-logo.svg" alt="ODTÜ">
+      </div>
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="card when-where">
+      <div class="when">
+        <div class="day">30</div>
+        <div class="md"><b>EKİM 2026</b><span>Cuma</span></div>
+        <div class="div"></div>
+        <div class="time">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <b>10:00</b>
+        </div>
+      </div>
+      <div class="where">
+        <div class="k"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></svg>Çevrimiçi · Google Meet</div>
+        <div class="url">meet.google.com/zrt-hdqi-hdf</div>
+      </div>
+    </div>
+    <div class="card qrcard">
+      <div class="box"><!--QR--></div>
+      <div class="cap">Katılmak için okutun</div>
+    </div>
+  </section>
+
+  <footer class="footer">Tüm öğrencilerimiz davetlidir.</footer>
+
+</div>
+</body>
+</html>

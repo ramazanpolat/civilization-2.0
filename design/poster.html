@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Medeniyet 2.0</title>
+<style>
+  @font-face { font-family: "Playfair"; src: url(Playfair.ttf); font-weight: 400 900; }
+  @font-face { font-family: "Playfair"; src: url(PlayfairItalic.ttf); font-weight: 400 900; font-style: italic; }
+  @font-face { font-family: "Manrope"; src: url(Manrope.ttf); font-weight: 200 800; }
+
+  :root {
+    --claret: #78113e;
+    --claret-deep: #4a0824;
+    --claret-ink: #3a0620;
+    --bordo: #6d131f;
+    --gold: #f9bf3b;
+    --gold-soft: #e9c77b;
+    --cream: #fbf7f1;
+    --paper: #ffffff;
+    --ink: #2a1c22;
+    --muted: #7a6870;
+    --line: #eadfd6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1240px; height: 1754px; background: var(--cream); }
+  body { font-family: "Manrope", sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+  .poster { position: relative; width: 1240px; height: 1754px; overflow: hidden; background: var(--cream); }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: absolute; inset: 0 0 auto 0; height: 900px;
+    background:
+      radial-gradient(1200px 900px at 100% 0%, #8e1a4b 0%, rgba(142,26,75,0) 60%),
+      linear-gradient(160deg, var(--claret) 0%, var(--claret-deep) 70%, #350417 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
+  }
+  .hero svg.pattern { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+  .topbar {
+    position: absolute; top: 72px; left: 96px; right: 96px;
+    display: flex; justify-content: space-between; align-items: center;
+    color: rgba(255,255,255,.78); font-size: 19px; font-weight: 600; letter-spacing: .32em; text-transform: uppercase;
+  }
+  .topbar .tag { display: flex; align-items: center; gap: 18px; color: var(--gold); }
+  .topbar .tag::before { content: ""; width: 56px; height: 2px; background: var(--gold); }
+  .topbar .date-mini { letter-spacing: .24em; }
+
+  .title-block { position: absolute; top: 230px; left: 96px; right: 96px; color: #fff; }
+  .eyebrow { font-size: 24px; font-weight: 500; letter-spacing: .06em; color: var(--gold-soft); margin-bottom: 26px; }
+  h1 {
+    font-family: "Playfair", serif; font-weight: 700; font-size: 150px; line-height: 1; letter-spacing: -.01em; white-space: nowrap;
+  }
+  h1 .num { color: var(--gold); font-style: italic; font-weight: 600; }
+  h2 {
+    margin-top: 34px; font-family: "Playfair", serif; font-style: italic; font-weight: 500;
+    font-size: 70px; line-height: 1.1; color: #fff;
+  }
+  .rule { margin-top: 44px; width: 120px; height: 4px; background: var(--gold); }
+
+  /* ---------- speaker ---------- */
+  .speaker { position: absolute; top: 740px; left: 96px; right: 96px; display: flex; align-items: flex-end; gap: 56px; }
+  .photo {
+    position: relative; flex: none; width: 340px; height: 340px; border-radius: 50%;
+    padding: 12px; background: var(--paper);
+    box-shadow: 0 30px 60px -20px rgba(58,6,32,.45), 0 0 0 6px var(--gold);
+  }
+  .photo img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+  .speaker .meta { padding-bottom: 10px; }
+  .label {
+    display: flex; align-items: center; gap: 16px;
+    font-size: 18px; font-weight: 700; letter-spacing: .34em; text-transform: uppercase; color: var(--claret);
+  }
+  .label::after { content: ""; width: 64px; height: 2px; background: var(--gold); }
+  .name { margin-top: 16px; font-family: "Playfair", serif; font-weight: 700; font-size: 64px; line-height: 1.05; color: var(--claret-ink); }
+  .name span { letter-spacing: .02em; }
+  .role { margin-top: 12px; font-size: 26px; font-weight: 700; color: var(--claret); }
+  .aff { margin-top: 8px; font-size: 22px; font-weight: 500; line-height: 1.45; color: var(--muted); }
+
+  /* ---------- details ---------- */
+  .details {
+    position: absolute; left: 96px; right: 96px; top: 1196px; height: 340px;
+    display: grid; grid-template-columns: 280px 1fr 250px;
+    background: var(--paper); border-radius: 28px; overflow: hidden;
+    box-shadow: 0 24px 60px -28px rgba(58,6,32,.35);
+    border: 1px solid var(--line);
+  }
+  .date {
+    background: linear-gradient(170deg, var(--claret) 0%, var(--claret-deep) 100%);
+    color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+    position: relative;
+  }
+  .date::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: var(--gold); }
+  .date .day { font-family: "Playfair", serif; font-weight: 700; font-size: 150px; line-height: .9; }
+  .date .month { margin-top: 14px; font-size: 26px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+  .date .wd { margin-top: 6px; font-size: 22px; font-weight: 500; color: var(--gold); letter-spacing: .08em; }
+
+  .info { padding: 48px 44px; display: flex; flex-direction: column; justify-content: center; gap: 36px; }
+  .row { display: flex; gap: 22px; align-items: flex-start; }
+  .icon {
+    flex: none; width: 56px; height: 56px; border-radius: 50%;
+    background: #f6ecef; display: grid; place-items: center;
+  }
+  .icon svg { width: 28px; height: 28px; stroke: var(--claret); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .row .k { font-size: 16px; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; color: var(--muted); }
+  .row .v { margin-top: 4px; font-size: 40px; font-weight: 800; color: var(--claret-ink); line-height: 1.1; }
+  .row .v.sm { font-size: 30px; }
+  .row .link { margin-top: 6px; white-space: nowrap; font-size: 21px; font-weight: 600; color: var(--claret); }
+
+  .qr { border-left: 1px dashed var(--line); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; background: #fdfaf6; }
+  .qr .box { width: 196px; height: 196px; padding: 22px; background: #fff; border-radius: 16px; border: 2px solid var(--gold-soft); }
+  .qr .box svg { width: 100%; height: 100%; display: block; }
+  .qr .cap { font-size: 15px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--claret); }
+
+  /* ---------- footer ---------- */
+  .footer {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 120px;
+    background: var(--claret-ink); color: #fff;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 96px;
+  }
+  .footer::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; background: var(--gold); }
+  .footer .invite { font-family: "Playfair", serif; font-style: italic; font-size: 34px; font-weight: 500; }
+  .footer .where { font-size: 18px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <section class="hero">
+    <svg class="pattern" viewBox="0 0 1240 1010" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1.4" fill="#ffffff" fill-opacity=".07"/>
+        </pattern>
+        <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+          <stop offset=".55" stop-color="#fff" stop-opacity="1"/>
+        </linearGradient>
+        <mask id="m"><rect width="1240" height="1010" fill="url(#fade)"/></mask>
+      </defs>
+      <rect width="1240" height="1010" fill="url(#dots)" mask="url(#m)"/>
+      <g fill="none" stroke="#f9bf3b" stroke-opacity=".16" stroke-width="1.5">
+        <circle cx="1130" cy="120" r="200"/>
+        <circle cx="1130" cy="120" r="320"/>
+        <circle cx="1130" cy="120" r="440" stroke-dasharray="3 9"/>
+        <circle cx="1130" cy="120" r="560" stroke-opacity=".09"/>
+      </g>
+      <!-- network motif -->
+      <g transform="translate(-40 210)">
+      <g stroke="#f9bf3b" stroke-opacity=".28" stroke-width="1.2" fill="none">
+        <path d="M910 300 L1010 250 L1100 330 L1040 430 L930 410 Z"/>
+        <path d="M1010 250 L1040 430 M910 300 L1100 330"/>
+        <path d="M1100 330 L1180 280 M1040 430 L1120 500"/>
+      </g>
+      <g fill="#f9bf3b">
+        <circle cx="910" cy="300" r="5" fill-opacity=".7"/>
+        <circle cx="1010" cy="250" r="7"/>
+        <circle cx="1100" cy="330" r="5" fill-opacity=".7"/>
+        <circle cx="1040" cy="430" r="6" fill-opacity=".85"/>
+        <circle cx="930" cy="410" r="4" fill-opacity=".6"/>
+        <circle cx="1180" cy="280" r="4" fill-opacity=".5"/>
+        <circle cx="1120" cy="500" r="4" fill-opacity=".5"/>
+      </g>
+      </g>
+    </svg>
+
+    <div class="topbar">
+      <div class="tag">Söyleşi</div>
+      <div class="date-mini">30 · 10 · 2026</div>
+    </div>
+
+    <div class="title-block">
+      <h1>Medeniyet <span class="num">2.0</span></h1>
+      <h2>Yapay Zekâyla<br>Birlikte Yaşam</h2>
+      <div class="rule"></div>
+    </div>
+  </section>
+
+  <section class="speaker">
+    <div class="photo"><img src="speaker.jpg" alt=""></div>
+    <div class="meta">
+      <div class="label">Konuşmacı</div>
+      <div class="name">Ramazan <span>POLAT</span></div>
+      <div class="role">Kıdemli Yapay Zekâ Uzmanı</div>
+      <div class="aff">Bilgisayar Yüksek Mühendisi<br>ODTÜ Bilgi İşlem Daire Başkanlığı</div>
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="date">
+      <div class="day">30</div>
+      <div class="month">Ekim 2026</div>
+      <div class="wd">Cuma</div>
+    </div>
+    <div class="info">
+      <div class="row">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><div class="k">Saat</div><div class="v">10:00</div></div>
+      </div>
+      <div class="row">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></svg></div>
+        <div><div class="k">Çevrimiçi</div><div class="v sm">Google Meet</div><div class="link">meet.google.com/zrt-hdqi-hdf</div></div>
+      </div>
+    </div>
+    <div class="qr">
+      <div class="box"><svg version="1.1" viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg"><path fill="#3a0620" shape-rendering="crispEdges" d="M0,0H1V1H0zM1,0H2V1H1zM2,0H3V1H2zM3,0H4V1H3zM4,0H5V1H4zM5,0H6V1H5zM6,0H7V1H6zM9,0H10V1H9zM10,0H11V1H10zM13,0H14V1H13zM15,0H16V1H15zM17,0H18V1H17zM18,0H19V1H18zM19,0H20V1H19zM20,0H21V1H20zM22,0H23V1H22zM23,0H24V1H23zM24,0H25V1H24zM25,0H26V1H25zM26,0H27V1H26zM27,0H28V1H27zM28,0H29V1H28zM0,1H1V2H0zM6,1H7V2H6zM10,1H11V2H10zM13,1H14V2H13zM14,1H15V2H14zM15,1H16V2H15zM20,1H21V2H20zM22,1H23V2H22zM28,1H29V2H28zM0,2H1V3H0zM2,2H3V3H2zM3,2H4V3H3zM4,2H5V3H4zM6,2H7V3H6zM8,2H9V3H8zM9,2H10V3H9zM10,2H11V3H10zM12,2H13V3H12zM13,2H14V3H13zM16,2H17V3H16zM19,2H20V3H19zM20,2H21V3H20zM22,2H23V3H22zM24,2H25V3H24zM25,2H26V3H25zM26,2H27V3H26zM28,2H29V3H28zM0,3H1V4H0zM2,3H3V4H2zM3,3H4V4H3zM4,3H5V4H4zM6,3H7V4H6zM8,3H9V4H8zM10,3H11V4H10zM11,3H12V4H11zM14,3H15V4H14zM15,3H16V4H15zM17,3H18V4H17zM18,3H19V4H18zM19,3H20V4H19zM22,3H23V4H22zM24,3H25V4H24zM25,3H26V4H25zM26,3H27V4H26zM28,3H29V4H28zM0,4H1V5H0zM2,4H3V5H2zM3,4H4V5H3zM4,4H5V5H4zM6,4H7V5H6zM8,4H9V5H8zM11,4H12V5H11zM16,4H17V5H16zM17,4H18V5H17zM18,4H19V5H18zM19,4H20V5H19zM20,4H21V5H20zM22,4H23V5H22zM24,4H25V5H24zM25,4H26V5H25zM26,4H27V5H26zM28,4H29V5H28zM0,5H1V6H0zM6,5H7V6H6zM8,5H9V6H8zM10,5H11V6H10zM15,5H16V6H15zM17,5H18V6H17zM20,5H21V6H20zM22,5H23V6H22zM28,5H29V6H28zM0,6H1V7H0zM1,6H2V7H1zM2,6H3V7H2zM3,6H4V7H3zM4,6H5V7H4zM5,6H6V7H5zM6,6H7V7H6zM8,6H9V7H8zM10,6H11V7H10zM12,6H13V7H12zM14,6H15V7H14zM16,6H17V7H16zM18,6H19V7H18zM20,6H21V7H20zM22,6H23V7H22zM23,6H24V7H23zM24,6H25V7H24zM25,6H26V7H25zM26,6H27V7H26zM27,6H28V7H27zM28,6H29V7H28zM8,7H9V8H8zM10,7H11V8H10zM11,7H12V8H11zM14,7H15V8H14zM15,7H16V8H15zM16,7H17V8H16zM19,7H20V8H19zM0,8H1V9H0zM2,8H3V9H2zM3,8H4V9H3zM4,8H5V9H4zM5,8H6V9H5zM6,8H7V9H6zM10,8H11V9H10zM12,8H13V9H12zM15,8H16V9H15zM17,8H18V9H17zM22,8H23V9H22zM23,8H24V9H23zM24,8H25V9H24zM25,8H26V9H25zM26,8H27V9H26zM0,9H1V10H0zM1,9H2V10H1zM3,9H4V10H3zM5,9H6V10H5zM7,9H8V10H7zM9,9H10V10H9zM11,9H12V10H11zM12,9H13V10H12zM13,9H14V10H13zM14,9H15V10H14zM16,9H17V10H16zM17,9H18V10H17zM19,9H20V10H19zM20,9H21V10H20zM21,9H22V10H21zM22,9H23V10H22zM24,9H25V10H24zM28,9H29V10H28zM1,10H2V11H1zM4,10H5V11H4zM6,10H7V11H6zM7,10H8V11H7zM11,10H12V11H11zM12,10H13V11H12zM13,10H14V11H13zM14,10H15V11H14zM15,10H16V11H15zM17,10H18V11H17zM18,10H19V11H18zM22,10H23V11H22zM24,10H25V11H24zM0,11H1V12H0zM1,11H2V12H1zM2,11H3V12H2zM4,11H5V12H4zM5,11H6V12H5zM8,11H9V12H8zM9,11H10V12H9zM11,11H12V12H11zM12,11H13V12H12zM13,11H14V12H13zM15,11H16V12H15zM18,11H19V12H18zM19,11H20V12H19zM20,11H21V12H20zM21,11H22V12H21zM22,11H23V12H22zM23,11H24V12H23zM24,11H25V12H24zM25,11H26V12H25zM27,11H28V12H27zM1,12H2V13H1zM2,12H3V13H2zM5,12H6V13H5zM6,12H7V13H6zM7,12H8V13H7zM8,12H9V13H8zM9,12H10V13H9zM14,12H15V13H14zM17,12H18V13H17zM19,12H20V13H19zM23,12H24V13H23zM25,12H26V13H25zM26,12H27V13H26zM1,13H2V14H1zM2,13H3V14H2zM3,13H4V14H3zM7,13H8V14H7zM11,13H12V14H11zM12,13H13V14H12zM16,13H17V14H16zM19,13H20V14H19zM21,13H22V14H21zM22,13H23V14H22zM23,13H24V14H23zM24,13H25V14H24zM28,13H29V14H28zM0,14H1V15H0zM2,14H3V15H2zM4,14H5V15H4zM6,14H7V15H6zM7,14H8V15H7zM9,14H10V15H9zM15,14H16V15H15zM16,14H17V15H16zM17,14H18V15H17zM18,14H19V15H18zM20,14H21V15H20zM23,14H24V15H23zM24,14H25V15H24zM25,14H26V15H25zM26,14H27V15H26zM2,15H3V16H2zM3,15H4V16H3zM4,15H5V16H4zM8,15H9V16H8zM14,15H15V16H14zM15,15H16V16H15zM16,15H17V16H16zM18,15H19V16H18zM20,15H21V16H20zM22,15H23V16H22zM23,15H24V16H23zM24,15H25V16H24zM27,15H28V16H27zM0,16H1V17H0zM6,16H7V17H6zM11,16H12V17H11zM12,16H13V17H12zM17,16H18V17H17zM25,16H26V17H25zM26,16H27V17H26zM0,17H1V18H0zM1,17H2V18H1zM2,17H3V18H2zM3,17H4V18H3zM4,17H5V18H4zM9,17H10V18H9zM11,17H12V18H11zM13,17H14V18H13zM14,17H15V18H14zM19,17H20V18H19zM20,17H21V18H20zM21,17H22V18H21zM22,17H23V18H22zM23,17H24V18H23zM24,17H25V18H24zM26,17H27V18H26zM28,17H29V18H28zM0,18H1V19H0zM2,18H3V19H2zM3,18H4V19H3zM5,18H6V19H5zM6,18H7V19H6zM7,18H8V19H7zM12,18H13V19H12zM13,18H14V19H13zM14,18H15V19H14zM15,18H16V19H15zM16,18H17V19H16zM22,18H23V19H22zM23,18H24V19H23zM24,18H25V19H24zM26,18H27V19H26zM0,19H1V20H0zM2,19H3V20H2zM7,19H8V20H7zM8,19H9V20H8zM13,19H14V20H13zM15,19H16V20H15zM18,19H19V20H18zM20,19H21V20H20zM22,19H23V20H22zM23,19H24V20H23zM24,19H25V20H24zM27,19H28V20H27zM0,20H1V21H0zM2,20H3V21H2zM3,20H4V21H3zM4,20H5V21H4zM5,20H6V21H5zM6,20H7V21H6zM8,20H9V21H8zM10,20H11V21H10zM11,20H12V21H11zM12,20H13V21H12zM14,20H15V21H14zM17,20H18V21H17zM18,20H19V21H18zM19,20H20V21H19zM20,20H21V21H20zM21,20H22V21H21zM22,20H23V21H22zM23,20H24V21H23zM24,20H25V21H24zM26,20H27V21H26zM27,20H28V21H27zM28,20H29V21H28zM8,21H9V22H8zM9,21H10V22H9zM10,21H11V22H10zM11,21H12V22H11zM16,21H17V22H16zM17,21H18V22H17zM18,21H19V22H18zM20,21H21V22H20zM24,21H25V22H24zM25,21H26V22H25zM26,21H27V22H26zM27,21H28V22H27zM28,21H29V22H28zM0,22H1V23H0zM1,22H2V23H1zM2,22H3V23H2zM3,22H4V23H3zM4,22H5V23H4zM5,22H6V23H5zM6,22H7V23H6zM10,22H11V23H10zM11,22H12V23H11zM15,22H16V23H15zM16,22H17V23H16zM19,22H20V23H19zM20,22H21V23H20zM22,22H23V23H22zM24,22H25V23H24zM25,22H26V23H25zM26,22H27V23H26zM0,23H1V24H0zM6,23H7V24H6zM8,23H9V24H8zM11,23H12V24H11zM12,23H13V24H12zM14,23H15V24H14zM15,23H16V24H15zM19,23H20V24H19zM20,23H21V24H20zM24,23H25V24H24zM27,23H28V24H27zM0,24H1V25H0zM2,24H3V25H2zM3,24H4V25H3zM4,24H5V25H4zM6,24H7V25H6zM8,24H9V25H8zM12,24H13V25H12zM15,24H16V25H15zM16,24H17V25H16zM17,24H18V25H17zM20,24H21V25H20zM21,24H22V25H21zM22,24H23V25H22zM23,24H24V25H23zM24,24H25V25H24zM26,24H27V25H26zM0,25H1V26H0zM2,25H3V26H2zM3,25H4V26H3zM4,25H5V26H4zM6,25H7V26H6zM8,25H9V26H8zM9,25H10V26H9zM10,25H11V26H10zM14,25H15V26H14zM16,25H17V26H16zM17,25H18V26H17zM18,25H19V26H18zM19,25H20V26H19zM20,25H21V26H20zM25,25H26V26H25zM26,25H27V26H26zM27,25H28V26H27zM28,25H29V26H28zM0,26H1V27H0zM2,26H3V27H2zM3,26H4V27H3zM4,26H5V27H4zM6,26H7V27H6zM8,26H9V27H8zM10,26H11V27H10zM11,26H12V27H11zM12,26H13V27H12zM13,26H14V27H13zM14,26H15V27H14zM15,26H16V27H15zM18,26H19V27H18zM19,26H20V27H19zM21,26H22V27H21zM22,26H23V27H22zM23,26H24V27H23zM24,26H25V27H24zM25,26H26V27H25zM26,26H27V27H26zM27,26H28V27H27zM0,27H1V28H0zM6,27H7V28H6zM9,27H10V28H9zM15,27H16V28H15zM16,27H17V28H16zM18,27H19V28H18zM20,27H21V28H20zM22,27H23V28H22zM23,27H24V28H23zM24,27H25V28H24zM25,27H26V28H25zM27,27H28V28H27zM0,28H1V29H0zM1,28H2V29H1zM2,28H3V29H2zM3,28H4V29H3zM4,28H5V29H4zM5,28H6V29H5zM6,28H7V29H6zM8,28H9V29H8zM9,28H10V29H9zM10,28H11V29H10zM12,28H13V29H12zM13,28H14V29H13zM14,28H15V29H14zM15,28H16V29H15zM17,28H18V29H17zM19,28H20V29H19zM22,28H23V29H22zM23,28H24V29H23zM26,28H27V29H26z" id="qr-path" fill="#000000" fill-opacity="1" fill-rule="nonzero" stroke="none" /></svg></div>
+      <div class="cap">Katılmak için okutun</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="invite">Tüm öğrencilerimiz davetlidir.</div>
+    <div class="where">Çevrimiçi · Google Meet</div>
+  </footer>
+
+</div>
+</body>
+</html>

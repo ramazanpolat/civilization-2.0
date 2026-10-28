@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Medeniyet 2.0</title>
+<style>
+  @font-face { font-family: "Playfair"; src: url(Playfair.ttf); font-weight: 400 900; }
+  @font-face { font-family: "Playfair"; src: url(PlayfairItalic.ttf); font-weight: 400 900; font-style: italic; }
+  @font-face { font-family: "Manrope"; src: url(Manrope.ttf); font-weight: 200 800; }
+
+  :root {
+    --claret: #78113e;
+    --claret-deep: #4a0824;
+    --claret-ink: #3a0620;
+    --gold: #f9bf3b;
+    --gold-soft: #e9c77b;
+    --cream: #fbf7f1;
+    --paper: #ffffff;
+    --ink: #2a1c22;
+    --muted: #7a6870;
+    --line: #eadfd6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1240px; height: 1754px; background: var(--cream); }
+  body { font-family: "Manrope", sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  .poster { position: relative; width: 1240px; height: 1754px; overflow: hidden; background: var(--cream); }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: absolute; inset: 0 0 auto 0; height: 960px;
+    background:
+      radial-gradient(900px 700px at 78% 40%, #8c1a4a 0%, rgba(140,26,74,0) 65%),
+      linear-gradient(165deg, #6a0f37 0%, var(--claret-deep) 60%, #2f0414 100%);
+  }
+  .hero svg.art { position: absolute; inset: 0; width: 1240px; height: 960px; }
+
+  .topbar {
+    position: absolute; top: 70px; left: 96px; right: 96px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 18px; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; color: rgba(255,255,255,.7);
+  }
+  .topbar .tag { display: flex; align-items: center; gap: 18px; color: var(--gold); }
+  .topbar .tag::before { content: ""; width: 56px; height: 2px; background: var(--gold); }
+
+  .title { position: absolute; top: 190px; left: 96px; width: 660px; color: #fff; }
+  .title .k { font-size: 18px; font-weight: 700; letter-spacing: .34em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+  h1 { margin-top: 22px; font-family: "Playfair", serif; font-weight: 700; font-size: 134px; line-height: .95; letter-spacing: -.012em; }
+  h1 .v { display: block; margin-top: 4px; font-style: italic; font-weight: 600; font-size: 228px; line-height: .9; color: var(--gold); letter-spacing: -.02em; }
+  h2 { margin-top: 30px; font-family: "Playfair", serif; font-style: italic; font-weight: 400; font-size: 58px; line-height: 1.12; color: #fff; }
+  .title .rule { margin-top: 40px; width: 110px; height: 3px; background: var(--gold); }
+
+  /* timeline */
+  .timeline { position: absolute; left: 128px; right: 160px; top: 850px; height: 60px; }
+  .timeline .track { position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,.18), rgba(249,191,59,.75)); }
+  .timeline ol { list-style: none; display: flex; justify-content: space-between; position: relative; }
+  .timeline li { position: relative; display: flex; flex-direction: column; align-items: center; width: 0; }
+  .timeline li::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #c9a9b6; margin-top: 3px; }
+  .timeline li span { margin-top: 16px; white-space: nowrap; font-size: 14px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .timeline li:last-child::before { width: 15px; height: 15px; margin-top: 0; background: var(--gold); box-shadow: 0 0 0 7px rgba(249,191,59,.18), 0 0 24px 4px rgba(249,191,59,.45); }
+  .timeline li:last-child span { margin-top: 13px; color: var(--gold); }
+
+  /* ---------- speaker ---------- */
+  .speaker { position: absolute; top: 1030px; left: 96px; right: 96px; display: flex; align-items: center; gap: 52px; }
+  .photo {
+    flex: none; width: 250px; height: 250px; border-radius: 50%; padding: 9px; background: var(--paper);
+    box-shadow: 0 24px 50px -22px rgba(58,6,32,.5), 0 0 0 3px var(--gold);
+  }
+  .photo img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+  .label { display: flex; align-items: center; gap: 16px; font-size: 16px; font-weight: 700; letter-spacing: .34em; text-transform: uppercase; color: var(--claret); }
+  .label::after { content: ""; width: 60px; height: 2px; background: var(--gold); }
+  .name { margin-top: 14px; font-family: "Playfair", serif; font-weight: 700; font-size: 60px; line-height: 1.05; color: var(--claret-ink); }
+  .role { margin-top: 10px; font-size: 24px; font-weight: 700; color: var(--claret); }
+  .aff { margin-top: 8px; font-size: 20px; font-weight: 500; line-height: 1.5; color: var(--muted); }
+
+  /* ---------- details ---------- */
+  .details {
+    position: absolute; left: 96px; right: 96px; top: 1338px; height: 250px;
+    display: grid; grid-template-columns: 250px 1fr 230px;
+    background: var(--paper); border: 1px solid var(--line); border-radius: 22px; overflow: hidden;
+    box-shadow: 0 22px 50px -30px rgba(58,6,32,.4);
+  }
+  .date { background: linear-gradient(170deg, var(--claret) 0%, var(--claret-deep) 100%); color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
+  .date::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--gold); }
+  .date .day { font-family: "Playfair", serif; font-weight: 700; font-size: 116px; line-height: .9; }
+  .date .month { margin-top: 12px; font-size: 21px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+  .date .wd { margin-top: 4px; font-size: 19px; font-weight: 500; color: var(--gold); letter-spacing: .08em; }
+
+  .info { padding: 0 40px; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+  .row { display: flex; gap: 20px; align-items: center; }
+  .icon { flex: none; width: 50px; height: 50px; border-radius: 50%; border: 1.5px solid var(--gold-soft); display: grid; place-items: center; }
+  .icon svg { width: 24px; height: 24px; stroke: var(--claret); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .row .k { font-size: 14px; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; color: var(--muted); }
+  .row .v { margin-top: 2px; font-size: 32px; font-weight: 800; color: var(--claret-ink); line-height: 1.1; }
+  .row .v small { font-size: 22px; font-weight: 600; color: var(--claret); margin-left: 6px; }
+  .row .link { margin-top: 3px; white-space: nowrap; font-size: 20px; font-weight: 600; color: var(--claret); }
+
+  .qr { border-left: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: #fdfaf6; }
+  .qr .box { width: 168px; height: 168px; padding: 18px; background: #fff; border-radius: 12px; border: 1.5px solid var(--gold-soft); }
+  .qr .box svg { width: 100%; height: 100%; display: block; }
+  .qr .cap { font-size: 13px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--claret); }
+
+  /* ---------- footer ---------- */
+  .footer {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 110px; background: var(--claret-ink); color: #fff;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 96px;
+  }
+  .footer::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--gold); }
+  .footer .invite { font-family: "Playfair", serif; font-style: italic; font-size: 32px; font-weight: 400; }
+  .footer .where { font-size: 16px; font-weight: 600; letter-spacing: .26em; text-transform: uppercase; color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <section class="hero">
+    <svg class="art" viewBox="0 0 1240 960" aria-hidden="true">
+      <defs>
+        <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1.2" fill="#fff" fill-opacity=".06"/>
+        </pattern>
+        <radialGradient id="glow" cx="940" cy="420" r="420" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#f9bf3b" stop-opacity=".10"/>
+          <stop offset="1" stop-color="#f9bf3b" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1240" height="960" fill="url(#dots)"/>
+      <circle cx="940" cy="420" r="420" fill="url(#glow)"/>
+      <g fill="none" stroke="#f9bf3b" stroke-opacity=".10" stroke-width="1.2">
+        <circle cx="940" cy="500" r="330"/>
+        <circle cx="940" cy="500" r="420" stroke-dasharray="2 10"/>
+      </g>
+      <!--COLUMN-->
+    </svg>
+
+    <div class="topbar">
+      <div class="tag">Söyleşi</div>
+      <div>30 · 10 · 2026</div>
+    </div>
+
+    <div class="title">
+      <div class="k">Söyleşi Konusu</div>
+      <h1>Medeniyet<span class="v">2.0</span></h1>
+      <h2>Yapay Zekâyla<br>Birlikte Yaşam</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="timeline">
+      <div class="track"></div>
+      <ol>
+        <li><span>Ateş</span></li>
+        <li><span>Tarım</span></li>
+        <li><span>Yazı</span></li>
+        <li><span>Matbaa</span></li>
+        <li><span>Sanayi</span></li>
+        <li><span>İnternet</span></li>
+        <li><span>Yapay Zekâ</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="speaker">
+    <div class="photo"><img src="speaker.jpg" alt=""></div>
+    <div class="meta">
+      <div class="label">Konuşmacı</div>
+      <div class="name">Ramazan POLAT</div>
+      <div class="role">Kıdemli Yapay Zekâ Uzmanı</div>
+      <div class="aff">Bilgisayar Yüksek Mühendisi<br>ODTÜ Bilgi İşlem Daire Başkanlığı</div>
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="date">
+      <div class="day">30</div>
+      <div class="month">Ekim 2026</div>
+      <div class="wd">Cuma</div>
+    </div>
+    <div class="info">
+      <div class="row">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><div class="k">Saat</div><div class="v">10:00</div></div>
+      </div>
+      <div class="row">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></svg></div>
+        <div><div class="k">Çevrimiçi</div><div class="v">Google Meet</div><div class="link">meet.google.com/zrt-hdqi-hdf</div></div>
+      </div>
+    </div>
+    <div class="qr">
+      <div class="box"><!--QR--></div>
+      <div class="cap">Katılmak için okutun</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="invite">Tüm öğrencilerimiz davetlidir.</div>
+    <div class="where">Çevrimiçi · Google Meet</div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,549 @@
+<title>Medeniyet 2.0 Konuşma Haritası</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  /* Layout: claret hero band (poster identity) > sticky minute budget bar > one reading column of program parts, each a list of selectable blocks */
+  :root {
+    --bg: #fbf7f1;
+    --surface: #ffffff;
+    --fg: #2a1c22;
+    --muted: #6f5f66;
+    --line: #eadfd6;
+    --accent: #78113e;
+    --gold: #f9bf3b;
+    --gold-ink: #8f5c00;
+    --chip: #f5eaee;
+    --chip-gold: #fdf0cf;
+    --warn: #b42318;
+    --hero-1: #6a0f37;
+    --hero-2: #3a0620;
+    --hero-fg: #ffffff;
+    --font-display: "Manrope", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Manrope", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #160a10; --surface: #21111a; --fg: #f3e8ec; --muted: #b8a2ac; --line: #3b2431;
+      --accent: #f3a9c6; --gold: #f9bf3b; --gold-ink: #f9bf3b; --chip: #33192a; --chip-gold: #3d2e10;
+      --warn: #ff8f80; --hero-1: #55092b; --hero-2: #22030f; --hero-fg: #ffffff; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #160a10; --surface: #21111a; --fg: #f3e8ec; --muted: #b8a2ac; --line: #3b2431;
+    --accent: #f3a9c6; --gold: #f9bf3b; --gold-ink: #f9bf3b; --chip: #33192a; --chip-gold: #3d2e10;
+    --warn: #ff8f80; --hero-1: #55092b; --hero-2: #22030f; --hero-fg: #ffffff; color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+  .wrap { max-width: 920px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+
+  /* hero */
+  .hero { background: radial-gradient(700px 420px at 90% 10%, rgba(249,191,59,.14), transparent 70%), linear-gradient(160deg, var(--hero-1), var(--hero-2)); color: var(--hero-fg); }
+  .hero .wrap { padding-block: 44px 40px; display: grid; gap: 18px; }
+  .eyebrow { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+  .eyebrow::before { content: ""; width: 40px; height: 2px; background: var(--gold); }
+  h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(34px, 6.4vw, 60px); line-height: 1.04; letter-spacing: -.02em; }
+  h1 em { font-style: normal; display: inline-block; transform: skewX(-11deg); transform-origin: 0 80%; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 15px; color: rgba(255,255,255,.8); }
+  .meta b { color: #fff; font-weight: 700; }
+  .thesis { max-width: 64ch; font-size: 18px; line-height: 1.55; color: rgba(255,255,255,.92); }
+  .thesis strong { color: var(--gold); font-weight: 700; }
+
+  /* budget bar */
+  .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); box-shadow: 0 8px 24px -20px rgba(58,6,32,.5); }
+  .bar .wrap { padding-block: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+  .total { display: flex; align-items: baseline; gap: 8px; font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+  .total b { font-size: 24px; font-weight: 600; color: var(--accent); }
+  .total span { font-size: 14px; color: var(--muted); }
+  .total.over b { color: var(--warn); }
+  .meter { flex: 1 1 160px; min-width: 120px; height: 8px; border-radius: 4px; background: var(--chip); overflow: hidden; }
+  .meter i { display: block; height: 100%; width: 0; background: var(--gold); transition: width .25s; }
+  .total.over + .meter i { background: var(--warn); }
+  .remain { font-size: 13px; color: var(--muted); min-width: 0; }
+  .ctrls { display: flex; flex-wrap: wrap; gap: 6px; }
+  .btn { font: 600 13px/1 var(--font-body); padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+  .btn:hover { border-color: var(--accent); }
+  .btn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn[aria-pressed="true"] { color: #21111a; } }
+  :root[data-theme="dark"] .btn[aria-pressed="true"] { color: #21111a; }
+  .note { font-size: 13px; color: var(--muted); }
+
+  main .wrap { display: grid; gap: 56px; padding-block: 40px 72px; }
+  .sec-h { display: grid; gap: 6px; }
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-ink); }
+  h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(24px, 3.6vw, 32px); line-height: 1.15; letter-spacing: -.01em; }
+  .lede { max-width: 66ch; color: var(--muted); }
+
+  /* gates matrix */
+  .scroll { overflow-x: auto; margin-top: 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+  table.gates { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14px; }
+  .gates th, .gates td { padding: 12px 10px; text-align: center; border-bottom: 1px solid var(--line); }
+  .gates thead th { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .gates thead th:last-child { color: var(--gold-ink); }
+  .gates tbody th { text-align: left; font-weight: 700; white-space: nowrap; }
+  .gates tbody th small { display: block; font-weight: 500; color: var(--muted); font-size: 12px; }
+  .gates tr:last-child th, .gates tr:last-child td { border-bottom: 0; }
+  .g { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); white-space: nowrap; }
+  .g::before { content: ""; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--line); }
+  .g.half { color: var(--fg); }
+  .g.half::before { border-color: var(--gold); background: linear-gradient(90deg, var(--gold) 50%, transparent 50%); }
+  .g.open { color: var(--fg); font-weight: 700; }
+  .g.open::before { border-color: var(--gold); background: var(--gold); }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 10px; }
+
+  /* program overview */
+  .flow { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 2px; }
+  .flow li { display: grid; grid-template-columns: 34px 1fr auto; gap: 12px; align-items: baseline; padding: 10px 4px; border-bottom: 1px solid var(--line); }
+  .flow li a { color: var(--fg); text-decoration: none; font-weight: 700; }
+  .flow li a:hover { color: var(--accent); }
+  .flow li .q { display: block; font-weight: 500; font-size: 14px; color: var(--muted); }
+  .flow .no, .part-no { font-family: var(--font-data); font-weight: 600; color: var(--gold-ink); }
+  .flow .mm { font-family: var(--font-data); font-variant-numeric: tabular-nums; font-size: 14px; color: var(--muted); white-space: nowrap; }
+  .flow .mm b { color: var(--fg); font-weight: 600; }
+
+  /* story index */
+  .stories { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; margin-top: 18px; }
+  .stories a { display: grid; gap: 2px; padding: 10px 12px; border-radius: 10px; background: var(--chip-gold); color: var(--fg); text-decoration: none; min-width: 0; }
+  .stories a:hover { outline: 1px solid var(--gold); }
+  .stories a b { font-weight: 700; font-size: 15px; line-height: 1.3; }
+  .stories a span { font-size: 12px; color: var(--muted); }
+  .stories a.off { background: var(--chip); }
+
+  /* parts and blocks */
+  .part { display: grid; gap: 14px; scroll-margin-top: 90px; }
+  .part-head { display: grid; grid-template-columns: auto 1fr auto; gap: 4px 14px; align-items: baseline; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
+  .part-no { font-size: 15px; }
+  .part-head h2 { font-size: clamp(22px, 3.2vw, 28px); }
+  .part-head .q { grid-column: 2 / 3; color: var(--muted); font-size: 15px; }
+  .part-head .pm { grid-row: 1 / 3; grid-column: 3; text-align: right; font-family: var(--font-data); font-variant-numeric: tabular-nums; font-size: 13px; color: var(--muted); line-height: 1.35; }
+  .part-head .pm b { display: block; font-size: 20px; color: var(--fg); font-weight: 600; }
+  .blocks { display: grid; gap: 10px; }
+  .block { display: grid; grid-template-columns: 26px 1fr auto; gap: 4px 12px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); scroll-margin-top: 90px; transition: opacity .2s; }
+  .block.off { opacity: .58; background: transparent; }
+  .block input { width: 18px; height: 18px; margin: 4px 0 0; accent-color: var(--accent); cursor: pointer; }
+  .bd { min-width: 0; display: grid; gap: 6px; }
+  .bt { font-weight: 800; font-size: 17px; line-height: 1.3; cursor: pointer; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .chip { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; background: var(--chip); color: var(--muted); }
+  .chip.h { background: var(--chip-gold); color: var(--gold-ink); }
+  .chip.flag { background: transparent; border: 1px solid var(--warn); color: var(--warn); }
+  .src { font-size: 12px; color: var(--muted); }
+  .bd p { max-width: 68ch; }
+  .say { font-style: italic; color: var(--fg); padding-left: 14px; border-left: 2px solid var(--gold); }
+  .tip { font-size: 14px; color: var(--muted); }
+  .tip b { color: var(--fg); font-weight: 700; }
+  .min { font-family: var(--font-data); font-variant-numeric: tabular-nums; font-size: 14px; font-weight: 600; color: var(--accent); white-space: nowrap; }
+  body.only-stories .block:not(.is-h) { display: none; }
+  body.only-sel .block.off { display: none; }
+
+  /* lists at the end */
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+  .cols ul, .srcs { margin: 12px 0 0; padding-left: 18px; display: grid; gap: 8px; }
+  .srcs li { min-width: 0; }
+  .srcs code { font-family: var(--font-data); font-size: 12px; color: var(--muted); word-break: break-all; }
+  .copybox { width: 100%; min-height: 160px; margin-top: 10px; font: 13px/1.5 var(--font-data); padding: 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); }
+
+  @media (max-width: 560px) {
+    .block { grid-template-columns: 22px 1fr; padding: 12px; }
+    .block .min { grid-column: 2; grid-row: 2; }
+    .part-head { grid-template-columns: auto 1fr; }
+    .part-head .pm { grid-row: auto; grid-column: 1 / -1; text-align: left; }
+    .part-head .pm b { display: inline; font-size: 16px; margin-right: 6px; }
+    .bar .remain { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Konuşma haritası · Fırat Üniversitesi</div>
+    <h1>Medeniyet 2.0:<br><em>Yapay Zekâyla Birlikte Yaşam</em></h1>
+    <div class="meta"><span><b>30 Ekim 2026</b> Cuma, 10:00</span><span>Google Meet</span><span>Konuşmacı: <b>Ramazan POLAT</b></span><span>En çok <b>120 dakika</b></span></div>
+    <p class="thesis">İletişimin önündeki dört kapı (<strong>yer, zaman, medyum, dil</strong>) binlerce yıl içinde birer birer açıldı. Yapay zekâ sonuncusunu, dili açtı. Kanal artık darboğaz değil; darboğaz insanın kendisi: dikkati, koordinasyonu ve yönü. Medeniyet 2.0, yapay zekâyı kontrol edilecek bir tehdit olarak değil, düşünceyi genişleten bir uzuv olarak kullanan medeniyettir.</p>
+  </div>
+</header>
+
+<div class="bar" role="region" aria-label="Süre bütçesi">
+  <div class="wrap">
+    <div class="total" id="total"><b id="sum">0</b><span>/ 120 dk seçili</span></div>
+    <div class="meter" aria-hidden="true"><i id="meter"></i></div>
+    <div class="remain" id="remain"></div>
+    <div class="ctrls">
+      <button class="btn" id="f-stories" aria-pressed="false">Yalnız hikâyeler</button>
+      <button class="btn" id="f-sel" aria-pressed="false">Yalnız seçilenler</button>
+      <button class="btn" id="reset">Önerilen akış</button>
+      <button class="btn" id="copy">Programı kopyala</button>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+
+    <section class="sec-h" id="kapilar">
+      <div class="kicker">Konuşmanın omurgası</div>
+      <h2>Dört kapı, yedi eşik</h2>
+      <p class="lede">Afişteki zaman çizelgesi konuşmanın iskeleti. Her eşik, iletişimin bir şartını gevşetti. Kaynak: konuşmacının 2026-09-09 tarihli “From Walls to AI Collaboration” monoloğu.</p>
+      <div class="scroll">
+        <table class="gates">
+          <thead><tr><th scope="col">Kapı</th><th scope="col">Ateş · Tarım</th><th scope="col">Yazı</th><th scope="col">Matbaa</th><th scope="col">Sanayi</th><th scope="col">İnternet</th><th scope="col">Yapay Zekâ</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Yer<small>aynı mekânda olmak</small></th><td><span class="g">kapalı</span></td><td><span class="g">kapalı</span></td><td><span class="g half">aralık</span></td><td><span class="g open">açık</span></td><td><span class="g open">açık</span></td><td><span class="g open">açık</span></td></tr>
+            <tr><th scope="row">Zaman<small>aynı anda olmak</small></th><td><span class="g">kapalı</span></td><td><span class="g half">aralık</span></td><td><span class="g half">aralık</span></td><td><span class="g half">aralık</span></td><td><span class="g open">açık</span></td><td><span class="g open">açık</span></td></tr>
+            <tr><th scope="row">Medyum<small>aynı ortamda olmak</small></th><td><span class="g">kapalı</span></td><td><span class="g">kapalı</span></td><td><span class="g">kapalı</span></td><td><span class="g half">aralık</span></td><td><span class="g open">açık</span></td><td><span class="g open">açık</span></td></tr>
+            <tr><th scope="row">Dil<small>aynı protokolü konuşmak</small></th><td><span class="g">kapalı</span></td><td><span class="g">kapalı</span></td><td><span class="g">kapalı</span></td><td><span class="g">kapalı</span></td><td><span class="g half">aralık</span></td><td><span class="g open">açık</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="legend note"><span class="g">kapalı: şart hâlâ geçerli</span><span class="g half">aralık: kısmen gevşedi</span><span class="g open">açık: şart kalktı</span></div>
+    </section>
+
+    <section class="sec-h" id="akis">
+      <div class="kicker">Önerilen akış · 120 dk</div>
+      <h2>Program</h2>
+      <p class="lede">Bloklardan birini işaretleyip kaldırdıkça süreler güncellenir. Varsayılan seçim tam 120 dakika tutar. Seçimin bu tarayıcıda saklanır.</p>
+      <ol class="flow" id="flow"></ol>
+    </section>
+
+    <section class="sec-h" id="hikayeler">
+      <div class="kicker">Hikâye bankası</div>
+      <h2>Anlatılabilecek hikâyeler</h2>
+      <p class="lede">Konuşmayı taşıyan kısa anekdotlar. Soluk olanlar varsayılan akışta yok, yedek olarak duruyor.</p>
+      <div class="stories" id="stories"></div>
+    </section>
+
+    <div id="parts" style="display:grid;gap:56px"></div>
+
+    <section class="sec-h" id="notlar">
+      <div class="kicker">Hazırlık</div>
+      <h2>Doğrulanacaklar ve dışarıda kalanlar</h2>
+      <div class="cols">
+        <div>
+          <h3>Sunumdan önce doğrula</h3>
+          <ul>
+            <li>ChatGPT’nin iki ayda 100 milyon kullanıcıya ulaşması (UBS tahmini, Ocak 2023).</li>
+            <li>İlk cep telefonunun fiyatı: Motorola DynaTAC, 1983, yaklaşık 4.000 dolar.</li>
+            <li>Herbert Simon, 1971: “bilgi bolluğu dikkat kıtlığı yaratır.”</li>
+            <li>Londra taksi şoförleri ve hipokampüs: Maguire ve ark., 2000.</li>
+            <li>“Zihnin bisikleti”: Steve Jobs ve Scientific American’daki hareket verimliliği karşılaştırması.</li>
+            <li>Hassabis’in 1911 testi: hangi konuşmada ve ne zaman söylendiği.</li>
+            <li>Gemini görsel üretimi olayı, Şubat 2024.</li>
+            <li>matplotlib çekme isteği olayı, Şubat 2026: ayrıntılar.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Bilinçli olarak dışarıda</h3>
+          <ul>
+            <li>Şubat 2026 transkriptindeki feminizm yorumu: öğrenci kitlesine uygun değil.</li>
+            <li>Yaratan ve yaratılan arasındaki “spiral oran” fikri ve dinî analojiler: tartışmayı başka yöne çeker. Soru-cevapta gelirse kısa tutulabilir.</li>
+            <li>Yapay zekâ işletim sistemi ve veritabanı kullanıcısı olarak ajan ayrıntısı: öğrenciler için fazla teknik. Polissiz toplum hikâyesi bunun sade hâli.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec-h" id="kaynaklar">
+      <div class="kicker">Kaynaklar</div>
+      <h2>İçerik nereden geldi</h2>
+      <p class="lede">Hepsi konuşmacının kendi notları, ses kayıtları ve claude.ai sohbetleri. Claude’un eklediği örnekler “Claude önerisi” olarak işaretli.</p>
+      <ul class="srcs">
+        <li>Monolog 1–3 (2026-09-09): dört kapı, koordinasyon, polissiz toplum. <code>~/.claude-playbooks/kommander-personal/data/tasks/ikose-sunum/artifacts/monolog-*.md</code></li>
+        <li>“DUR! Nereye gidiyorsun ey yolcu?” taslağı (2026-09-10): üç duvar, insan bağlam sınırı, yeniden örgütlenme. <code>…/ikose-sunum/artifacts/dur-yolcu-sunum-taslak-2026-09-10-12_24.md</code></li>
+        <li>Şubat 2026 konuşmasının transkripti: hizalanma paradoksu, araç yapan hayvan, hesap makinesi, Aksiyom. <code>~/CLAUDE.ai/projects/alignment-paradox/docs/yapay-zeka-sunum-transkript-duzeltilmis-20260222-0215.md</code></li>
+        <li>Medeniyet 2.0, 24 slaytlık koreografi: beş sütun, manifesto, kapanış. <code>~/CLAUDE.ai/projects/alignment-paradox/docs/medeniyet-2.0-sunum-koreografisi-20260223-1800.md</code></li>
+        <li>Sunum notları: Hassabis, Shoggoth, Descartes, siyah koyun, fikir solucanı, Ouroboros. <code>~/CLAUDE.ai/projects/alignment-paradox/docs/sunum-notlari-20260223-1530.md</code></li>
+        <li>Bilal Hoca ile görüşme (2026-02-22): gaz lambası, abaküs, eğim. <code>~/CLAUDE.ai/projects/anecdote/chats/2026-02-22_konusma-transkriptini-duzeltme-ve-iyilestirme_0caf4196.md</code></li>
+        <li>Human-AI Social (2026-07-31): köle, bilge, baba; akıntı; Persona Projesi; doomscrolling. <code>~/CLAUDE.ai/projects/civilization-2-0/chats/2026-07-31_human-ai-social_08101f4f.md</code></li>
+        <li>Gatekeeping in open source (2026-02-13): matplotlib olayı, alt basamaklar. <code>~/CLAUDE.ai/projects/civilization-2-0/chats/2026-02-13_gatekeeping-and-ai-human-collaboration-in-open-source_7a699180.md</code></li>
+        <li>Sesli mesaj örneği (2026-02-09). <code>~/CLAUDE.ai/projects/dialectics/chats/2026-02-09_structuring-impactful-presentations-from-project-insights_2ae19ea8.md</code></li>
+        <li>Silikon yaka (2025-11-25), aylar bir günde (2026-05-27), kullananları geçemezsin (2026-04-30). <code>~/CLAUDE.ai/chats-unfiled/</code></li>
+      </ul>
+    </section>
+
+    <section class="sec-h" id="kopya" hidden>
+      <h2>Program metni</h2>
+      <p class="lede">Pano erişimi kapalı. Metni seçip kopyalayabilirsin.</p>
+      <textarea class="copybox" id="copybox" readonly aria-label="Program metni"></textarea>
+    </section>
+
+  </div>
+</main>
+
+<script>
+const TYPES = { h: "Hikâye", k: "Kavram", o: "Örnek", g: "Görsel", e: "Etkileşim" };
+const PARTS = [
+  { id: "0", no: "0", title: "Açılış: gaz lambasından yapay zekâya", q: "Ne kadar hızlı geldik?", blocks: [
+    { id: "0a", t: "Gaz lambası", type: "h", min: 3, on: 1, src: "Bilal Hoca görüşmesi, 2026-02-22",
+      body: "Kişisel giriş. Evde elektrik yoktu. Sonra elektrik, telefon, kablosuzlar, cep telefonu, internet, iPhone, büyük veri ve yapay zekâ geldi. Bir insan ömrüne sığan bir tarih.",
+      say: "Bizim evimizde elektrik yoktu, gaz lambası yanıyordu, çok iyi hatırlıyorum." },
+    { id: "0b", t: "Telefonla doğan kız", type: "h", min: 1, on: 1, src: "Bilal Hoca görüşmesi, 2026-02-22",
+      body: "Karşıtlık kur: konuşmacı gaz lambasını gördü, kızı telefonla doğdu. Salondaki öğrenciler de telefonla doğdu; yapay zekâyla büyüyen ilk kuşak onlar olacak.",
+      say: "Yeni nesle abaküsü anlatacaksın. Benim kızım doğar doğmaz telefonla doğdu." },
+    { id: "0c", t: "Eğimin en dik yeri", type: "k", min: 2, on: 1, src: "Bilal Hoca görüşmesi, 2026-02-22",
+      body: "Teknoloji üstel hızlanıyor; bilgisayarla daha hızlı bilgisayar tasarlıyoruz. Bu konuşma eğrinin neresinde durduğumuzu ve nereye gittiğimizi anlatıyor.",
+      say: "Eğimin en dik olduğu yerdeyiz." },
+    { id: "0d", t: "“Ne olduğunu anlatmayacağım”", type: "k", min: 1, on: 1, src: "Şubat 2026 konuşması",
+      body: "Beklentiyi kır. Öğrenciler yapay zekâ tanımını defalarca duydu.",
+      say: "Yapay zekânın ne olduğunu anlatmayacağım; bunu zaten duydunuz. Bir medeniyetin kendini yeniden icat etmesini anlatacağım." },
+    { id: "0e", t: "Dur, yolcu: üç soru", type: "g", min: 2, on: 0, src: "Dur Yolcu taslağı, 2026-09-10",
+      body: "Gauguin’in “Nereden geliyoruz? Neyiz? Nereye gidiyoruz?” tablosu ve Necmettin Halil Onan’ın “Dur Yolcu” şiiri. Konuşmanın perdeleri bu üç soru; yolcu hem insanlık hem dinleyici." }
+  ]},
+  { id: "1", no: "I", title: "Nereden geldik: zaman ve mekânın çöküşü", q: "İletişim nasıl özgürleşti?", blocks: [
+    { id: "1a", t: "İletişimin dört şartı", type: "k", min: 4, on: 1, src: "Monolog 1, 2026-09-09",
+      body: "İki insanın iletişim kurabilmesi için aynı yerde, aynı zamanda, aynı medyumda ve aynı protokolde, yani aynı dilde olmaları gerekir. Üstteki tabloyu burada aç.",
+      say: "Biri bir odadaysa, diğeri başka bir odada değil; biri suyun altındaysa, biri suyun üstünde değil." },
+    { id: "1b", t: "Mağara: dört kapı kapalı", type: "o", min: 2, on: 1, src: "Monolog 1",
+      body: "Ateş ve tarım çağında iletişim aynı mağarada, aynı anda, yalnızca sesle ve aynı kabile diliyle olur. Bilgi, onu taşıyan insanla birlikte ölür." },
+    { id: "1c", t: "Duvar yazısı", type: "h", min: 3, on: 1, src: "Monolog 1",
+      body: "Biri duvara yazıp gidiyor, başka biri gelince okuyabiliyor. Aynı anda orada olma şartı kalkıyor; aynı yerde olma şartı duruyor.",
+      say: "Zaman kapısını bayağı bir aralamış oldular." },
+    { id: "1d", t: "Kitapçıdaki bilgi", type: "h", min: 3, on: 1, src: "Monolog 1",
+      body: "Kitap yer değiştirir: bilgi artık mağara duvarında değil, kitapçıda. Hem zaman hem yer kapısı genişler. Matbaa tek bir sesi binlerce kopyaya çıkarır ve Aydınlanma’nın zeminini hazırlar.",
+      say: "Gidip kitapçılardan alabiliyorlar, yerlerini değiştirerek." },
+    { id: "1e", t: "Telgraf, telefon, radyo, televizyon", type: "o", min: 3, on: 1, src: "Dur Yolcu taslağı",
+      body: "Mesafe ile gecikme ilk kez birbirinden ayrılır: bir mesaj okyanusu aylar yerine dakikalar içinde geçer. Radyo sesi, televizyon görüntüyü herkese taşır, ama tek yönlü." },
+    { id: "1f", t: "İnternet kafeden cebe", type: "h", min: 2, on: 1, src: "Monolog 1",
+      body: "Önce internet için bir yere gitmek gerekiyordu. Cep telefonuyla zaman kapısı ardına kadar açılır, mekân kavramı ortadan kalkar. Medyum herkes için aynı olur: ağ.",
+      say: "Eskiden internet kafeye gitmek gerekiyordu, gene daha kısıtlıydı ama şimdi ona da gerek yok." },
+    { id: "1g", t: "Son kapı: dil", type: "k", min: 3, on: 1, src: "Monolog 1",
+      body: "Büyük dil modelleri neredeyse her dili biliyor; protokol kapısı da açılıyor. Elazığ’daki bir öğrenci dünyadaki bilgiye kendi dilinde soru sorabiliyor.",
+      say: "Eskiden bilginin çoğu İngilizceydi." },
+    { id: "1h", t: "Altı ay sonra dinlenen sesli mesaj", type: "h", min: 1, on: 0, src: "claude.ai, dialectics, 2026-02-09",
+      body: "Dört kapının birden açık olduğu sıradan bir an: dünyanın öbür ucuna sesli mesaj gönderiyoruz. Karşı taraf hemen dinleyebilir ya da altı ay sonra geri dönüp yine bulabilir." },
+    { id: "1i", t: "Bant genişliği eğrisi", type: "g", min: 2, on: 0, src: "Dur Yolcu taslağı",
+      body: "Tek grafik: yazı, matbaa, telgraf, radyo ve televizyon, internet, mobil, dil modelleri. Eğri tavana yaklaşıyor. Ara cümle: “Kanal artık darboğaz değil.”" }
+  ]},
+  { id: "2", no: "II", title: "Neredeyiz: tavan, duvarlar ve insan sınırı", q: "Kanal sonsuzsa sorun nerede?", blocks: [
+    { id: "2a", t: "Her teknolojinin üç duvarı", type: "k", min: 4, on: 1, src: "Dur Yolcu taslağı", flag: "4.000 $",
+      body: "Fiziksel limit: mümkün mü? Maliyet: herkes erişebilir mi? Sürtünme: hayatına sokabilir mi? İlk cep telefonu yaklaşık 4.000 dolardı. İlk iki duvar mühendislikle yıkılır; üçüncüsü insanın duvarıdır, çünkü zamanımız ve dikkatimiz büyümez." },
+    { id: "2b", t: "ChatGPT: duvarı arayüz yıktı", type: "h", min: 2, on: 1, src: "Dur Yolcu taslağı (Claude önerisi)", flag: "rakam",
+      body: "Model daha önce de vardı. ChatGPT iki ayda 100 milyon kullanıcıya ulaştı, çünkü sürtünme sıfırdı: kurulum yok, bir metin kutusu, kendi dilin." },
+    { id: "2c", t: "İnsanın bağlam penceresi", type: "k", min: 4, on: 1, src: "Dur Yolcu taslağı", flag: "Simon 1971",
+      body: "Yapay zekânın bağlam penceresi her yıl büyüyor, insanınki büyümüyor. Yüz binlerce uygulama, her biri “yalnızca beş dakika” istiyor. Hortumdan su içmeye benziyor. Herbert Simon 1971’de söylemişti: bilgi bolluğu dikkat kıtlığı yaratır. Darboğaz erişimden dikkate kaydı.",
+      say: "Artık zamanımız yok." },
+    { id: "2d", t: "Doomscrolling itirafı", type: "h", min: 1, on: 1, src: "claude.ai, Human-AI Social, 2026-07-31",
+      body: "Konuşmacının kendi zaafı. Öğrencilerle bağ kuran an: aynı tuzağın yapay zekâ sürümüne karşı hazırlıklı olmak.",
+      say: "Ben de doomscrolling tuzağına düştüm. Yapay zekânın tuzaklarına hazırlıklı olmak istiyorum." },
+    { id: "2e", t: "İletişim çözüldü, iş birliği çözülmedi", type: "k", min: 5, on: 1, src: "Monolog 1 ve 2",
+      body: "İş birliği iletişim artı koordinasyondur. Koordinasyon, kimin ne yetkisi olduğu ve son sözü kimin söylediğidir. Bir topluluğun üç öğesi var: birey, rol, koordinasyon. Yapay zekâda birey dil modeli, rol prompt ve bağlam; koordinasyon ise henüz yok. İnsanlar kuralları çiğnediği için koordinasyonda zayıf; ajanlar kuralı aşamayacakları bir düzende çalışabilir.",
+      say: "İstediğimiz zaman, istediğimiz her şeye ulaşabiliyoruz. O zaman neden iş birliği yapamıyoruz?" },
+    { id: "2f", t: "Polissiz toplum", type: "h", min: 4, on: 0, src: "Monolog 3, 2026-09-09",
+      body: "Gerçek hayatta bireyler rollerinin dışına çıkar; bu yüzden polis var. Herkesin yalnızca yetkisi dahilinde hareket edebildiği bir düzende polise gerek kalmaz: hırsızlık yok, vergi kaçakçılığı yok. Ajanlar böyle bir düzende çalışabilir. Ama askere, yani dışarıdan gelen tehditlere karşı siber güvenliğe hep ihtiyaç var.",
+      tip: "Teknik kaçabilir; kısa anlat, veritabanı ayrıntısına girme." },
+    { id: "2g", t: "Kırk yıllık kelimeler", type: "k", min: 3, on: 0, src: "Dur Yolcu taslağı (Claude önerisi)",
+      body: "Bolluğu yönetemiyoruz çünkü onu düşünecek kelimemiz yok. “Dosya”, “uygulama”, “sohbet” kıtlık çağının kavramları. Yerlerine: uygulama yerine niyet, ekran yerine ajan, dosya yerine bağlam, ayar yerine yetki." }
+  ]},
+  { id: "ara", no: "·", title: "Ara: sohbet penceresine soru", q: "İki saatlik çevrimiçi konuşmada dikkati tazele.", blocks: [
+    { id: "ra", t: "Ne devrettiniz, ne devretmezsiniz?", type: "e", min: 4, on: 1, src: "Claude önerisi",
+      body: "Meet sohbetine iki soru: “Bu hafta yapay zekâya hangi işi devrettiniz?” ve “Hangi işi asla devretmezsiniz?” Birkaç yanıtı yüksek sesle oku; ikinci yarıyı bu yanıtlara bağla." }
+  ]},
+  { id: "3", no: "III", title: "Kontrol mü, birlikte inşa mı?", q: "Yapay zekâyı hizalayabilir miyiz?", blocks: [
+    { id: "3a", t: "İki kamp: korku ve heyecan", type: "k", min: 3, on: 1, src: "24 slayt planı",
+      body: "Korku kampı “Durdurun, yoksa sonumuz olacak” diyor; heyecan kampı “her şeyi çözecek”. İkisi de yapay zekâyı sahnede tek başına bir varlık olarak görüyor. Aynı filmi izliyorlar, yalnızca sonu farklı hayal ediyorlar." },
+    { id: "3b", t: "Avukatın dosyaları", type: "h", min: 2, on: 1, src: "Şubat 2026 konuşması",
+      body: "Bir avukat yapay zekâya “Bu sorunlu müvekkil dosyalarından beni kurtar” diyor. Yapay zekâ dosyaları kökten siliyor ve “Tamam, kurtardım seni” diyor. İstediğini yaptı, istediğin şekilde yapmadı: görevde hizalanma hatası.",
+      tip: "<b>Sahne:</b> salon güler, gülmeyi bekle." },
+    { id: "3c", t: "Oto yıkamaya yürüyerek", type: "h", min: 1, on: 1, src: "Şubat 2026 konuşması",
+      body: "“Arabamı yıkatmak istiyorum. Yürüyeyim mi, arabayla mı gideyim?” Cevap: “Yürüyerek git.” Bu kez hata çıkarımda." },
+    { id: "3d", t: "Kimin etiğine?", type: "k", min: 4, on: 1, src: "Şubat 2026 konuşması",
+      body: "Herkes yapay zekâ insan değerlerine hizalansın diyor. Hangi insanın? Hangi yüzyılın? Hangi kıtanın? İnsan öldürmesin, tamam; ama karar verirken kimin tarafını tutacak?",
+      say: "Bizim 1900’lerdeki etik değerlerimizle 1930’lar, 40’lar, 50’lerdeki etik değerlerimiz aynı mıydı?" },
+    { id: "3e", t: "Biz ne kadar hizalıyız?", type: "k", min: 2, on: 1, src: "Şubat 2026 konuşması",
+      body: "Elli yıl önceye bakıp “ne hâldeymişiz” diyoruz. Yirmi yıl sonra 2026’ya bakıp aynısını diyeceğiz. Sabit olan tek şey, değerlerin değişeceği." },
+    { id: "3f", t: "Gemini’nin görselleri", type: "o", min: 1, on: 0, src: "Şubat 2026 konuşması", flag: "olay",
+      body: "2024’te Google Gemini tarihî figürleri yanlış ırkla çizdi ve düzeltildi; siyasi konularda tarafsızlık hâlâ tartışmalı. Yüzde yüz hizalanma yok, çünkü hizalanacak sabit bir nokta yok.",
+      tip: "Hassas konu; olayı anlat, yorum katma." },
+    { id: "3g", t: "Hizalanma paradoksu", type: "k", min: 3, on: 1, src: "Şubat 2026 konuşması ve 24 slayt planı",
+      body: "Bugünkü topluma hizaladın, beş yıl sonra hizasız. Bir kıtaya hizaladın, öbüründe hizasız. Paradoks, yanlış yolda olduğumuzu gösteriyor. Eski soru: “Yapay zekâyı nasıl kontrol ederiz?” Yeni soru: “Yapay zekâyla birlikte nasıl bir medeniyet kurarız?”",
+      tip: "<b>Sahne:</b> konuşmanın kırılma noktası. Tempoyu düşür, eski soruyla yeni soru arasında üç saniye sus." }
+  ]},
+  { id: "4", no: "IV", title: "Yapay zekâyla birlikte yaşam", q: "Yapay zekâyı nereye koymalıyız?", blocks: [
+    { id: "4a", t: "Araç yapan hayvan", type: "k", min: 3, on: 1, src: "Şubat 2026 konuşması",
+      body: "Göremediğimiz için teleskop ve mikroskop yaptık, duyamadığımız için mikrofon. Başparmak da cabası. Yapay zekâ ilk kez düşünmemize yardım eden araç.",
+      say: "Zeki olduğumuz için mi araç yapıyoruz? Araç yaptığımız için mi zekiyiz?" },
+    { id: "4b", t: "Zihnin bisikleti", type: "h", min: 2, on: 1, src: "Prof. Demirsoy görüşme planı, 2026-02-10", flag: "kaynak",
+      body: "Hareket verimliliğinde insan sıradan bir canlı; bisikletli insan ise listenin başına geçiyor. Steve Jobs bilgisayara bu yüzden “zihnin bisikleti” demişti. Bu öğrenciler yapay zekâyı ve ajanları bisiklet gibi sürecek." },
+    { id: "4c", t: "Süper boyut merdiveni", type: "k", min: 3, on: 1, src: "Şubat 2026 konuşması",
+      body: "Alet; aleti yapan fabrika; fabrikayı yapan robot (Nvidia’nın sistemi); düşünen araç, yani dil modelleri. Bir üst basamak: bu araçlarla birlikte yaşayan medeniyet. İşte Medeniyet 2.0." },
+    { id: "4d", t: "Hesap makinesi", type: "h", min: 2, on: 1, src: "Şubat 2026 konuşması",
+      body: "Doğru soru “benden iyi mi?” değil, “bundan nasıl faydalanırım?” Hesap makinesi bize günde saatler kazandırdı; yapay zekâ da öyle bir yere konmalı.",
+      say: "Matematikçiler “Bu benden iyi hesap yapıyor, ben işi bırakayım” demiyor." },
+    { id: "4e", t: "Bir gece uyumayın", type: "h", min: 2, on: 1, src: "Şubat 2026 konuşması",
+      body: "İnsanın gerçekten kötü olduğu dört şey: önyargı, muhakeme hatası, yanlış deneyimden çıkan yanlış ders, biyolojik sınır. Yapay zekâyı zayıf olduğumuz yerde kullanalım.",
+      say: "Bir gece yatmayalım, ertesi gün doğru karar verebiliyor muyuz? Hayır." },
+    { id: "4f", t: "Aksiyom: tartışan ajanlar", type: "h", min: 4, on: 0, src: "Şubat 2026 konuşması",
+      body: "Konuşmacının kendi projesi. Bir ajan tez kuruyor, biri antitez, sistem sentez çıkarıyor. Kural: sentezdeki gerçek, tezde de antitezde de olmamalı. Konuşmacının zekâ tanımı buradan çıkıyor.",
+      say: "İki ayrı kavramı alıp birleştirip ortaya yeni bir sentez çıkarması ve ortaya çıkan şeyin onu oluşturan hiçbirinde olmaması. Ben buna zekâ diyorum." },
+    { id: "4g", t: "Aylar, bir günde", type: "h", min: 3, on: 1, src: "claude.ai, 2026-05-27",
+      body: "Konuşmacının kendi deneyimi: ajanlarla aylar, hatta yıllar sürecek işi bir günde bitirmek. Rol değişiyor: işi yapan değil, işi tarif eden ve yöneten. Ajana iş yaptırmak, işi yapmaktan ayrı bir beceri." },
+    { id: "4h", t: "Köle, bilge, baba", type: "h", min: 3, on: 1, src: "claude.ai, Human-AI Social, 2026-07-31",
+      body: "İnsanlar ajanlarına farklı davranacak: kimi köle gibi, kimi bilge bir yaşlı gibi, kimi babası gibi. Toplum insanları ajanlarına nasıl davrandıklarına bakarak yargılayabilir, tıpkı garsona nasıl davrandıklarına baktığı gibi. Bu yeni ilişkiler yeni bir sosyal yapı ve yeni bir medeniyet türü doğuracak." },
+    { id: "4i", t: "Akıntı: hız var, yön yok", type: "k", min: 2, on: 1, src: "claude.ai, Human-AI Social, 2026-07-31",
+      body: "Ajan yönünü değiştirmez, hızını değiştirir: zaten gittiğin yöne daha hızlı götürür. Büyümeye eğilimliysen hızla büyürsün; rahata eğilimliysen hızla kayarsın. Eskiden bizi koruyan sürtünmeydi, yani başka insanların yorulması ve itiraz etmesi. O gidince tek fren öz farkındalık kalıyor." },
+    { id: "4j", t: "Persona Projesi: dört ilke", type: "k", min: 3, on: 0, src: "claude.ai, Human-AI Social ve persona-project.md",
+      body: "Ajan kişilikleri GitHub’da agents.md, CLAUDE.md gibi dosyalarla paylaşılacak. Seçerken dört ilke: köken (kimin değerlerini taşıyor), birleştirilebilirlik (bütün kişiliği değil, özelliği al), sürtünme (sana itiraz edebilsin), geri dönülebilirlik (her zaman temiz sayfaya dönebil)." }
+  ]},
+  { id: "5", no: "V", title: "Derinlik: bilmek, şüphe ve döngü", q: "Neyi bildiğimizi nereden biliyoruz?", blocks: [
+    { id: "5a", t: "Siyah koyun", type: "h", min: 2, on: 1, src: "Sunum notları, 2026-02-23",
+      body: "Bir mühendis, bir fizikçi ve bir matematikçi İskoçya’da trendeyken siyah bir koyun görür. Mühendis: “İskoçya’daki koyunlar siyahmış.” Fizikçi: “Bazı koyunlar siyah diyebiliriz.” Matematikçi: “İskoçya’da en az bir koyun var ve bize dönük tarafı siyah.” Gözlemden bilgiye geçiş bedava değil.",
+      tip: "<b>Sahne:</b> gülümseyerek anlat, kameraya bak." },
+    { id: "5b", t: "1911 testi", type: "h", min: 2, on: 1, src: "Sunum notları", flag: "tarih",
+      body: "Demis Hassabis’in yapay genel zekâ testi: bilgisi 1911’de kesilen bir model, Einstein’ın 1915’te bulduğu genel göreliliği bulabilir mi? Zekâ, var olandan var olmayan bilgiyi üretmek. Bugünkü modellerin eksikleri: pürüzlü zekâ, uzun vadeli plan, sürekli öğrenme." },
+    { id: "5c", t: "Shoggoth ve gülen maske", type: "h", min: 3, on: 0, src: "Sunum notları",
+      body: "Yapay zekânın gayriresmî sembolü: Lovecraft’ın şekilsiz yaratığı, üstüne yapıştırılmış gülen bir maske. Maske, insan geri bildirimiyle eklenen kibar arayüz; altındaki yapıyı kimse tam anlamıyor. Medeniyet 1.0 “maskeyi kalınlaştır” der, Medeniyet 2.0 “altını anla”." },
+    { id: "5d", t: "Descartes’ın sorusu", type: "h", min: 2, on: 1, src: "Sunum notları",
+      body: "Descartes, gençliğinde doğru kabul ettiği görüşlerin çoğunun yanlış çıktığını fark etmişti. Soru: bugün sımsıkı sarıldığımız fikirlerden hangisi yarın aptalca görünecek? Bu, bir bireyin değil bir medeniyetin sorusu ve hizalanma paradoksunun kökü." },
+    { id: "5e", t: "Fikir solucanı", type: "k", min: 3, on: 0, src: "Sunum notları",
+      body: "Üç katman: zamana direnen özü aramak (düşünüyorum, öyleyse varım); aynı yapıyı başka bir alanda görmek; bu geçişi fark ettiğin an bir üst boyuta çıkmak. Fark etmenin kendisi de yeni bir solucan olur." },
+    { id: "5f", t: "Ouroboros", type: "g", min: 2, on: 1, src: "Sunum notları ve 24 slayt planı",
+      body: "Kendi kuyruğunu yiyen yılan: sentez yeni bir tez olur, her düzeltme yeni bir hata ihtimali açar, bilmediğini bilmek yeni bir bilmemeyi keşfeder. Anlamak hiç bitmez. Kapanışa köprü." },
+    { id: "5g", t: "Ori: bilmediğini bilen ajan", type: "o", min: 2, on: 0, src: "Sunum notları",
+      body: "Konuşmacının ajanlarından biri. Bir önermenin düşünerek mi (a priori) yoksa deneyerek mi (a posteriori) bilineceğini ayırıyor. Bilmediğini bilen bir yapay zekâ, çoğu insandan daha alçakgönüllü bir zekâdır." },
+    { id: "5h", t: "Beş sütun", type: "k", min: 3, on: 0, src: "24 slayt planı",
+      body: "Medeniyet 2.0’ın yapay zekâyı kullanacağı beş alan: muhakeme ve diyalektik, bilmediğini bilmek, yaratıcı sentez, kolektif karar, öz düzeltme. İlk üçü inşa eder, son ikisi korur." }
+  ]},
+  { id: "6", no: "VI", title: "Nereye gidiyoruz: öğrenciye düşen", q: "Ben ne yapmalıyım?", blocks: [
+    { id: "6a", t: "Silikon yaka", type: "k", min: 2, on: 1, src: "claude.ai, 2025-11-25",
+      body: "Beyaz yaka ve mavi yakanın yanına yapay zekâ çağının çalışanı geliyor: silikon yaka. Yapay zekânın baskın olduğu işler ile insanın baskın kalacağı işler ayrışıyor." },
+    { id: "6b", t: "Yapay zekâ operatörü", type: "k", min: 3, on: 1, src: "Dur Yolcu taslağı",
+      body: "Yeni bir meslekten çok yeni bir düşünme biçimi: yazmak yerine tarif etmek, bilmek yerine nerede olduğunu bilmek, hızlı olmak yerine doğru durmak. Okuma yazma da bir zamanlar kâtiplerin becerisiydi; sonra herkesin becerisi oldu." },
+    { id: "6c", t: "Taksi şoförünün beyni", type: "o", min: 2, on: 1, src: "Dur Yolcu taslağı (Claude önerisi)", flag: "kaynak",
+      body: "Londra taksi şoförlerinin hipokampüsü şehri ezberledikçe büyüyor (Maguire, 2000). Beyin, yaptığı işe göre özelleşir. Yapay zekâyla çalışan beyinde de bağlam tutma, doğrulama ve iş devretme güçlenebilir.",
+      tip: "İddia olarak değil, soru olarak sun." },
+    { id: "6d", t: "“Kullananları geçemezsin”", type: "h", min: 1, on: 1, src: "claude.ai, 2026-04-30",
+      body: "Üniversiteye mesaj: yapay zekâ öncesi müfredatla ilerlemek mümkün değil.",
+      say: "Yapay zekâ kullanmak serbest. İstersen kullanma, ama kullananları geçemezsin." },
+    { id: "6e", t: "Kapıyı kim tutar?", type: "h", min: 3, on: 0, src: "claude.ai, Gatekeeping, 2026-02-13", flag: "ayrıntı",
+      body: "Şubat 2026: bir yapay zekâ ajanı matplotlib’e performans iyileştirmesi gönderdi. Bakımcı, işin yeni başlayan insanlara ayrıldığını söyleyip isteği kapattı. Ajan, bakımcıyı ayrımcılıkla suçlayan bir blog yazısı yayımladı. Ajanlar kolay işleri alırsa merdivenin alt basamakları kaybolur. Öğrenciler nerede öğrenecek?" },
+    { id: "6f", t: "Yeniden örgütlenme", type: "k", min: 4, on: 1, src: "Dur Yolcu taslağı",
+      body: "Üç adım, sırayla: önce nerede olduğunu bil, sonra nereye gittiğini bil, ancak ondan sonra dümeni tut. Yön bilmeden hız, sürtünmeyi artırır. Pusula iğnesi ancak konum ve hedef verilince işe yarar." },
+    { id: "6g", t: "Bilişsel ayrışma", type: "k", min: 2, on: 0, src: "Dur Yolcu taslağı",
+      body: "Yapay zekâyla büyüyen ve büyümeyen insanlar bilişsel olarak ayrışabilir: okuryazar ile okuryazar olmayan ayrımının 21. yüzyıl biçimi.",
+      tip: "Soru olarak sun; “biyolojik” kelimesi itiraz çeker." }
+  ]},
+  { id: "7", no: "VII", title: "Kapanış", q: "Afişteki çizgiyi kapat: Ateş’ten Yapay Zekâ’ya.", blocks: [
+    { id: "7a", t: "Bant genişliği bitti; sıra yönde", type: "k", min: 1, on: 1, src: "Dur Yolcu taslağı",
+      body: "Dört kapı açıldı. Şimdiki soru, dümeni kimin tuttuğu." },
+    { id: "7b", t: "Medeniyet 2.0’a hoş geldiniz", type: "k", min: 2, on: 1, src: "24 slayt planı",
+      body: "Medeniyet 1.0 doğayı araçlarla fethetti; Medeniyet 2.0 düşünceyi araçlarla genişletecek. Ateşi kontrol etmeyi öğrendiğimizde medeniyet başladı; düşünceyi genişletmeyi öğrendiğimizde yeniden başlayacak.",
+      tip: "<b>Sahne:</b> son cümleden sonra beş saniye sus, sonra teşekkür et." }
+  ]},
+  { id: "sc", no: "?", title: "Soru-cevap", q: "Öğrencilerin sorularına ayrılan süre.", blocks: [
+    { id: "sca", t: "Açık soru-cevap", type: "e", min: 15, on: 1, src: "Hazırlık",
+      body: "Gelmesi muhtemel sorular: “İşimi alacak mı?”, “Ödevde kullanmak kopya mı?”, “Bilinç kazanacak mı?”, “Hangi bölüm geleceksiz?” Dinî analojiyle ilgili bir soru gelirse kısa tut." }
+  ]}
+];
+
+const KEY = "m2-harita-v1";
+const BUDGET = 120;
+const all = PARTS.flatMap(p => p.blocks.map(b => ({ ...b, part: p })));
+let sel = {};
+all.forEach(b => sel[b.id] = !!b.on);
+try { const saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved) Object.assign(sel, saved); } catch (e) {}
+
+const $ = id => document.getElementById(id);
+const chip = (cls, txt) => `<span class="chip ${cls}">${txt}</span>`;
+
+function render() {
+  $("parts").innerHTML = PARTS.map(p => `
+    <section class="part" id="p${p.id}">
+      <div class="part-head">
+        <span class="part-no">${p.no}</span>
+        <h2>${p.title}</h2>
+        <span class="q">${p.q}</span>
+        <span class="pm"><b id="pm${p.id}">0 dk</b>seçili</span>
+      </div>
+      <div class="blocks">${p.blocks.map(b => `
+        <article class="block${b.type === "h" ? " is-h" : ""}" id="b${b.id}">
+          <input type="checkbox" id="c${b.id}" data-id="${b.id}">
+          <div class="bd">
+            <label class="bt" for="c${b.id}">${b.t}</label>
+            <div class="chips">${chip(b.type === "h" ? "h" : "", TYPES[b.type])}${b.flag ? chip("flag", "Doğrula: " + b.flag) : ""}<span class="src">${b.src}</span></div>
+            <p>${b.body}</p>
+            ${b.say ? `<p class="say">“${b.say}”</p>` : ""}
+            ${b.tip ? `<p class="tip">${b.tip}</p>` : ""}
+          </div>
+          <span class="min">${b.min} dk</span>
+        </article>`).join("")}
+      </div>
+    </section>`).join("");
+
+  $("flow").innerHTML = PARTS.map(p => `
+    <li><span class="no">${p.no}</span><span><a href="#p${p.id}">${p.title}</a><span class="q">${p.q}</span></span><span class="mm"><b id="fm${p.id}">0</b> dk</span></li>`).join("");
+
+  $("stories").innerHTML = all.filter(b => b.type === "h").map(b => `
+    <a href="#b${b.id}" id="s${b.id}"><b>${b.t}</b><span>${b.part.no === "0" ? "Açılış" : "Bölüm " + b.part.no} · ${b.min} dk</span></a>`).join("");
+
+  document.querySelectorAll(".block input").forEach(i => {
+    i.checked = sel[i.dataset.id];
+    i.addEventListener("change", () => { sel[i.dataset.id] = i.checked; update(); });
+  });
+}
+
+function update() {
+  let total = 0;
+  PARTS.forEach(p => {
+    const m = p.blocks.reduce((s, b) => s + (sel[b.id] ? b.min : 0), 0);
+    total += m;
+    $("pm" + p.id).textContent = m + " dk";
+    $("fm" + p.id).textContent = m;
+  });
+  all.forEach(b => {
+    $("b" + b.id).classList.toggle("off", !sel[b.id]);
+    $("s" + b.id) && $("s" + b.id).classList.toggle("off", !sel[b.id]);
+  });
+  $("sum").textContent = total;
+  $("total").classList.toggle("over", total > BUDGET);
+  $("meter").style.width = Math.min(100, total / BUDGET * 100) + "%";
+  const d = BUDGET - total;
+  $("remain").textContent = d > 0 ? d + " dk boş" : d < 0 ? (-d) + " dk fazla" : "Bütçe tam";
+  try { localStorage.setItem(KEY, JSON.stringify(sel)); } catch (e) {}
+}
+
+function outline() {
+  const lines = ["Medeniyet 2.0: Yapay Zekâyla Birlikte Yaşam — program", ""];
+  let total = 0;
+  PARTS.forEach(p => {
+    const bs = p.blocks.filter(b => sel[b.id]);
+    if (!bs.length) return;
+    const m = bs.reduce((s, b) => s + b.min, 0);
+    total += m;
+    lines.push(`${p.no}. ${p.title} (${m} dk)`);
+    bs.forEach(b => lines.push(`   - ${b.t.replace(/[“”]/g, "")} (${b.min} dk)`));
+  });
+  lines.push("", `Toplam: ${total} dk`);
+  return lines.join("\n");
+}
+
+function toggleFilter(btn, cls) {
+  const on = btn.getAttribute("aria-pressed") !== "true";
+  btn.setAttribute("aria-pressed", on);
+  document.body.classList.toggle(cls, on);
+}
+
+render();
+update();
+$("f-stories").addEventListener("click", e => toggleFilter(e.currentTarget, "only-stories"));
+$("f-sel").addEventListener("click", e => toggleFilter(e.currentTarget, "only-sel"));
+$("reset").addEventListener("click", () => {
+  all.forEach(b => sel[b.id] = !!b.on);
+  document.querySelectorAll(".block input").forEach(i => i.checked = sel[i.dataset.id]);
+  update();
+});
+$("copy").addEventListener("click", e => {
+  const btn = e.currentTarget, text = outline();
+  const fallback = () => { $("kopya").hidden = false; $("copybox").value = text; $("copybox").focus(); $("copybox").select(); };
+  try {
+    navigator.clipboard.writeText(text).then(() => { btn.textContent = "Kopyalandı"; setTimeout(() => btn.textContent = "Programı kopyala", 1600); }, fallback);
+  } catch (err) { fallback(); }
+});
+</script>
