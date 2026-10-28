@@ -130,12 +130,12 @@ Her biri konuşmada adıyla anılmalı.
 
 | Kısaltma | Dosya |
 |---|---|
-| T1 | `/Users/polat/DEV/civilization-2-0/transcript-1.md`: yapay zekâ ile birlikte yaşam kaydı (2026-10-22) |
-| T2 | `/Users/polat/DEV/civilization-2-0/transcript-2.md`: protokol ve Medeniyet 2.0 tanımı (2026-10-22) |
-| T3 | `/Users/polat/DEV/civilization-2-0/transcript-3.md`: terminoloji ve yeni talep (2026-10-23) |
-| T4 | `/Users/polat/DEV/civilization-2-0/transcript-4.md`: zaman, ekran, bayram kartları (2026-10-24) |
-| Tez 10-20 | Konuşmacının 2026-10-20 sohbet mesajı (bkz. `journal.md`) |
-| Kitap | `kaynaklar/yapay-zeka-destekli-emek.md`: Polat ve Karagöz (2026), ss. 87–105 |
+| T1 | `kb/sources/transcript-1.md`: yapay zekâ ile birlikte yaşam kaydı (2026-10-22) |
+| T2 | `kb/sources/transcript-2.md`: protokol ve Medeniyet 2.0 tanımı (2026-10-22) |
+| T3 | `kb/sources/transcript-3.md`: terminoloji ve yeni talep (2026-10-23) |
+| T4 | `kb/sources/transcript-4.md`: zaman, ekran, bayram kartları (2026-10-24) |
+| Tez 10-20 | Konuşmacının 2026-10-20 sohbet mesajı (bkz. `kb/journal.md`) |
+| Kitap | `kb/sources/yapay-zeka-destekli-emek/yapay-zeka-destekli-emek.md`: Polat ve Karagöz (2026), ss. 87–105 |
 | Monolog 1 | `~/.claude-playbooks/kommander-personal/data/tasks/ikose-sunum/artifacts/monolog-1-*` (2026-09-09) |
 | Dur Yolcu | `…/ikose-sunum/artifacts/dur-yolcu-sunum-taslak-2026-09-10-12_24.md` |
 | Şubat 2026 | `~/CLAUDE.ai/projects/alignment-paradox/docs/yapay-zeka-sunum-transkript-duzeltilmis-20260222-0215.md` |

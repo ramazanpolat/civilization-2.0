@@ -12,7 +12,7 @@ Fikirlerin, kararların ve malzemenin tarih sırasıyla kaydı. Yeni girişler e
   30 Ekim 2026 Cuma 10:00, Google Meet (https://meet.google.com/zrt-hdqi-hdf). Konuşmacı
   Ramazan POLAT.
 - **Afiş:** Fırat renkleriyle v3 (bordo #78113e, altın #f9bf3b; Fırat ve ODTÜ logoları).
-  Konuşmacı onayladı. Dosyalar `/Users/polat/DEV/civilization-2-0/out/`.
+  Konuşmacı onayladı. Dosyalar `talks/2026-10-30-firat/afis/`.
 - `[Claude]` İçerik taslağı v1 (45 + 15 dk) konuşmacının önceki malzemesinden derlendi:
   monologlar (2026-09-09), Dur Yolcu taslağı, Şubat 2026 konuşması, 24 slayt planı, claude.ai
   arşivi. Dosya: `medeniyet-2-0-konusma-icerigi.md`.

@@ -1,7 +1,5 @@
 # Cepten Medeniyete — Cebimize girenler, aramızda neleri değiştirir?
 
-Sürüm: v5 · 25 Ekim 2026
-
 Konuşmacı: Ramazan POLAT · ODTÜ Bilgi İşlem Daire Başkanlığı.
 Dinleyici: Fırat Üniversitesi öğrencileri.
 Etkinlik: 30 Ekim 2026, 10:00, çevrim içi söyleşi.
@@ -416,8 +414,8 @@ Soruları alırken gündelik bir ilişki örneği isteyin: aile grubunda cevap s
 - [HTML sunumu](slaytlar-v5-2026-10-25-23_24.html) · 18 slayt. Yazı tipleri ve görseller HTML içine gömülü.
 - `→` / boşluk: ilerle; `←`: geri; `O`: slayt haritası; `N`: anlatım ve geçiş notları; `S`: konuşmacı penceresi; `F`: tam ekran; `B`: karart.
 - 11. slaytta son düşünce başlangıçta gizli. Katılımcılar düşündükten sonra `R` veya düğmeyle açılır. Yazdırma görünümünde açıktır.
-- Açılış görseli bu sürüm için built-in image_gen aracıyla üretildi. Kaynak: `gorseller-v5/karttan-telefona.png`; sunumda kullanılan sıkıştırılmış varlık: `gorseller-v5/karttan-telefona.webp`. Bu, konuşmacının ailesine ait tarihî bir fotoğraf değil, kavramsal stüdyo görselidir.
-- Görsel promptu: sıcak kırık beyaz masa üzerinde eski bir tebrik kartı, zarf ve markasız koyu telefon; kartla telefonu birleştiren bordo ip; solda başlık için boşluk; doğal ışık, kâğıt dokusu; okunabilir yazı, marka veya filigran yok. Tam prompt `gorseller-v5/uretim-notu.md` dosyasında.
+- Açılış görseli built-in image_gen aracıyla üretildi. Kaynak: `gorseller/karttan-telefona.png`; sunumda kullanılan sıkıştırılmış varlık: `gorseller/karttan-telefona.webp`. Bu, konuşmacının ailesine ait tarihî bir fotoğraf değil, kavramsal stüdyo görselidir.
+- Görsel promptu: sıcak kırık beyaz masa üzerinde eski bir tebrik kartı, zarf ve markasız koyu telefon; kartla telefonu birleştiren bordo ip; solda başlık için boşluk; doğal ışık, kâğıt dokusu; okunabilir yazı, marka veya filigran yok. Tam prompt `gorseller/uretim-notu.md` dosyasında.
 
 ## Son kontrol
 
