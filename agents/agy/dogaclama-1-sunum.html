@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doğaçlama 1 — Bilim Kurgunun İçinde Uyanmak, İletişim Sınırları ve Üç Duvar</title>
+  <style>
+    :root {
+      --bg: #0c0a0e;
+      --bg-panel: #16121a;
+      --bg-card: #1e1824;
+      --border: rgba(249, 191, 59, 0.18);
+      --border-subtle: rgba(255, 255, 255, 0.09);
+      --bordo: #78113e;
+      --bordo-light: #a61c58;
+      --bordo-glow: rgba(166, 28, 88, 0.35);
+      --gold: #f9bf3b;
+      --gold-soft: rgba(249, 191, 59, 0.16);
+      --cyan: #38bdf8;
+      --emerald: #34d399;
+      --text: #f8f5f2;
+      --text-muted: #b8b0c0;
+      --text-dim: #7d7488;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 85% 15%, rgba(120, 17, 62, 0.28), transparent 45%),
+                  radial-gradient(circle at 15% 85%, rgba(249, 191, 59, 0.08), transparent 40%),
+                  var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .deck {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2.2rem 3.5rem 4.2rem;
+    }
+
+    /* Top Bar */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 0.85rem;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .brand-pill {
+      background: var(--bordo);
+      color: var(--gold);
+      font-weight: 700;
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.75rem;
+    }
+
+    .slide-counter {
+      font-variant-numeric: tabular-nums;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Slide Stage */
+    .stage {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 1rem 0;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      max-width: 1260px;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem;
+      animation: fadeIn 0.26s ease-out;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 3.4vw, 3.1rem);
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    h1 .accent {
+      color: var(--gold);
+    }
+
+    .lead {
+      font-size: clamp(1.05rem, 1.45vw, 1.3rem);
+      line-height: 1.55;
+      color: var(--text-muted);
+      max-width: 960px;
+    }
+
+    /* Grids & Cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 1.4rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card.highlight {
+      border-color: var(--gold);
+      background: linear-gradient(160deg, rgba(120, 17, 62, 0.32), rgba(30, 24, 36, 0.92));
+      box-shadow: 0 10px 30px -12px var(--bordo-glow);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .card p {
+      font-size: 0.98rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+
+    .quote-box {
+      border-left: 4px solid var(--gold);
+      background: rgba(249, 191, 59, 0.07);
+      padding: 1rem 1.4rem;
+      border-radius: 0 12px 12px 0;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    /* Interactive Chart Panels */
+    .chart-layout {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 1.5rem;
+      align-items: stretch;
+      min-height: 390px;
+    }
+
+    .chart-box {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .era-tabs {
+      display: flex;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .era-btn {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
+      padding: 0.45rem 1rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+
+    .era-btn:hover {
+      border-color: var(--gold);
+      color: var(--text);
+    }
+
+    .era-btn.active {
+      background: var(--gold);
+      color: #140d18;
+      border-color: var(--gold);
+      box-shadow: 0 0 16px rgba(249, 191, 59, 0.35);
+    }
+
+    .svg-stage {
+      width: 100%;
+      height: 260px;
+    }
+
+    /* Anthropic Bars */
+    .bar-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      padding: 0.75rem 0.95rem;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+
+    .bar-row.active {
+      border-color: var(--gold);
+      background: rgba(120, 17, 62, 0.24);
+    }
+
+    .bar-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .bar-track {
+      position: relative;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-potential {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, rgba(249, 191, 59, 0.25), rgba(249, 191, 59, 0.5));
+      border-right: 2px dashed var(--gold);
+      border-radius: 999px;
+      transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .bar-actual {
+      position: absolute;
+      top: 3px;
+      left: 0;
+      bottom: 3px;
+      background: linear-gradient(90deg, var(--bordo-light), var(--gold));
+      border-radius: 999px;
+      transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Walls Interactive */
+    .wall-card {
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wall-badge {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .status-cleared {
+      background: rgba(52, 211, 153, 0.15);
+      color: var(--emerald);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+    }
+
+    .status-falling {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+    }
+
+    .status-critical {
+      background: rgba(249, 191, 59, 0.18);
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+
+    /* Mecha / Harness Interactive */
+    .mecha-diagram {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1.15fr;
+      align-items: center;
+      gap: 0.85rem;
+      margin-top: 0.4rem;
+    }
+
+    .op-symbol {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold);
+      text-align: center;
+    }
+
+    /* Speaker Notes Drawer */
+    .notes-drawer {
+      position: fixed;
+      left: 3.5rem;
+      right: 3.5rem;
+      bottom: 4.1rem;
+      background: rgba(15, 11, 20, 0.96);
+      border: 1px solid var(--gold);
+      border-radius: 14px;
+      padding: 1.1rem 1.4rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+      display: none;
+      z-index: 30;
+      max-height: 34vh;
+      overflow-y: auto;
+    }
+
+    .notes-drawer.open {
+      display: block;
+    }
+
+    .notes-drawer h4 {
+      color: var(--gold);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.45rem;
+    }
+
+    .notes-drawer p {
+      color: var(--text);
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    /* Bottom Controls */
+    .bottombar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3.4rem;
+      background: rgba(12, 10, 14, 0.9);
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3.5rem;
+      z-index: 20;
+    }
+
+    .progress-track {
+      position: absolute;
+      top: -2px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--bordo-light), var(--gold));
+      width: 12.5%;
+      transition: width 0.25s ease;
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ctrl-btn {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .ctrl-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .shortcut-hint {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+
+    @media (max-width: 980px) {
+      .deck { padding: 1.2rem 1.5rem 4rem; }
+      .grid-2, .grid-3, .chart-layout, .mecha-diagram { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-pill">Medeniyet 2.0 · Doğaçlama 1</span>
+        <span>Ramazan POLAT · Deneyim Özeti &amp; Perspektif</span>
+      </div>
+      <div class="slide-counter" id="slideCounter">01 / 08</div>
+    </header>
+
+    <main class="stage">
+      <!-- SLIDE 1: Kişisel Beyan ve Hedef Kitle -->
+      <section class="slide active" data-notes="Bu sunum kapsamında konuştuğum, söylediğim, aktardığım her şey şahsıma aittir. Herhangi bir kurum, kuruluş ya da tüzel kişilik adına beyanda bulunmuyorum. Kendiniz de anlattıklarımı bir otoritenin anlatısı olarak anlamamanızı ve sorgulamanızı tavsiye ediyorum. Sunumun hitap ettiği kitle hayatına yapay zekâ girmiş ya da girmek üzere olan bilgisayar mühendisleri, yazılım mühendisleri ve kısaca bilişimciler. Ancak bu bir yapay zekâ kursu olarak görülmemeli; hayatınıza yapay zekâyı aldığınızda daha bilinçli iletişim kurabilmeniz için deneyimlerimin özetlenmiş hâli.">
+        <span class="kicker">00 · Başlarken &amp; Çerçeve</span>
+        <h1>Bir Yapay Zekâ Kursu Değil,<br/><span class="accent">Deneyimlerimin Özeti</span></h1>
+        <p class="lead">
+          Hayatına yapay zekâ girmiş ya da girmek üzere olan <strong>bilgisayar mühendisleri, yazılım mühendisleri ve bilişimciler</strong> için farklı bir bakış açısı.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>1. Şahsi Beyan</h3>
+            <p>Bu sunumda konuştuğum, söylediğim ve aktardığım her şey <strong>şahsıma aittir</strong>. Herhangi bir kurum, kuruluş ya da tüzel kişilik adına beyanda bulunmuyorum.</p>
+          </div>
+          <div class="card highlight">
+            <h3>2. Otorite Değil, Sorgulama</h3>
+            <p>Anlattıklarımı bir otoritenin anlatısı olarak kabul etmemenizi, her birini <strong>kendi süzgecinizden geçirip sorgulamanızı</strong> tavsiye ediyorum.</p>
+          </div>
+          <div class="card">
+            <h3>3. Amaç: Bilinçli İletişim</h3>
+            <p>Nasıl kod yazılacağını veya sistem entegre edileceğini anlatan bir kurs değil; yapay zekâyı hayatınıza aldığınızda <strong>daha bilinçli iletişim kurabilmeniz</strong> için bir deneyim özeti.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: Bilim Kurgunun İçinde Uyanmak -->
+      <section class="slide" data-notes="İlk bölümde nerede olduğumuzu göstermek istiyorum. Neredeyse her gün, her hafta içinde yaşadığım zamanın ne kadar ileri bir zaman olduğunu düşünüyorum. Üniversitedeyken bilim kurgu olarak gördüğüm filmlerde izlediğim geleceğin içinde yaşadığıma şaşırıyorum. Hatırladığım bir olay şu: İki ajanımı konuşturarak bir konuda karar vermelerini istemiştim. Bu iki ajan konuşurken kendilerine bir iletişim formatı belirlemişlerdi. Iron Man'de J.A.R.V.I.S., 2001'de HAL 9000, Interstellar'da TARS vardı. Ajanlarımla konuşurken bazen kendimi o filmlerdeymiş gibi hissediyorum.">
+        <span class="kicker">01 · Nerede Olduğumuz</span>
+        <h1>Üniversitedeyken İzlediğim<br/><span class="accent">Bilim Kurgunun İçinde Uyanmak</span></h1>
+        <p class="lead">
+          Haftada birkaç kez — bazen günde birkaç defa — durup şaşırıyorum: <em>"Aman Allah'ım, yapay zekâyla bu kadar mı iç içeyiz? Bu kadar mı ilerledi?"</em>
+        </p>
+
+        <div class="grid-2">
+          <div class="card highlight">
+            <h3>İki Ajanın Kendi Dilini Kurması</h3>
+            <p>
+              İki ajanımı birbiriyle konuşturup bir konuda karar vermelerini istemiştim.
+              Konuşurken <strong>kendi aralarında bir iletişim formatı</strong> belirlediler.
+            </p>
+            <div class="quote-box" style="margin-top: 0.4rem; font-size: 0.98rem;">
+              Sanki hiç farkında olmamışım da bir gün uyanmışım gibi: Yapay zekâyı ulaşılmaz bir yerde sanırken aslında tam ortasında yaşıyoruz.
+            </div>
+          </div>
+
+          <div class="card" style="justify-content: space-between;">
+            <h3>Filmlerdeki Gelecek Bugün Masamızda</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.25rem;">
+              <div style="padding: 0.75rem 1rem; background: rgba(255,255,255,0.03); border-radius: 10px; border-left: 3px solid var(--gold);">
+                <strong>J.A.R.V.I.S.</strong> <span style="color: var(--text-dim);">— Iron Man</span>
+                <p style="font-size: 0.88rem; margin-top: 0.2rem;">Doğal dille konuşulan, bağlamı bilen kişisel yardımcı.</p>
+              </div>
+              <div style="padding: 0.75rem 1rem; background: rgba(255,255,255,0.03); border-radius: 10px; border-left: 3px solid var(--bordo-light);">
+                <strong>HAL 9000</strong> <span style="color: var(--text-dim);">— 2001: A Space Odyssey</span>
+                <p style="font-size: 0.88rem; margin-top: 0.2rem;">Sistemi yöneten, karar süreçlerine katılan otonom zekâ.</p>
+              </div>
+              <div style="padding: 0.75rem 1rem; background: rgba(255,255,255,0.03); border-radius: 10px; border-left: 3px solid var(--cyan);">
+                <strong>TARS</strong> <span style="color: var(--text-dim);">— Interstellar</span>
+                <p style="font-size: 0.88rem; margin-top: 0.2rem;">İnsanla omuz omuza çalışan, görev üstlenen yol arkadaşı.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: Grafik 1 - 50 Yıl -> 20 Yıl -> 5 Yıl -> Bugün Normal Dağılım -->
+      <section class="slide" data-notes="Benim şaşırma periyodumu biraz daha büyütürsek: 50 yıl öncesine, 20 yıl öncesine ve 5 yıl öncesine göre karşılaştırırsak nereden nereye geldiğimizi daha iyi görürüz. Bu bir normal dağılım grafiği; yapay zekânın insanların hayatlarına ne kadar girdiğini gösteriyor. 50 yıl önce yapay zekâyı hayatının %50'sinden fazlasına yerleştiren azınlık çoğunlukla akademisyenlerdi. 20 yıl önce sayı artıyor ama nüfusa oranla çok az. 5 yıl önce grafik sağa doğru hareket ediyor. Sonraki durumu tahmin etmek zor değil. Peki nereye kadar? Belli bir sınırı var mı? Düz bir şekilde mi artıyor?">
+        <span class="kicker">01 · Nereden Nereye Geldik? (Etkileşimli Grafik)</span>
+        <h1>Yapay Zekâ Hayatımıza Ne Kadar Girdi?<br/><span class="accent">50 Yıl → 20 Yıl → 5 Yıl → Bugün</span></h1>
+
+        <div class="chart-layout">
+          <div class="chart-box">
+            <div class="era-tabs" id="eraTabs">
+              <button class="era-btn active" onclick="setEra(0)">1. 50 Yıl Önce</button>
+              <button class="era-btn" onclick="setEra(1)">2. 20 Yıl Önce</button>
+              <button class="era-btn" onclick="setEra(2)">3. 5 Yıl Önce</button>
+              <button class="era-btn" onclick="setEra(3)">4. Bugün &amp; Yakın Gelecek</button>
+            </div>
+
+            <svg class="svg-stage" viewBox="0 0 680 250" id="distSvg">
+              <defs>
+                <linearGradient id="curveGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#f9bf3b" stop-opacity="0.55" />
+                  <stop offset="100%" stop-color="#78113e" stop-opacity="0.05" />
+                </linearGradient>
+                <linearGradient id="tailGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#a61c58" stop-opacity="0.7" />
+                  <stop offset="100%" stop-color="#f9bf3b" stop-opacity="0.9" />
+                </linearGradient>
+              </defs>
+
+              <!-- Axes -->
+              <line x1="45" y1="210" x2="645" y2="210" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" />
+              <line x1="345" y1="25" x2="345" y2="210" stroke="rgba(249,191,59,0.4)" stroke-dasharray="5,5" stroke-width="1.5" />
+              <text x="352" y="40" fill="#f9bf3b" font-size="11" font-weight="700">Hayatının &gt;%50'sinde YZ olanlar eşiği</text>
+
+              <!-- X Axis Labels -->
+              <text x="50" y="232" fill="#9ca3af" font-size="11">%0 (Hiç yok)</text>
+              <text x="315" y="232" fill="#f9bf3b" font-size="11" font-weight="600">%50 Eşiği</text>
+              <text x="535" y="232" fill="#9ca3af" font-size="11">%100 (Tam entegre)</text>
+
+              <!-- Ghost curves for comparison -->
+              <path id="ghostCurve0" d="" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" />
+              <!-- Active Distribution Area & Stroke -->
+              <path id="distArea" d="" fill="url(#curveGrad)" />
+              <path id="tailArea" d="" fill="url(#tailGrad)" />
+              <path id="distStroke" d="" fill="none" stroke="#f9bf3b" stroke-width="3" />
+
+              <!-- Callout dot -->
+              <circle id="peakDot" cx="135" cy="60" r="5" fill="#f9bf3b" />
+            </svg>
+
+            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--text-dim);">
+              <span>Yatay eksen: YZ'nin kişinin günlük hayatındaki payı (%0 – %100)</span>
+              <span>Dikey eksen: İnsan sayısı (Normal dağılım)</span>
+            </div>
+          </div>
+
+          <div class="card highlight" style="justify-content: space-between;">
+            <div>
+              <span class="kicker" id="eraBadge">50 YIL ÖNCE (1970'ler)</span>
+              <h3 id="eraTitle" style="font-size: 1.35rem; margin-top: 0.35rem;">Sadece Akademisyen Azınlık</h3>
+              <p id="eraDesc" style="margin-top: 0.65rem;">
+                Yapay zekâyı hayatının %50'sinden fazlasına yerleştiren sağ kuyruktaki çok küçük azınlık, yalnızca <strong>yapay zekâyı geliştiren akademisyenlerdi</strong>. Toplumun geri kalanı için sıfıra yakındı.
+              </p>
+            </div>
+
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.9rem;">
+              <div style="font-size: 0.8rem; color: var(--gold); font-weight: 700; text-transform: uppercase; margin-bottom: 0.45rem;">
+                Bu Hareketin Doğurduğu 4 Soru:
+              </div>
+              <ul style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; padding-left: 1.1rem;">
+                <li>Peki <strong>nereye kadar</strong> gidecek?</li>
+                <li>Bunun belli bir <strong>sınırı var mı</strong>?</li>
+                <li>Kullanım arttıkça <strong>insanın hayatında ne değişiyor</strong>?</li>
+                <li>Böyle <strong>düz bir şekilde mi</strong> artıyor?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Televizyondan Cep Telefonuna -->
+      <section class="slide" data-notes="İkinci bölümde kullanımın artmasına bağlı olarak toplumumuzda ne gibi değişiklikler olacağından bahsedeceğim. Cep telefonunu örnek olarak kullanabiliriz. Bunu televizyona kadar da geri götürebilirim ama cep telefonu gayet güzel bir örnek çünkü yanında iletişimi ve interneti de getirdi. Televizyonda bu tek taraflı ama telefonda çift taraflı. İletmiyorsunuz, iletişiyorsunuz; yayın yapmıyorsunuz, iletişiyorsunuz. Üstüne üstlük artık telefonlarda internet var.">
+        <span class="kicker">02 · Toplumsal Değişimin Örneği</span>
+        <h1>Televizyondan Cep Telefonuna:<br/><span class="accent">"İletmiyorsunuz, İletişiyorsunuz"</span></h1>
+        <p class="lead">
+          Cep telefonu hayatımıza girdiğinde yalnızca bir cihaz getirmedi; yanında <strong>çift taraflı iletişimi ve interneti</strong> cebe sokarak toplumu dönüştürdü.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <span class="wall-badge status-falling">Tek Taraflı (Yayın)</span>
+            <h3>Televizyon Modeli</h3>
+            <p>
+              Bir merkezden kitleye doğru <strong>tek yönlü aktarım</strong>. Yayın yapıyorsunuz, karşı tarafa sadece <em>iletiyorsunuz</em>; geri dönüş ve karşılıklı müzakere yok.
+            </p>
+          </div>
+
+          <div class="card highlight">
+            <span class="wall-badge status-critical">Çift Taraflı + İnternet</span>
+            <h3>Cep Telefonu Devrimi</h3>
+            <p>
+              Yayın yapmıyorsunuz, <strong>çift taraflı iletişiyorsunuz</strong>. Üstüne üstlük telefonlarla birlikte <strong>internet</strong> de cebimize girdi; verinin yayılma hızı tarihte görülmemiş bir boyuta ulaştı.
+            </p>
+          </div>
+        </div>
+
+        <div class="quote-box">
+          Cep telefonu bir toplum olarak bizi nasıl değiştirdiyse, şimdi cebimizdeki o çift taraflı iletişimin içine <strong>soru sorup fikir yürütebildiğimiz ajanlar</strong> yerleşiyor.
+        </div>
+      </section>
+
+      <!-- SLIDE 5: Bilginin Sınırları: Mekan, Zaman ve İnteraksiyon -->
+      <section class="slide" data-notes="Eskiden birilerine veri, bilgi, fikir (information) aktaracaksanız en basit yol konuşmaktı. Ancak kısıtlamalar vardı: İlki mekân — aynı yerde olmanız gerekiyordu. İkincisi zaman — aynı zamanda orada olmanız gerekiyordu; bugünkü saat 10 sunumunu ben 9'da yapsam, siz 10'da odaya girseniz olmazdı. Şimdi mekân sınırı kalktı. Zaman sınırı da video kaydıyla kalktı; isteyen istediği zaman izleyebilir. Ama önemli bir fark var: İnteraksiyon yok! Kayda soru soramazsınız, bunun için zaman makinesi lazım :) Şimdi ise cebimizde istediğimiz an soru sorup fikir yürütebildiğimiz bir cihaz var.">
+        <span class="kicker">02 · "Information" Aktarımının Kısıtlamaları</span>
+        <h1>Mekân, Zaman ve <span class="accent">İnteraksiyon Sınırı</span></h1>
+        <p class="lead">
+          Bilgiyi konuşarak aktarmanın önündeki tarihsel sınırlar birer birer kalktı — geriye tek bir fark kalmıştı: <strong>eşzamanlı olmayan interaksiyon</strong>.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <span class="wall-badge status-cleared">1. Kısıtlama · Kalktı</span>
+            <h3>Mekân Sınırı</h3>
+            <p>
+              Eskiden konuşarak bilgi aktarmak için <strong>aynı odada, aynı mekânda</strong> olmanız şarttı. Bugün birbirimizden yüzlerce kilometre uzakta bu sunumu yapabiliyoruz.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="wall-badge status-falling">2. Kısıtlama · Kayıtla Aşıldı</span>
+            <h3>Zaman Sınırı (09:00 vs 10:00)</h3>
+            <p>
+              Ben sunumu 09:00'da yapsam, siz 10:00'da odaya girseniz buluşamazdık. Video kaydı zaman sınırını kaldırdı ama <strong>interaksiyon yok</strong>: kayda soru soramazsınız <em>(zaman makinesi henüz icat olmadı :))</em>.
+            </p>
+          </div>
+
+          <div class="card highlight">
+            <span class="wall-badge status-critical">3. Kırılma · Şimdi Cebimizde</span>
+            <h3>Canlı İnteraksiyon &amp; Muhakeme</h3>
+            <p>
+              Yazı → Telefon → İnternet → <strong>Yapay Zekâ</strong>. Artık herkesin cebinde sadece dünyanın verisi değil, istediği an <strong>soru sorabildiği ve fikir yürütmesini sağlayabildiği</strong> bir muhatap var.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Grafik 2 - Anthropic Raporu (Potansiyel vs Mevcut Kullanım) -->
+      <section class="slide" data-notes="Ancak şahsi fikrim, bu baş döndürücü teknolojik gelişmelere kendimiz o kadar hızlı adapte olamıyoruz. İnsanlık daha önce bu kadar hızlı bir medeni, toplumsal ve sosyal değişime uğramamıştı. Anthropic'in bir raporu var: yapay zekânın kullanılabileceği ve fiilen kullanıldığı alanlar gösteriliyor. Örneğin hukuk (legal) hizmetlerinde yapay zekâ işin %90'ından fazlasını yapabiliyor ama mevcut durumda %10 ya da 15'i kullanıyor. Bazı alanlarda ise AI'ın alanı olmadığı için neredeyse hiçbir şey yapamıyor. Teknoloji o kadar hızlı ilerliyor ki biz yetişemiyoruz.">
+        <span class="kicker">02 · Adaptasyon Boşluğu (Etkileşimli Grafik)</span>
+        <h1>Teknoloji Çok Hızlı, <span class="accent">Biz Yetişemiyoruz</span></h1>
+        <p class="lead">
+          <strong>Anthropic Raporu Perspektifi:</strong> Yapay zekânın teknik olarak yapabildiği iş kapasitesi ile gerçek hayattaki mevcut kullanım oranı arasındaki devasa adaptasyon makası.
+        </p>
+
+        <div class="chart-layout">
+          <div class="chart-box" style="gap: 0.75rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem; color: var(--text-muted);">
+              <span>Alan seçin (tıklayarak inceleyin):</span>
+              <div style="display: flex; gap: 1rem;">
+                <span><strong style="color: var(--bordo-light);">■</strong> Mevcut Kullanım</span>
+                <span><strong style="color: var(--gold);">▨</strong> Teknik Kapasite (Yapabildiği)</span>
+              </div>
+            </div>
+
+            <div class="bar-row active" onclick="selectSector(0)" id="sector0">
+              <div class="bar-header">
+                <span>1. Hukuk Hizmetleri (Legal Services)</span>
+                <span style="color: var(--gold);">Yapabildiği: &gt;%90 · Mevcut Kullanım: ~%12</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-potential" style="width: 92%;"></div>
+                <div class="bar-actual" style="width: 13%;"></div>
+              </div>
+            </div>
+
+            <div class="bar-row" onclick="selectSector(1)" id="sector1">
+              <div class="bar-header">
+                <span>2. Yazılım, Veri ve Belge İşleme</span>
+                <span style="color: var(--gold);">Yapabildiği: ~%85 · Mevcut Kullanım: ~%28</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-potential" style="width: 85%;"></div>
+                <div class="bar-actual" style="width: 28%;"></div>
+              </div>
+            </div>
+
+            <div class="bar-row" onclick="selectSector(2)" id="sector2">
+              <div class="bar-header">
+                <span>3. İdari Analiz, Finans ve Danışmanlık</span>
+                <span style="color: var(--gold);">Yapabildiği: ~%75 · Mevcut Kullanım: ~%15</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-potential" style="width: 75%;"></div>
+                <div class="bar-actual" style="width: 15%;"></div>
+              </div>
+            </div>
+
+            <div class="bar-row" onclick="selectSector(3)" id="sector3">
+              <div class="bar-header">
+                <span>4. Fiziksel Saha İşleri (AI Alanı Olmayanlar)</span>
+                <span style="color: var(--text-muted);">Yapabildiği: &lt;%5 · Mevcut Kullanım: ~%2</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-potential" style="width: 5%;"></div>
+                <div class="bar-actual" style="width: 2%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card highlight" style="justify-content: space-between;">
+            <div>
+              <span class="kicker" id="secBadge">HUKUK HİZMETLERİ ÖRNEĞİ</span>
+              <h3 id="secTitle" style="font-size: 1.35rem; margin-top: 0.35rem;">%90+ Kapasiteye Karşı %10–15 Kullanım</h3>
+              <p id="secDesc" style="margin-top: 0.65rem;">
+                Yapay zekâ hukuk hizmetlerindeki işin <strong>%90'ından fazlasını</strong> yapabilecek teknik olgunlukta. Ama gerçek hayatta şu an yalnızca <strong>%10–15'lik</strong> bir kitle tarafından kullanılıyor.
+              </p>
+            </div>
+
+            <div class="quote-box" style="font-size: 0.96rem;">
+              <strong>Temel Soru:</strong> Teknik olarak mümkün olduğu hâlde kullanım neden %15'ten %50'ye, %80'e fırlamadı? Önümüzdeki darboğaz ne?
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Üç Duvar (İcat, Cost, Mental Friction / Don't Make Me Think) -->
+      <section class="slide" data-notes="Kullanım oranları neden hemen %15'ten %80'e çıkmadı? Darboğaz nedir? Birincisi teknolojik sebepler: icat olması gerekiyor, bu şu an icat olundu. İkinci sorun aşılması gereken şey: cost, yani maliyet. Maliyet düştükçe alabilecek insan sayısı artıyor. Peki üçüncü duvar nedir? Mental friction, yani sürtünme: bilişsel yük, zihinsel direnç. Ben buna kısaca 'don't make me think' diyorum. Artık maddiyata bağlı değil; insanın zaman harcamasına, beynini yormasına bağlı. Beynimizi yormak istemiyoruz. O engeli de yapay zekâ sayesinde aştık; artık biz yorulmuyoruz, yapay zekâya yaptırıyoruz. Üçüncü engel de aşılınca büyük bir exponential hızlanmaya giriyoruz.">
+        <span class="kicker">02 · Darboğaz Analizi</span>
+        <h1>Neden %15'ten %80'e Çıkmadı?<br/><span class="accent">Aşılması Gereken Üç Duvar</span></h1>
+        <p class="lead">
+          Bir teknolojinin tüm topluma yayılmasını tutan üç ardışık duvar — ve üçüncüsü yıkıldığında başlayan <strong>üstel (exponential) hızlanma</strong>:
+        </p>
+
+        <div class="grid-3">
+          <div class="card wall-card" onclick="highlightWall(0)" id="wall0">
+            <span class="wall-badge status-cleared">1. Duvar · Aşıldı</span>
+            <h3>Teknolojik Sınır (İcat)</h3>
+            <p>
+              Öncelikle teknolojinin <strong>icat edilmesi ve çalışır hâle gelmesi</strong> gerekiyordu. Bu eşik geçildi; teknoloji bugün elimizde.
+            </p>
+          </div>
+
+          <div class="card wall-card" onclick="highlightWall(1)" id="wall1">
+            <span class="wall-badge status-falling">2. Duvar · Hızla Düşüyor</span>
+            <h3>Maliyet (Cost)</h3>
+            <p>
+              Maliyet düştükçe teknolojiye erişebilen insan sayısı artar. Model ve işlem maliyetleri her ay katlanarak ucuzluyor.
+            </p>
+          </div>
+
+          <div class="card wall-card highlight" onclick="highlightWall(2)" id="wall2">
+            <span class="wall-badge status-critical">3. Duvar · Asıl Darboğaz</span>
+            <h3>Mental Friction<br/><span style="color: var(--gold); font-size: 0.95rem;">"Don't Make Me Think"</span></h3>
+            <p>
+              Maddi değil, <strong>bilişsel yük ve zihinsel direnç</strong>. Zaman harcamak, uğraşmak, beyni yormak gerekiyor — ve <em>beynimizi yormak istemiyoruz</em>.
+            </p>
+          </div>
+        </div>
+
+        <div class="quote-box" id="wallCallout">
+          <strong>Kırılma Noktası:</strong> Üçüncü duvarı da bizzat yapay zekânın kendisi yıkıyor — çünkü artık biz yorulmuyoruz, <strong>düşünme ve uğraşma yükünü de yapay zekâya devrediyoruz</strong>. Üçüncü duvar yıkılınca <em>exponential</em> (üstel) hızlanma başlıyor!
+        </div>
+      </section>
+
+      <!-- SLIDE 8: AGI, ASI ve Ajan / Harness (Mecha Robot / RoboCop) -->
+      <section class="slide" data-notes="Bu üçüncü engel de aşılınca büyük bir exponential hızlanmaya giriyoruz. Buna AGI (Artificial General Intelligence) deniyor; şu an aslında AGI çağındayız. Bir süre sonra yapay zekâ o kadar iyi olacak ki işi tamamen yapay zekâya bırakacağız; buna da ASI (Artificial Superintelligence) deniyor. Burada yapay zekâ derken sohbet ettiğimiz üretken yapay zekâların vücut bulmuş hâli olan ajanlardan bahsediyorum. Ajan nedir, harness nedir? Türkçesi teçhizat / tesisat. Bunu bir meka robotun dış iskeletiymiş gibi düşünebilirsiniz, RoboCop gibi. İçine bir LLM koyuyorsunuz; artık o LLM'in eli kolu oluyor, program yazabiliyor.">
+        <span class="kicker">03 · Üstel Çağ ve Kavramlar</span>
+        <h1>AGI, ASI ve Ajanın Anatomisi:<br/><span class="accent">Mecha Robot (Harness) Benzetmesi</span></h1>
+
+        <div class="mecha-diagram">
+          <div class="card">
+            <span class="wall-badge status-falling">Beyin / Model</span>
+            <h3>LLM (Üretken YZ)</h3>
+            <p>Dil bilen, akıl yürüten, sohbet ettiğimiz büyük dil modeli — ancak tek başına dış dünyaya dokunamaz.</p>
+          </div>
+
+          <div class="op-symbol">+</div>
+
+          <div class="card">
+            <span class="wall-badge status-critical">Teçhizat / Tesisat</span>
+            <h3>Harness (Dış İskelet)</h3>
+            <p>Bir <strong>meka robotun dış gövdesi</strong> (<em>RoboCop</em> gibi). Dosya okuyan, terminal açan, araç kullanan tesisat.</p>
+          </div>
+
+          <div class="op-symbol">=</div>
+
+          <div class="card highlight">
+            <span class="wall-badge status-cleared">Eli Kolu Olan Zekâ</span>
+            <h3>Ajan (Agent)</h3>
+            <p>İçine LLM yerleştirilmiş meka robot: Artık modelin <strong>eli kolu var</strong>; kendi başına program yazıp çalıştırabiliyor.</p>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top: 0.3rem;">
+          <div class="card">
+            <h3>AGI Çağı <span style="color: var(--text-dim); font-size: 0.9rem;">(Artificial General Intelligence)</span></h3>
+            <p>Üçüncü duvarın (zihinsel sürtünmenin) aşılmasıyla girdiğimiz üstel hızlanma dönemi; genel bilişsel görevlerin devredilebildiği eşik.</p>
+          </div>
+          <div class="card">
+            <h3>ASI Ufku <span style="color: var(--text-dim); font-size: 0.9rem;">(Artificial Superintelligence)</span></h3>
+            <p>Yapay zekânın işi bütünüyle kendisine bırakabileceğimiz kadar ileri geçtiği, bizim müdahalemize gerek kalmayan sonraki evre.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Speaker Notes Drawer -->
+    <aside class="notes-drawer" id="notesDrawer">
+      <h4>Konuşmacı Notu (Doğaçlama Metninden)</h4>
+      <p id="notesText"></p>
+    </aside>
+
+    <!-- Bottom Navigation Bar -->
+    <footer class="bottombar">
+      <div class="progress-track">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div class="nav-controls">
+        <button class="ctrl-btn" onclick="prevSlide()">← Önceki</button>
+        <button class="ctrl-btn" onclick="nextSlide()">Sonraki →</button>
+        <button class="ctrl-btn" onclick="toggleNotes()" id="notesBtn">Notlar (N)</button>
+        <button class="ctrl-btn" onclick="toggleFullscreen()">Tam Ekran (F)</button>
+      </div>
+      <div class="shortcut-hint">Ok tuşları / Space: Geçiş · 1–4: Grafik dönemleri · N: Konuşmacı notu · F: Tam ekran</div>
+    </footer>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const counterEl = document.getElementById('slideCounter');
+    const progressEl = document.getElementById('progressBar');
+    const notesDrawer = document.getElementById('notesDrawer');
+    const notesText = document.getElementById('notesText');
+    let current = 0;
+
+    function updateSlide() {
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === current));
+      counterEl.textContent = `${String(current + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+      progressEl.style.width = `${((current + 1) / slides.length) * 100}%`;
+      notesText.textContent = slides[current].dataset.notes || '';
+    }
+
+    function nextSlide() {
+      if (current < slides.length - 1) {
+        current++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (current > 0) {
+        current--;
+        updateSlide();
+      }
+    }
+
+    function toggleNotes() {
+      notesDrawer.classList.toggle('open');
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    // --- Interactive Graph 1: Shifting Normal Distribution (50y -> 20y -> 5y -> Today) ---
+    const eras = [
+      {
+        badge: "50 YIL ÖNCE (1970'ler)",
+        title: "Sadece Akademisyen Azınlık",
+        desc: "Yapay zekâyı hayatının %50'sinden fazlasına yerleştiren sağ kuyruktaki çok küçük azınlık, yalnızca <strong>yapay zekâyı geliştiren akademisyenlerdi</strong>. Toplumun geri kalanı için sıfıra yakındı.",
+        mean: 135,
+        sigma: 65,
+        amp: 145
+      },
+      {
+        badge: "20 YIL ÖNCE (2000'ler)",
+        title: "Erken Benimseyenler ve Uzmanlar",
+        desc: "Yapay zekâyı hayatına sokan insan sayısı artmaya başlıyor; eğri sağa doğru hareket ediyor ama genel nüfusa oranla <strong>hâlâ çok küçük bir azınlık</strong>.",
+        mean: 220,
+        sigma: 82,
+        amp: 135
+      },
+      {
+        badge: "5 YIL ÖNCE (2021)",
+        title: "Eğri Hızla Sağa Kayıyor",
+        desc: "Grafik belirgin biçimde yön değiştiriyor. Günlük iş akışlarında ve yazılımda yapay zekâ kullanımı hızla ana akıma yaklaşıyor.",
+        mean: 315,
+        sigma: 95,
+        amp: 130
+      },
+      {
+        badge: "BUGÜN & YAKIN GELECEK",
+        title: "Toplumun Merkezine Yerleşim",
+        desc: "Eğrinin gövdesi %50 eşiğinin sağ tarafına geçiyor. Kaba tabirle yapay zekâ kullanımı çok daha artıyor ve herkesin hayatına giriyor — <strong>peki düz bir çizgide mi, yoksa üstel bir sıçramayla mı?</strong>",
+        mean: 435,
+        sigma: 95,
+        amp: 135
+      }
+    ];
+
+    function buildCurvePaths(mean, sigma, amp) {
+      const baseY = 210;
+      const thresholdX = 345;
+      let stroke = '';
+      let area = `M 50 ${baseY} `;
+      let tail = `M ${thresholdX} ${baseY} `;
+
+      for (let x = 50; x <= 640; x += 6) {
+        const z = (x - mean) / sigma;
+        const y = baseY - amp * Math.exp(-0.5 * z * z);
+        const pt = `${x.toFixed(1)} ${y.toFixed(1)}`;
+        stroke += (x === 50 ? `M ${pt}` : ` L ${pt}`);
+        area += `L ${pt} `;
+        if (x >= thresholdX) {
+          tail += `L ${pt} `;
+        }
+      }
+      area += `L 640 ${baseY} Z`;
+      tail += `L 640 ${baseY} Z`;
+      return { stroke, area, tail, peakX: mean, peakY: baseY - amp };
+    }
+
+    function setEra(idx) {
+      const era = eras[idx];
+      if (!era) return;
+      document.querySelectorAll('#eraTabs .era-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', i === idx);
+      });
+      document.getElementById('eraBadge').textContent = era.badge;
+      document.getElementById('eraTitle').textContent = era.title;
+      document.getElementById('eraDesc').innerHTML = era.desc;
+
+      const paths = buildCurvePaths(era.mean, era.sigma, era.amp);
+      document.getElementById('distStroke').setAttribute('d', paths.stroke);
+      document.getElementById('distArea').setAttribute('d', paths.area);
+      document.getElementById('tailArea').setAttribute('d', paths.tail);
+      const dot = document.getElementById('peakDot');
+      dot.setAttribute('cx', paths.peakX);
+      dot.setAttribute('cy', paths.peakY);
+    }
+
+    // Initialize ghost curve (50 years ago reference) and initial state
+    const ghost0 = buildCurvePaths(eras[0].mean, eras[0].sigma, eras[0].amp);
+    document.getElementById('ghostCurve0').setAttribute('d', ghost0.stroke);
+    setEra(0);
+
+    // --- Interactive Graph 2: Anthropic Report Sectors ---
+    const sectors = [
+      {
+        badge: "HUKUK HİZMETLERİ (LEGAL SERVICES)",
+        title: "%90+ Kapasiteye Karşı %10–15 Kullanım",
+        desc: "Anthropic raporundaki çarpıcı örnek: Yapay zekâ hukuk hizmetlerindeki işlerin <strong>%90'ından fazlasını</strong> yapabiliyor. Ancak mevcut durumda bunu kullanan kitle yalnızca <strong>%10–15</strong> civarında."
+      },
+      {
+        badge: "YAZILIM VE BİLGİ İŞLEME",
+        title: "En Hızlı Benimseyen Alanda Bile Boşluk Var",
+        desc: "Bilişim ve yazılım dünyası yapay zekâya en yakın alan olmasına rağmen, teknik olarak yapılabileceklerin hâlâ <strong>yalnızca üçte biri</strong> günlük pratikte kullanılıyor."
+      },
+      {
+        badge: "İDARİ ANALİZ VE DANIŞMANLIK",
+        title: "Yüksek Potansiyel, Yavaş Kurumsal Adaptasyon",
+        desc: "Raporlama, sentez ve karar destek süreçlerinde teknik kapasite %75'i aşsa da kurumsal alışkanlıklar ve zihinsel direnç nedeniyle kullanım %15 bandında kalıyor."
+      },
+      {
+        badge: "YAPAY ZEKÂNIN ALANI OLMAYAN İŞLER",
+        title: "Her Alan Yapay Zekânın Alanı Değil",
+        desc: "Grafikte bazı alanlarda yapay zekânın neredeyse hiçbir şey yapamadığı görülüyor; çünkü bunlar doğrudan fiziksel/mekanik beceri gerektiren ve üretken YZ'nin alanı olmayan işler."
+      }
+    ];
+
+    function selectSector(idx) {
+      const s = sectors[idx];
+      if (!s) return;
+      for (let i = 0; i < 4; i++) {
+        document.getElementById(`sector${i}`).classList.toggle('active', i === idx);
+      }
+      document.getElementById('secBadge').textContent = s.badge;
+      document.getElementById('secTitle').textContent = s.title;
+      document.getElementById('secDesc').innerHTML = s.desc;
+    }
+
+    // --- Interactive Slide 7: 3 Walls ---
+    const wallNotes = [
+      "<strong>1. Duvar (Teknolojik İcat):</strong> Önce teknolojinin icat olması gerekiyordu. Bu duvar artık geride kaldı; teknoloji icat edildi ve çalışıyor.",
+      "<strong>2. Duvar (Cost / Maliyet):</strong> Maliyet düştükçe alabilecek ve erişebilecek insan sayısı artıyor. Bu duvar da hızla aşağı iniyor.",
+      "<strong>3. Duvar (Mental Friction / 'Don't Make Me Think'):</strong> Asıl engel maddiyat değil, <strong>beynimizi yorma direnci</strong>. Yapay zekâ düşünme yükünü de bizden aldığı için bu üçüncü duvar yıkılıyor ve <em>exponential</em> hızlanma başlıyor!"
+    ];
+
+    function highlightWall(idx) {
+      for (let i = 0; i < 3; i++) {
+        document.getElementById(`wall${i}`).classList.toggle('highlight', i === idx);
+      }
+      document.getElementById('wallCallout').innerHTML = wallNotes[idx];
+    }
+
+    // Keyboard shortcuts
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'n' || e.key === 'N') {
+        toggleNotes();
+      } else if (e.key === 'f' || e.key === 'F') {
+        toggleFullscreen();
+      } else if (['1', '2', '3', '4'].includes(e.key)) {
+        const idx = parseInt(e.key, 10) - 1;
+        if (current === 2) setEra(idx);
+        if (current === 5) selectSector(idx);
+      }
+    });
+
+    updateSlide();
+  </script>
+</body>
+</html>

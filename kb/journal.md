@@ -152,3 +152,18 @@ Fikirlerin, kararların ve malzemenin tarih sırasıyla kaydı. Yeni girişler e
 - `[Claude]` Sunum v2: `koreografiler/cepten-medeniyete/slaytlar-v2-2026-10-25-21_52.html`.
   v1 ile aynı 56 slayt. Ekran düğmeleri eklendi; açılır pencere engellenirse konuşmacı görünümü
   aynı sekmede açılıyor. Özel artifact olarak yayımlandı.
+
+
+## 2026-10-29 Perşembe
+
+- `[Konuşmacı]` Doğaçlama konuşma kaydı: `kb/sources/transcript-5.md`.
+  - İçerik: Kişisel beyan ("şahsıma aittir, sorgulayın, bu bir YZ kursu değil deneyim özeti");
+    bilim kurgunun içinde uyanmak (iki ajanın kendi iletişim formatını belirlemesi; J.A.R.V.I.S.,
+    HAL 9000, TARS); 50 yıl → 20 yıl → 5 yıl → bugün kayan normal dağılım grafiği; televizyon
+    (tek taraflı yayın) vs. cep telefonu (çift taraflı iletişim + internet); bilginin mekân,
+    zaman ve interaksiyon sınırları (saat 09:00/10:00 sunum örneği); Anthropic raporu (hukukta
+    %90+ kapasite vs. %10–15 fiilî kullanım, adaptasyon boşluğu); üç duvar (1. İcat, 2. Maliyet
+    / Cost, 3. Mental Friction / "Don't Make Me Think"); üstel hızlanma (Gen-AI, AGI, ASI);
+    Mecha robot / RoboCop benzetmesiyle LLM + Harness (teçhizat/tesisat) = Ajan.
+- `[Agy]` `agents/agy/dogaclama-1.md` ve etkileşimli sunum taslağı `agents/agy/dogaclama-1-sunum.html`
+  hazırlandı (kayan dağılım grafiği ve Anthropic kapasite vs. kullanım makası grafiği dahil).
