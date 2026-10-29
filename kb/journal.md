@@ -185,3 +185,7 @@ Fikirlerin, kararların ve malzemenin tarih sırasıyla kaydı. Yeni girişler e
     vakasının ayrıntıları.
 - `[Konuşmacı]` Sunum taslağının büyük kısmını beğendi; sunumu çok farklı bir yapıda kurmayı düşünüyor.
   Değerlendirme sonraya bırakıldı.
+- `[Konuşmacı]` Çalışma biçimi: Konuşmacının dikteleri sunuma birebir alınmaz. Örnekleri yapay zekâ üretir; eksik
+  noktalar tamamlanır, zayıf örnekler daha iyileriyle değiştirilir. Ham dikteler `kb/sources/` içinde olduğu gibi kalır.
+- `[Claude]` `agents/claude/ornekler-draft.md`: T7'nin dört konusu için örnek bankası (gerçek vakalar, araştırmalar,
+  temsilî sahneler, kültürel referanslar; her biri türüyle ve kaynağıyla etiketli).
