@@ -169,3 +169,19 @@ Fikirlerin, kararların ve malzemenin tarih sırasıyla kaydı. Yeni girişler e
     Grok Bot).
 - `[Agy]` `agents/agy/dogaclama-1.md` ve etkileşimli sunum taslağı `agents/agy/dogaclama-1-sunum.html`
   (9 slayt) hazırlandı.
+- `[Claude]` `agents/claude/sunum-onerisi-draft.md` (T5 ve T6'nın değerlendirmesi, iki parçalı akış önerisi) ve
+  27 slaytlık `agents/claude/sunum-onerisi-draft.html` hazırlandı; `K` tuşu 16 slaytlık kısa sürümü açar.
+- `[Konuşmacı]` Yeni dikte: `kb/sources/transcript-7.md` (ham). `transcript-6` numarası aynı gün kaydedilen,
+  henüz depoya eklenmemiş doğaçlamaya ayrıldı.
+  - İçerik: "yapay zekâ işimizi alacak" söylentisi; çalışma hayatında yapay zekâ kullananlar kullanmayanların
+    yerini alacak (yaya ile dört nala giden atlı benzetmesi); cevabı olmayan sorular (bilinç, özgür irade, iş
+    kaybı, yok oluş); iletişim değişiyor: yapay zekânın iddiası sizin için bir fikirden öteye geçmez, onu kendi
+    iddianız gibi savunamazsınız; sosyal katman: iş arkadaşlarının tedirginliği ("Yapay zekâya niye
+    yaptırdın?"), üniversitede yapay zekâyla yapılan ödev, "benim yapay zekâm böyle demiyor"; yapay zekâ
+    "çok güvenmediğimiz bir yardımcı birey"; iş dışında arkadaş, akıl hocası, gönül ilişkisi; GPT-4o
+    dalkavukluğu ve kullanıcı tepkisi; arkadaşlık chatbotları; Allan Brooks vakası (NYT, 2025-08-08).
+  - Konuşmacı bu bölüm için sunumda iyi örnekler istiyor.
+  - **Doğrula:** GPT-4o olaylarının tarihi ve sırası; arkadaşlık chatbotlarıyla nedensellik; Allan Brooks
+    vakasının ayrıntıları.
+- `[Konuşmacı]` Sunum taslağının büyük kısmını beğendi; sunumu çok farklı bir yapıda kurmayı düşünüyor.
+  Değerlendirme sonraya bırakıldı.

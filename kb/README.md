@@ -12,6 +12,6 @@
 | **Cümle Bankası** | [`bank/cumle-bankasi.md`](bank/cumle-bankasi.md) | Ortak yapı taşı (vurucu cümleler ve alıntılar) |
 | **Hikâye Bankası** | [`bank/hikaye-bankasi.md`](bank/hikaye-bankasi.md) | Ortak yapı taşı (anekdotlar ve sahneler) |
 | **Terimler Sözlüğü** | [`bank/terimler.md`](bank/terimler.md) | Ortak yapı taşı (AI'dan ajana kavram sözlüğü) |
-| **Birincil Kaynaklar** | [`sources/transcript-0.md`](sources/transcript-0.md) … [`transcript-5.md`](sources/transcript-5.md) | Kayıt (ham ve düzeltilmiş konuşmacı dikteleri) |
+| **Birincil Kaynaklar** | [`sources/transcript-0.md`](sources/transcript-0.md) … [`transcript-7.md`](sources/transcript-7.md) | Kayıt (ham ve düzeltilmiş konuşmacı dikteleri) |
 | **Akademik Kaynak** | [`sources/yapay-zeka-destekli-emek/`](sources/yapay-zeka-destekli-emek/yapay-zeka-destekli-emek.md) | Polat & Karagöz (2026), *Yapay Zekâ Destekli Emek*, ss. 87–105 |
 | **Arşiv** | [`history/`](history/) | Salt okunur (yürürlükten kalkan eski KB belgeleri) |
