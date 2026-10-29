@@ -164,6 +164,8 @@ Fikirlerin, kararların ve malzemenin tarih sırasıyla kaydı. Yeni girişler e
     zaman ve interaksiyon sınırları (saat 09:00/10:00 sunum örneği); Anthropic raporu (hukukta
     %90+ kapasite vs. %10–15 fiilî kullanım, adaptasyon boşluğu); üç duvar (1. İcat, 2. Maliyet
     / Cost, 3. Mental Friction / "Don't Make Me Think"); üstel hızlanma (Gen-AI, AGI, ASI);
-    Mecha robot / RoboCop benzetmesiyle LLM + Harness (teçhizat/tesisat) = Ajan.
+    Mecha robot / RoboCop benzetmesiyle LLM + Harness (teçhizat/tesisat) = Ajan; ekleme: diğer
+    ajanları yöneten ve bilgilere erişen tek birincil asistan ajan (OpenAI Dots, Claude Duet,
+    Grok Bot).
 - `[Agy]` `agents/agy/dogaclama-1.md` ve etkileşimli sunum taslağı `agents/agy/dogaclama-1-sunum.html`
-  hazırlandı (kayan dağılım grafiği ve Anthropic kapasite vs. kullanım makası grafiği dahil).
+  (9 slayt) hazırlandı.

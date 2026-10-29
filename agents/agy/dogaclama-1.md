@@ -62,6 +62,10 @@ Tabii arada yapay zekânın doğuşuyla ilgili bir sürü evre var. Burada yapay
 
 Peki ajan nedir, **harness** nedir? Türkçesi sanırsam teçhizat ya da tesisat. Bunu bir **meka robotun dış iskeletiymiş** gibi düşünebilirsiniz, *RoboCop* gibi. İçine bir **LLM** koyuyorsunuz; artık o teçhizat o LLM'in, o yapay zekâ modelinin eli kolu oluyor. Program yazabiliyor, çalıştırabiliyor.
 
+### Birincil Asistan Olarak Tek Ajan (Orkestratör): OpenAI Dots, Claude Duet, Grok Bot
+
+Ayrıca ileride yapay zekânın insanların **birincil yardımcısı, asistanı** olması var. Mesela şu an OpenAI **Dots** diye bir şey çıkardı; **Grok Bot** var, **Claude Duet** var. Bunlar tamamen diğer ajanları yöneterek ve diğer bilgilere erişerek, kişinin **tek bir ajan olarak asistanı** olma yolunda ilerliyor.
+
 ---
 
 ## 2. Doğaçlamadan Çıkan Yeni Yapı Taşları ve Notlar

@@ -144,6 +144,13 @@ teçhizatı. Bunu bir **meka robotun dış iskeletiymiş** gibi düşünebilirsi
 İçine bir **LLM** koyuyorsunuz. Artık o LLM'in, o yapay zekâ modelinin eli kolu oluyor; program
 yazabiliyor.
 
+## Birincil asistan olarak tek ajan: OpenAI Dots, Claude Duet, Grok Bot
+
+Ayrıca ileride yapay zekânın insanların birincil yardımcısı, asistanı olması var. Mesela şu an
+OpenAI **Dots** diye bir şey çıkardı; **Grok Bot** var, **Claude Duet** var. Bunlar tamamen
+diğer ajanları yöneterek ve diğer bilgilere erişerek, kişinin **tek bir ajan olarak asistanı**
+olma yolunda ilerliyor.
+
 ---
 
 ## Düzeltme notları
@@ -160,3 +167,6 @@ yazabiliyor.
 - "beynini yoracaksın sıcacası" → "beynini yoracaksın kısacası".
 - "İçine bir ellem koyuyorsunuz. Artık o ellemin" → "İçine bir LLM koyuyorsunuz. Artık o
   LLM'in".
+- "OpenAI Dot diye bir şey çıkardım. Grokbot var" → "OpenAI Dots diye bir şey çıkardı; Grok Bot
+  var, Claude Duet var" (bkz. `transcript-4.md` doğrulama notu: OpenAI Dots, Anthropic Claude
+  Duet, xAI Grok Bot).
