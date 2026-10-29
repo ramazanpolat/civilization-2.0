@@ -189,3 +189,8 @@ Fikirlerin, kararların ve malzemenin tarih sırasıyla kaydı. Yeni girişler e
   noktalar tamamlanır, zayıf örnekler daha iyileriyle değiştirilir. Ham dikteler `kb/sources/` içinde olduğu gibi kalır.
 - `[Claude]` `agents/claude/ornekler-draft.md`: T7'nin dört konusu için örnek bankası (gerçek vakalar, araştırmalar,
   temsilî sahneler, kültürel referanslar; her biri türüyle ve kaynağıyla etiketli).
+- `[Konuşmacı]` Düzeltme (bir önceki çalışma biçimi girdisine): Sunumda konuşmacının cümleleri kullanılır. Yapay zekâ
+  yalnızca eksik gördüğü ve anlatımın akışını bozan yerleri geliştirir, zayıf örnekleri güçlendirir; sözleri ve
+  örnekleri değiştirmek amaç değildir.
+- `[Konuşmacı]` Sunum taslağı tek başına okunduğunda anlaşılmıyor; bazı slaytlarda ne anlatılmak istendiği belli
+  değil. Her slayt, konuşmacı olmadan okunduğunda da ne söylediğini göstermeli.

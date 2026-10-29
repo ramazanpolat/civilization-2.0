@@ -2,7 +2,7 @@
 
 **Durum:** Taslak
 **Tarih:** 2026-10-29
-**Dayanak:** `kb/sources/transcript-7.md` (T7). Konuşmacının sözleri birebir alınmadı: her başlıkta önce T7'nin söylediği, sonra eksik ya da zayıf yanı, sonra önerilen örnekler var.
+**Dayanak:** `kb/sources/transcript-7.md` (T7). Sunumda konuşmacının cümleleri kullanılır; bu belge yalnızca eksik görülen, akışı bozan yerleri ve güçlendirilebilecek örnekleri önerir. Her başlıkta önce T7'nin söylediği, sonra eksik ya da zayıf yanı, sonra öneriler var; konuşmacı hangisini alacağını seçer.
 
 Örnek türleri:
 

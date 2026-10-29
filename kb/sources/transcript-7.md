@@ -31,7 +31,7 @@ ve hafife alınacak bir durum değil.
 
 - Bu metin, konuşmacının daha önce sıraladığı "amaçlanan faydalar"a ek olarak yazıldı. O liste depoda yok.
 - Konuşmacı bu bölüm için sunumda iyi örnekler istiyor: iş arkadaşlarının tepkisi, üniversitede ödev, "benim yapay zekâm böyle demiyor" sahnesi.
-  - Açıklama (konuşmacı, 2026-10-29): Örnekleri yapay zekâ (Claude) üretecek. Konuşmacının sözleri sunuma birebir alınmayacak; eksik noktalar tamamlanacak, zayıf örnekler daha iyileriyle değiştirilecek. Bu kaydın işlenmiş hâli: `agents/claude/ornekler-draft.md`.
+  - Açıklama (konuşmacı, 2026-10-29): Örnekleri yapay zekâ (Claude) önerecek. Sunumda konuşmacının cümleleri kullanılır; yalnızca eksik görülen, akışı bozan yerler geliştirilir ve zayıf örnekler güçlendirilir. Örnek önerileri: `agents/claude/ornekler-draft.md`.
 - Konuşmacı mevcut sunum taslağının büyük kısmını beğendi; sunumu çok farklı bir yapıda kurmayı düşünüyor. Değerlendirme sonraya bırakıldı.
 
 ## Okuma ve doğrulama notları
