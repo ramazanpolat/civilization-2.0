@@ -224,3 +224,8 @@ Fikirlerin, kararların ve malzemenin tarih sırasıyla kaydı. Yeni girişler e
     değerlendirme, ekonomik fırsatlar ise olasılık olarak sunulacak (editoryal öneri).
   - **Doğrula:** Diktedeki belirsiz ürün adları; her harness'ın her modeli çağırabildiği
     genellemesi; yeni mesleklerin sayısı ve istihdama etkisi için ayrıca veri gerekir.
+
+## 2026-10-30 Cuma
+
+- `[Konuşmacı]` Yeni sunum hattı istendi. Konu listesi: birlikte yaşamak ne demek; kullanım dağılımı ve "cebimize soru sorabildiğimiz bir şey girdi"; Anthropic'in kapasite / gözlenen kullanım grafiği; ne için, karşılığı ve bedeli; herkesin kendi ajanı (J.A.R.V.I.S., HAL 9000, TARS); yeni görgü; yoğun kullanımın insana etkisi (sanrı, GPT-4o dalkavukluğu); işimizi alacak mı ve yeni alanlar. Çıkarılacaklar: üç duvar, "Önce yapabiliriz…", "Çevrim içisin…", "Bir ajanın 'tamam'ı…", "Sohbetin hafızası…", "Teknik bağlantının yanına…".
+- `[Claude]` `agents/claude/sunum-akisi-draft.md`: tema, beş iddia, kazanımlar, 27 slaytlık kaba akış, örnek haritası, kısa sürüm ve Doğrula listesi.
