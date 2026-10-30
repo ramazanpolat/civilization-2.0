@@ -169,3 +169,33 @@ Fikirlerin, kararların ve malzemenin tarih sırasıyla kaydı. Yeni girişler e
     Grok Bot).
 - `[Agy]` `agents/agy/dogaclama-1.md` ve etkileşimli sunum taslağı `agents/agy/dogaclama-1-sunum.html`
   (9 slayt) hazırlandı.
+
+- `[Konuşmacı]` Yeni doğaçlama konuşma kaydı: `kb/sources/transcript-6.md`.
+  - Konuşmacının isteğiyle ham metin, ifadeler düzeltilmeden kaydedildi; kısa editoryal
+    değerlendirme istendi.
+  - İçerik: birlikte yaşamın eşiği; kullanım yoğunluğu ve kullanıcı kategorileri; zamanın
+    yapay zekâya ayrılan payı; 50 yıl → 20 yıl → 5 yıl → bugün için temsilî dağılım;
+    GPT tarihçesi ve kullanıcı sayıları; terminalde geçen kişisel çalışma süresi;
+    birlikte yaşamın zaman ve donanım maliyeti; cep telefonu ve bayramlaşma benzetmesi;
+    soru sormadan iş devrine ve ajan yönetimine geçiş; iş sonucunun sorumluluğu.
+  - **Doğrula:** KVKK rehberinin adı ve tarihi; model tarihçesindeki iddialar; 100 milyon
+    ve 1 milyar kullanıcı eşikleri, bunların süreleri ve kullanıcı ölçütleri.
+
+## 2026-10-30 Cuma
+
+- `[Konuşmacı]` Yeni doğaçlama: `kb/sources/transcript-8.md` (ham). `transcript-7` numarası
+  diğer çalışma dalındaki kayda ait olduğu için korundu.
+  - İçerik: iş kaygısına karşı yeni çalışma alanları; elektrik-elektronik, bilgisayar ve
+    yapay zekâ benzetmesi; prompt, context ve harness mühendisliği; LLM ile gövde benzetmesi;
+    yapay zekâyla öğrenmeye zaman ayırma; sosyal, bireysel ve ekonomik bedeller; sevdiğin iş
+    ve para kazandıran iş butonları/kapıları; Gamma hakkındaki kişisel deneyim; öğrencinin
+    sevdiği alana yapay zekâyı katması.
+  - İstek: yeni çalışma alanları güzel örneklerle gösterilsin; öğrenciye kendi alanında
+    ilerleyebileceği bir yön verilsin.
+- `[Codex]` `agents/codex/yeni-calisma-alanlari-draft.md`: MIT bölüm tarihçesi, Anthropic'in
+  bağlam ve harness çalışmaları, Gamma'nın ürün belgesi ve temsilî öğrenci projeleriyle
+  desteklenen editoryal taslak. Konuşmacının sözleri, dış kaynaklar ve öneriler ayrıldı.
+  - Kullanım grafiği yeni istihdamın kanıtı olarak kullanılmayacak; Gamma kıyası kişisel
+    değerlendirme, ekonomik fırsatlar ise olasılık olarak sunulacak (editoryal öneri).
+  - **Doğrula:** Diktedeki belirsiz ürün adları; her harness'ın her modeli çağırabildiği
+    genellemesi; yeni mesleklerin sayısı ve istihdama etkisi için ayrıca veri gerekir.

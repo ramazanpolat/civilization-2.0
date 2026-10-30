@@ -1,0 +1,6 @@
+# Keep generation instructions and runtime planning local.
+slide-deck/*/prompts/
+slide-deck/*/outline-draft-*.md
+slide-deck/*/analysis-draft-*.md
+slide-deck/*/production-status-draft-*.md
+slide-deck/*/generation-tasks-draft-*.json

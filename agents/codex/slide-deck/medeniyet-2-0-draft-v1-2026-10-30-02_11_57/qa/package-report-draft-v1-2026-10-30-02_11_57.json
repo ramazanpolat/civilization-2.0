@@ -1,0 +1,20 @@
+{
+  "slides": 24,
+  "pptx_speaker_notes": 24,
+  "pdf_pages": 24,
+  "pdf_bookmarks": 24,
+  "image_order_and_embedded_bytes_match": true,
+  "aspect_ratio": "16:9",
+  "canonical_definition_checked": true,
+  "visual_review": "All selected images reviewed; slide 19 regenerated to remove unwanted logos.",
+  "files": {
+    "medeniyet-2-0-sunum-draft-v1-2026-10-30-02_11_57.pptx": {
+      "bytes": 12814721,
+      "sha256": "7d61a36f407946aaa8e6d4d26fcad02c2d749ed143a7a63e3dba6cc920a69096"
+    },
+    "medeniyet-2-0-sunum-draft-v1-2026-10-30-02_11_57.pdf": {
+      "bytes": 12787488,
+      "sha256": "b72e2cea4585d73843306906619f167495b06018ca5de9ecaa931563b25448ce"
+    }
+  }
+}

@@ -1,0 +1,1222 @@
+[
+  {
+    "file" : "01-slide-cover-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 0.5,
+        "text" : "Medeniyet 2.0"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Medeniyet 2.0: Yapay Zekâyla Birlikte Yaşam"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Ne kadar kullanıyoruz? Neyi devrediyoruz? Birbirimizden ne bekliyoruz?"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Ramazan POLAT • Fırat Üniversitesi • 30 Ekim 2026"
+      }
+    ]
+  },
+  {
+    "file" : "02-slide-bilim-kurgu-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 1,
+        "text" : "Bilim kurgu diye"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "izledigim şeyin"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "içinde çalışıyorum."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Üniversitedeyken filmlerde izlediğim"
+      },
+      {
+        "confidence" : 1,
+        "text" : "gelecek, bugün çalışma masamda."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "İki ajanımı bir konuda konuşturdum;"
+      },
+      {
+        "confidence" : 1,
+        "text" : "kendi aralarında bir iletişim formatı"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "belirlediler."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Bu deneyim, yapay zekânın"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "hayatımdaki yerini yeniden"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "düşündürdü."
+      },
+      {
+        "confidence" : 0.30000001192092896,
+        "text" : "BNOYE"
+      }
+    ]
+  },
+  {
+    "file" : "03-slide-kullanim-dagilimi-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 1,
+        "text" : "Yapay zekâ kullanımını zaman"
+      },
+      {
+        "confidence" : 1,
+        "text" : "içinde artan bir katılım olarak düşünelim."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "50 yıl önce"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "20 yıl önce"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "5 yıl önce"
+      },
+      {
+        "confidence" : 1,
+        "text" : "bugün"
+      },
+      {
+        "confidence" : 1,
+        "text" : "50"
+      },
+      {
+        "confidence" : 1,
+        "text" : "100"
+      },
+      {
+        "confidence" : 0.30000001192092896,
+        "text" : "0"
+      },
+      {
+        "confidence" : 1,
+        "text" : "50"
+      },
+      {
+        "confidence" : 1,
+        "text" : "100"
+      },
+      {
+        "confidence" : 1,
+        "text" : "50"
+      },
+      {
+        "confidence" : 1,
+        "text" : "100"
+      },
+      {
+        "confidence" : 0.30000001192092896,
+        "text" : "0"
+      },
+      {
+        "confidence" : 1,
+        "text" : "50"
+      },
+      {
+        "confidence" : 1,
+        "text" : "100"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Yatay eksen: çalışma süresinin yapay zekâyla geçen payı."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Dikey eksen: o kullanım grubundaki kişi sayısı."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Temsili dağılım — ölçülmüş tarihsel veri değildir."
+      }
+    ]
+  },
+  {
+    "file" : "04-slide-kisisel-kullanim-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 1,
+        "text" : "Bilgisayar başındaki"
+      },
+      {
+        "confidence" : 1,
+        "text" : "süremde ajanlar"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "önemli bir yer tutuyor."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Bilgisayar başındaki sürem"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "yaklaşık %55 terminalde"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "geçiyor."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Terminaldeki sürenin neredeyse"
+      },
+      {
+        "confidence" : 1,
+        "text" : "tamamını yapay zekâya"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "ayırıyorum."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Bu benim kişisel kullanımım."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Siz kendinizi nerede görüyorsunuz?"
+      },
+      {
+        "confidence" : 0.30000001192092896,
+        "text" : "%55."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Konuşmacının kişisel beyanı"
+      }
+    ]
+  },
+  {
+    "file" : "05-slide-ajan-govdesi-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 1,
+        "text" : "Ajan, modelin araçlarla"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "iş yapabildiği bir sistem."
+      },
+      {
+        "confidence" : 1,
+        "text" : "LLM:"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Dil üzerinden verilen işi"
+      },
+      {
+        "confidence" : 1,
+        "text" : "yorumlayan model."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Harness / gövde:"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Modele araçlar ve çalışma"
+      },
+      {
+        "confidence" : 1,
+        "text" : "ortamı sağlayan yazılim."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Ajan:"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Araç kullanıp sonuçlarına"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "göre işi sürdürebilen sistem."
+      }
+    ]
+  },
+  {
+    "file" : "06-slide-yeni-calisma-alanlari-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 1,
+        "text" : "Yeni bir teknoloji,"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "etrafında yeni çalışma alanları da açıyor."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Elektrik ve elektronik → bilgisayar alanları → yapay zekâ uygulamaları."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Kaynak: MIT EECS — Departmental History"
+      },
+      {
+        "confidence" : 1,
+        "text" : "1975"
+      },
+      {
+        "confidence" : 1,
+        "text" : "MIT: Elektrik Mühendisliği Bölümü,"
+      },
+      {
+        "confidence" : 1,
+        "text" : "1975'te elektrik ve bilgisayar bilimini"
+      },
+      {
+        "confidence" : 1,
+        "text" : "birlikte kapsadı."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Bu, alanların genişlemesine somut bir örnek."
+      },
+      {
+        "confidence" : 1,
+        "text" : "2020"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "2020'de yapı, yapay zekâ ve karar"
+      },
+      {
+        "confidence" : 1,
+        "text" : "verme alanını da içeriyordu."
+      }
+    ]
+  },
+  {
+    "file" : "07-slide-uc-muhendislik-isi-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 0.5,
+        "text" : "Modeli gerçek bir işe bağlamak da"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "mühendiślik işi."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Prompt mühendisligi:"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Görevi ve iyi sonucun"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "ölçütünü tarif et."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Bağlam mühendisliği:"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Gereken bilgiyi doğru"
+      },
+      {
+        "confidence" : 1,
+        "text" : "anda sağla."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Harness mühendisliği:"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Araçları, izinleri ve"
+      },
+      {
+        "confidence" : 1,
+        "text" : "doğrulamayı kur."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Kaynak: Anthropic Engineering"
+      }
+    ]
+  },
+  {
+    "file" : "08-slide-sevdigin-is-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 1,
+        "text" : "Sevdiğiniz alanda yapay zekâyla"
+      },
+      {
+        "confidence" : 1,
+        "text" : "değer üretmeyi deneyebilirsiniz."
+      },
+      {
+        "confidence" : 0.30000001192092896,
+        "text" : "Чinre"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Sevdiğin iş."
+      },
+      {
+        "confidence" : 0.30000001192092896,
+        "text" : "00 %"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Para"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "kazandıran iş."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "• Bir üçüncü seçenek:"
+      },
+      {
+        "confidence" : 1,
+        "text" : "sevdiğin alanda yapay"
+      },
+      {
+        "confidence" : 1,
+        "text" : "zekâyla bir ihtiyacı çözmek."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Alan bilgin, ortaya çıkan şeyin"
+      },
+      {
+        "confidence" : 1,
+        "text" : "kalitesini değerlendirmene"
+      },
+      {
+        "confidence" : 1,
+        "text" : "yardım eder."
+      }
+    ]
+  },
+  {
+    "file" : "09-slide-gamma-ornegi-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 0.5,
+        "text" : "Gamma'da beğendiğim şey,"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "sunum hazırlama işine odaklanması."
+      },
+      {
+        "confidence" : 1,
+        "text" : "\"Benim mesela bu konuda"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "en beğendiğim ürün Gamma.\""
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Konuşmacının kişisel değerlendirmesi • Gamma Yardım Merkezi"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Hedefi anlamak"
+      },
+      {
+        "confidence" : 1,
+        "text" : "anlatıyı kurmak"
+      },
+      {
+        "confidence" : 1,
+        "text" : "tasarlamak"
+      },
+      {
+        "confidence" : 1,
+        "text" : "düzenlemek"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Belirli bir ihtiyacın ayrıntılarını iyi çözmek, bir ürün fikri olabilir."
+      }
+    ]
+  },
+  {
+    "file" : "10-slide-zaman-ve-bedel-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 0.5,
+        "text" : "Daha çok şey yapabilmek,"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "daha çok zamanın kalacağı anlamına"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "gelmeyebilir."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Bir fikir daha kolay"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "ürüne dönüşebiliyor."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Beş yan proje,"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "elli beş fikre"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "dönüşebiliyor."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Zaman, dikkat,"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "abonelik ve donanım"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "maliyeti yine size ait."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Konuşmacının kişisel benzetmesi"
+      }
+    ]
+  },
+  {
+    "file" : "11-slide-sorumluluk-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 0.5,
+        "text" : "İşi yapay zekâya devrettiniz;"
+      },
+      {
+        "confidence" : 1,
+        "text" : "sonucu hâlâ siz teslim ediyorsunuz."
+      },
+      {
+        "confidence" : 1,
+        "text" : "\"Yapay zekâ yanlış yapmış, ne yapayım?\" diyemezsiniz."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Size verilen işi kontrol ederek teslim etmek sizin sorumluluğunuz."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "ilk ilke: Sonucu sahiplenin."
+      }
+    ]
+  },
+  {
+    "file" : "12-slide-iddia-ve-dogrulama-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 0.5,
+        "text" : "Yapay zekânın iddiasını,"
+      },
+      {
+        "confidence" : 1,
+        "text" : "gerekçesini anlayarak sahiplenin"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "İddia"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "kontrol: kaynak, ölçüm veya test"
+      },
+      {
+        "confidence" : 1,
+        "text" : "\"Yapay zekânın iddiaları sizin için"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "birer fikirden öteye gidemez.\""
+      },
+      {
+        "confidence" : 1,
+        "text" : "\"Neden?\" sorusuna verebileceğiniz"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "bir cevabıniz olsun."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "gerekçeli karar"
+      }
+    ]
+  },
+  {
+    "file" : "13-slide-benim-ajanim-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 0.5,
+        "text" : "\"Benim yapay zekâm böyle demiyor\""
+      },
+      {
+        "confidence" : 1,
+        "text" : "bir tartışmayı çözmüyor."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Ali: \"Benim yapay zekâm"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "bu tasarımın yanlış"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "olduğunu söyledi.\""
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Ayşe: \"Benimki doğru"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "olduğunu söylüyor.\""
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Birlikte soru:"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Hangi gerekçeyi,"
+      },
+      {
+        "confidence" : 1,
+        "text" : "hangi testle"
+      },
+      {
+        "confidence" : 1,
+        "text" : "kontrol edeceğiz?"
+      }
+    ]
+  },
+  {
+    "file" : "14-slide-bayramlasma-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 0.5,
+        "text" : "Cep telefonu bayramlaşmamızı bile değiştirdi."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Kartta:"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Ne yazacağız, kimin yazısı"
+      },
+      {
+        "confidence" : 1,
+        "text" : "güzel, ne zaman ulaşacak?"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Telefonda:"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Sesini duyabiliyoruz."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Görüntülü aramada:"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Birbirimizi de görebiliyoruz."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Kutlamanın çevresindeki hazırlık ve beklenti değişti. •"
+      }
+    ]
+  },
+  {
+    "file" : "15-slide-imkan-ve-gorgu-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 0.5,
+        "text" : "Yapabildiğimiz şey, birbirimizden"
+      },
+      {
+        "confidence" : 1,
+        "text" : "beklediğimiz şeye dönüşebiliyor."
+      },
+      {
+        "confidence" : 1,
+        "text" : "?"
+      },
+      {
+        "confidence" : 0.30000001192092896,
+        "text" : "Imkân:"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Her an mesaj"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "gönderebilirim."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Alışkanlık:"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Gün içinde sık sık"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "yazışırız."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Beklenti:"
+      },
+      {
+        "confidence" : 1,
+        "text" : "\"Çevrim içisin,"
+      },
+      {
+        "confidence" : 1,
+        "text" : "neden cevap vermedin?\""
+      },
+      {
+        "confidence" : 1,
+        "text" : "Görgü:"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Ne zaman cevap"
+      },
+      {
+        "confidence" : 1,
+        "text" : "bekleneceğini aramızda"
+      },
+      {
+        "confidence" : 1,
+        "text" : "konuşuruz."
+      }
+    ]
+  },
+  {
+    "file" : "16-slide-insan-ajan-insan-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 0.5,
+        "text" : "Ajan aracılığıyla ulaşmak,"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "ilişkinin anlamını değiştiriyor."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Randevu:"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "\"Asistanım uygun saati bulsun.\""
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Hız ve kolaylık."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Dertleşme:"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "\"Asistanımla konuş.\""
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "→ Karşı taraf kişisel ilgi bekleyebilir."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Aynı aracılık, farklı ilişkilerde farklı anlam taşıyabilir."
+      }
+    ]
+  },
+  {
+    "file" : "17-slide-temsil-yetkisi-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 0.5,
+        "text" : "Bir ajanın \"tamam\"ı,"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "kimin sözü?"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Ajan: \"Yarın bu işi"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "teslim ederiz.\""
+      },
+      {
+        "confidence" : 1,
+        "text" : "Bu sözü vermeye"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "yetkili mi?"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "İnsan sahibi bu"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "taahhütten"
+      },
+      {
+        "confidence" : 1,
+        "text" : "haberdar mı?"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Karşı taraf yetkinin"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Sınırını biliyor mu?"
+      }
+    ]
+  },
+  {
+    "file" : "18-slide-ortak-hafiza-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 1,
+        "text" : "Konuşmayı hatırlayan bir yardımcı,"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "ilişkinin hafızasına da katılıyor."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Toplantı"
+      },
+      {
+        "confidence" : 1,
+        "text" : "not"
+      },
+      {
+        "confidence" : 1,
+        "text" : "aranabilir geçmiş"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "sonraki"
+      },
+      {
+        "confidence" : 1,
+        "text" : "konuşmanın bağlamı."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Kim kaydediyor, kim erişiyor?"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Hangi sözün hatırlanmasını ve kullanılmasını bekliyoruz?"
+      }
+    ]
+  },
+  {
+    "file" : "19-slide-dalkavukluk-draft-v1-2026-10-30-02_11_57-r2.png",
+    "lines" : [
+      {
+        "confidence" : 0.5,
+        "text" : "Bizi hep haklı bulan bir"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "yardımcıya ne kadar güveniyoruz?"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Anlaşılmak ve desteklenmek hoşumuza gidebilir."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Sürekli onaylanmak, düşüncemizin doğru olduğunu göstermez."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "\"Bu fikrimin"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "zayıf yani ne?\""
+      },
+      {
+        "confidence" : 1,
+        "text" : "sorusu da"
+      },
+      {
+        "confidence" : 1,
+        "text" : "konuşmanın parçası"
+      },
+      {
+        "confidence" : 1,
+        "text" : "olsun."
+      },
+      {
+        "confidence" : 1,
+        "text" : "?"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Gerçek örnek: OpenAl,"
+      },
+      {
+        "confidence" : 1,
+        "text" : "aşırı onaylayıcı bulunan"
+      },
+      {
+        "confidence" : 1,
+        "text" : "GPT-4o güncellemesini"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Nisan 2025'te geri aldı."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Kaynak: OpenAl • 29 Nisan 2025"
+      }
+    ]
+  },
+  {
+    "file" : "20-slide-kural-ve-beklenti-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 1,
+        "text" : "Yazılı kullanım kuralının yanında,"
+      },
+      {
+        "confidence" : 1,
+        "text" : "aramızdaki beklentiyi de konuşmamız gerekiyor."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Kullanım kuralı:"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Bu işte yapay zekâdan"
+      },
+      {
+        "confidence" : 1,
+        "text" : "nasıl yararlanabiliriz?"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Toplumsal beklenti:"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Benden kişisel bir"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "karşılık mı, bir sonuç mu"
+      },
+      {
+        "confidence" : 1,
+        "text" : "bekliyorsun?"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Ajanın kimliği,"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "yetkisi ve yaptığı iş"
+      },
+      {
+        "confidence" : 1,
+        "text" : "anlaşılır olsun."
+      }
+    ]
+  },
+  {
+    "file" : "21-slide-uc-anlasma-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 1,
+        "text" : "Yeni görgüyü küçük ve açık"
+      },
+      {
+        "confidence" : 1,
+        "text" : "anlaşmalarla kurabiliriz."
+      },
+      {
+        "confidence" : 1,
+        "text" : "L"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Aracılığı açıkla:"
+      },
+      {
+        "confidence" : 1,
+        "text" : "\"Bu görüşmeyi"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "asistanım ayarlıyor.\""
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Yetkiyi anlaşılır kıl:"
+      },
+      {
+        "confidence" : 1,
+        "text" : "\"Saati önerebilir;"
+      },
+      {
+        "confidence" : 1,
+        "text" : "kesinleştirmeyi ben"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "yapacağım.\""
+      },
+      {
+        "confidence" : 1,
+        "text" : "Emeği sahiplen:"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "\"Bunu yapay zekâyla"
+      },
+      {
+        "confidence" : 1,
+        "text" : "hazırladım; şu kısımları"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "kontrol ettim.\""
+      }
+    ]
+  },
+  {
+    "file" : "22-slide-kucuk-proje-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 0.5,
+        "text" : "Sevdiğin alanda küçük bir iş seç;"
+      },
+      {
+        "confidence" : 1,
+        "text" : "yap, kontrol et, geliştir."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Müzik: kendi kayıtların için"
+      },
+      {
+        "confidence" : 1,
+        "text" : "bir çalışma yardımcısı."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Elektronik: bir kartın"
+      },
+      {
+        "confidence" : 1,
+        "text" : "belgeleriyle çalıışan"
+      },
+      {
+        "confidence" : 1,
+        "text" : "laboratuvar yardimcısı."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Oyun: tek mekanikli küçük"
+      },
+      {
+        "confidence" : 1,
+        "text" : "bir prototip."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Bir ihtiyacı seç"
+      },
+      {
+        "confidence" : 1,
+        "text" : "yapay zekâyla dene"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "sonucu sınayıp geliştir."
+      }
+    ]
+  },
+  {
+    "file" : "23-slide-medeniyet-tanimi-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 0.5,
+        "text" : "Medeniyet 2.0"
+      },
+      {
+        "confidence" : 1,
+        "text" : "dediğim yer."
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Görüntülü arama bayramlaşmamızı"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "nasıl değiştirdiyse, yapay zekâ da"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "hayatımıza yeterince yerleştiğinde"
+      },
+      {
+        "confidence" : 1,
+        "text" : "yaşam şeklimizi değiştirecek."
+      },
+      {
+        "confidence" : 1,
+        "text" : "Ajanlara, insan olmadıklarını bilerek"
+      },
+      {
+        "confidence" : 1,
+        "text" : "ama insanmış gibi davrandığımız"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "o noktaya ben Medeniyet 2.0 diyorum."
+      }
+    ]
+  },
+  {
+    "file" : "24-slide-back-cover-draft-v1-2026-10-30-02_11_57.png",
+    "lines" : [
+      {
+        "confidence" : 1,
+        "text" : "Sevdiğin hangi işe"
+      },
+      {
+        "confidence" : 1,
+        "text" : "yapay zekâyı"
+      },
+      {
+        "confidence" : 1,
+        "text" : "katmak istersin?"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Küçük bir"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "ihtiyacın ne?"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "-"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "Sonucun doğru ve"
+      },
+      {
+        "confidence" : 1,
+        "text" : "işe yarar olduğunu"
+      },
+      {
+        "confidence" : 1,
+        "text" : "nasıl anlarsın?"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Yapay zekâya"
+      },
+      {
+        "confidence" : 1,
+        "text" : "hangi kısmını"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "devredersin?"
+      },
+      {
+        "confidence" : 1,
+        "text" : "Bunun başka insanlarla"
+      },
+      {
+        "confidence" : 1,
+        "text" : "ilişkinde neyi"
+      },
+      {
+        "confidence" : 0.5,
+        "text" : "değiştirebileceğini"
+      },
+      {
+        "confidence" : 1,
+        "text" : "düşünüyorsun?"
+      }
+    ]
+  }
+]
