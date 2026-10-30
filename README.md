@@ -6,6 +6,35 @@ Bu depo, **Medeniyet 2.0** tezini, merkezi bilgi tabanını (`kb/`), üç ayrı 
 
 ---
 
+## Fırat Üniversitesi Söyleşisi — Yapay Zekâyla Birlikte Yaşam
+
+**30 Ekim 2026 Cuma, 10:00 · Fırat Üniversitesi · Çevrim içi söyleşi**<br>
+**Konuşmacı:** Ramazan POLAT (ODTÜ) · **Durum:** Gerçekleşti
+
+**[Sunulan sunum — 17 slayt](talks/2026-10-30-firat/slaytlar.html)** · **[İçerik, akış ve konuşmacı notları](talks/2026-10-30-firat/icerik.md)** · **[Etkinlik kaydı](talks/2026-10-30-firat/README.md)**
+
+HTML sunumunu indirip tarayıcıda açabilirsiniz; dosya, sunum ve konuşmacı notlarını birlikte içerir.
+
+<p align="center">
+  <a href="talks/2026-10-30-firat/afis/medeniyet-2-0-firat-v3.png">
+    <img src="talks/2026-10-30-firat/afis/medeniyet-2-0-firat-v3.jpg" alt="Medeniyet 2.0: Yapay Zekâyla Birlikte Yaşam — Ramazan POLAT, Fırat Üniversitesi, 30 Ekim 2026 söyleşi afişi" width="480">
+  </a>
+</p>
+
+### Söyleşinin İçeriği
+
+**Bir aracı kullanmaktan, onunla birlikte yaşamaya:** Yapay zekânın gündelik hayattaki yeri, açtığı çalışma alanları, kullanımının bedelleri ve insan ilişkilerinde oluşturduğu yeni beklentiler.
+
+- **Neredeyiz?** Yapay zekâ kullanımını hayatımızdaki payıyla düşünmek; kullanım dağılımı ve dinleyicinin kendi konumu.
+- **Nereye gidiyor?** Yeni çalışma alanları ve sevdiğimiz işe yapay zekâyı katmak.
+- **Bedeli ne?** Zaman, para, düşünmeyi devretme ve bizi sürekli haklı çıkaran bir yardımcıyla çalışmak.
+- **Kurallar:** Yapay zekâyı hayatımıza katarken beş kullanım kuralı.
+- **Medeniyet 2.0:** Kişisel ajanlar, değişen insan ilişkileri ve birlikte oluşturacağımız yeni görgü.
+
+Tam ekran metinleri ve anlatım notları [etkinliğin içerik belgesinde](talks/2026-10-30-firat/icerik.md) yer alır.
+
+---
+
 ## Dizin Haritası
 
 | Alan | Yol | Açıklama |
@@ -14,7 +43,7 @@ Bu depo, **Medeniyet 2.0** tezini, merkezi bilgi tabanını (`kb/`), üç ayrı 
 | **Ajan Stüdyoları** | [`agents/claude/`](agents/claude/README.md) | Claude Code'un bağımsız `living-docs` çalışma alanı. |
 | | [`agents/codex/`](agents/codex/README.md) | Codex'in bağımsız `living-docs` çalışma alanı. |
 | | [`agents/agy/`](agents/agy/README.md) | Antigravity'nin bağımsız `living-docs` çalışma alanı. |
-| **Söyleşiler & Sunumlar** | [`talks/2026-10-30-firat/`](talks/2026-10-30-firat/README.md) | 30 Ekim 2026 Fırat Üniversitesi söyleşisi: güncel sunum ([`slaytlar.html`](talks/2026-10-30-firat/slaytlar.html)), anlatım ([`icerik.md`](talks/2026-10-30-firat/icerik.md)) ve afiş ([`afis/`](talks/2026-10-30-firat/afis/)). |
+| **Söyleşiler & Sunumlar** | [`talks/2026-10-30-firat/`](talks/2026-10-30-firat/README.md) | Gerçekleşen 30 Ekim 2026 Fırat Üniversitesi söyleşisi: sunulan sunum ([`slaytlar.html`](talks/2026-10-30-firat/slaytlar.html)), içerik ve anlatım notları ([`icerik.md`](talks/2026-10-30-firat/icerik.md)) ve afiş ([`afis/`](talks/2026-10-30-firat/afis/)). |
 
 ---
 
