@@ -15,3 +15,4 @@ Claude Code'un **Medeniyet 2.0** üzerindeki bağımsız `living-docs` çalışm
 | [`sunum-onerisi-draft.html`](sunum-onerisi-draft.html) | Öneriye göre 27 slaytlık HTML sunum taslağı; `K` tuşu kısa sürümü (16 slayt) açar. |
 | [`ornekler-draft.md`](ornekler-draft.md) | `transcript-7` konuları için örnek bankası: eksikler, zayıf örnekler ve yerlerine önerilen kaynaklı vakalar, sahneler, benzetmeler (taslak). |
 | [`sunum-akisi-draft.md`](sunum-akisi-draft.md) | 2026-10-30 konu listesine göre yeni sunum hattı: tema, iddialar, kazanımlar, 27 slaytlık kaba akış, örnek haritası, çıkarılanlar (taslak). |
+| [`sunum-draft.html`](sunum-draft.html) | `sunum-akisi-draft.md` akışına göre 17 slaytlık HTML sunum (animasyonlu dağılım, Anthropic grafiği, Medeniyet 2.0 eşiği; `K` 14 slaytlık kısa sürüm). |
